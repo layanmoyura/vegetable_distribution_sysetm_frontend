@@ -1,0 +1,32 @@
+body,
+html {
+  height: 100%;
+}
+
+.bg {
+  /* The image used */
+  background-image: url(../../assets/g.png);
+  /* Full height */
+  /*height: 100%;
+  /* Center and scale the image nicely */
+  margin-left: 380px;
+  margin-top: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+}
+
+.bck
+{
+  background-color: rgb(170, 223, 198);
+}
+
+.banner
+{
+  background-image: url(../../assets/BANNER.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+}
