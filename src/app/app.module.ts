@@ -8,6 +8,9 @@ import { LoginComponent } from './login/login.component';
 import { NavibarComponent } from './navibar/navibar.component';
 import { SignupComponent } from './signup/signup.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -16,12 +19,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     DashboardComponent,
     LoginComponent,
     NavibarComponent,
-    SignupComponent
+    SignupComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatIconModule
     
   ],
   providers: [],

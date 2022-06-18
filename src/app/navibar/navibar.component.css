@@ -1,7 +1,15 @@
-.word {
-   
+@media(min-width: 576px) {
+  .word {
+
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
     text-align: center;
     font-weight: 900;
   }
+}
+
+.word {
+
+  font-weight: 900;
+
+}
