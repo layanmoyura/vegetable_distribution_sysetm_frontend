@@ -1,0 +1,14 @@
+.banner
+{
+  background-image: url(../../assets/BANNER.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+}
+
+.bck
+{
+  background-color: rgb(170, 223, 198);
+  height: 75%;
+}
