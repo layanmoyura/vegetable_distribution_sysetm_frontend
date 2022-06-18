@@ -9,12 +9,14 @@ html {
   /* Full height */
   /*height: 100%;
   /* Center and scale the image nicely */
-  margin-left: 380px;
+  
   margin-top: 10px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 300px;
+  display: flex; 
+  justify-content: center;
 }
 
 .bck
