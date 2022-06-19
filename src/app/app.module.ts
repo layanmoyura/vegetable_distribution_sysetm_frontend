@@ -15,6 +15,7 @@ import { BackgroundComponent } from './background/background.component';
 import { AdminPannelComponent } from './admin-pannel/admin-pannel.component';
 import { OrderComponent } from './order/order.component';
 import { FarmerViewComponent } from './farmer-view/farmer-view.component';
+import { DeliveyComponent } from './delivey/delivey.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { FarmerViewComponent } from './farmer-view/farmer-view.component';
     AdminPannelComponent,
     OrderComponent,
     FarmerViewComponent,
+    DeliveyComponent,
     
   ],
   imports: [

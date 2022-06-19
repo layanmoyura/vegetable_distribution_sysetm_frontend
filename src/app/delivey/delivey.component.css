@@ -1,0 +1,20 @@
+.bck
+{
+  background-color: rgb(170, 223, 198);
+  height: 100%;
+}
+
+.bg {
+    /* The image used */
+    background-image: url(../../assets/AD.png);
+    /* Full height */
+    /*height: 100%;
+    /* Center and scale the image nicely */
+    margin-top: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    display: flex; 
+    justify-content: center;
+  }
