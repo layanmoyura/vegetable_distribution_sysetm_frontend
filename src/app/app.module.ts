@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatIconModule } from '@angular/material/icon';
 import { BackgroundComponent } from './background/background.component';
+import { AdminPannelComponent } from './admin-pannel/admin-pannel.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { BackgroundComponent } from './background/background.component';
     NavibarComponent,
     SignupComponent,
     BackgroundComponent,
+    AdminPannelComponent,
     
   ],
   imports: [
