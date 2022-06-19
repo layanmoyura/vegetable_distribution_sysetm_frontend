@@ -11,6 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatIconModule } from '@angular/material/icon';
+import { BackgroundComponent } from './background/background.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
     LoginComponent,
     NavibarComponent,
     SignupComponent,
+    BackgroundComponent,
     
   ],
   imports: [
