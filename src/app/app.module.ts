@@ -14,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { BackgroundComponent } from './background/background.component';
 import { AdminPannelComponent } from './admin-pannel/admin-pannel.component';
 import { OrderComponent } from './order/order.component';
+import { FarmerViewComponent } from './farmer-view/farmer-view.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { OrderComponent } from './order/order.component';
     BackgroundComponent,
     AdminPannelComponent,
     OrderComponent,
+    FarmerViewComponent,
     
   ],
   imports: [
