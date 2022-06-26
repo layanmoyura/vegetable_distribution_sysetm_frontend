@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -16,6 +15,7 @@ import { AdminPannelComponent } from './admin-pannel/admin-pannel.component';
 import { OrderComponent } from './order/order.component';
 import { FarmerViewComponent } from './farmer-view/farmer-view.component';
 import { DeliveyComponent } from './delivey/delivey.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 @NgModule({
@@ -38,6 +38,7 @@ import { DeliveyComponent } from './delivey/delivey.component';
     NgbModule,
     BrowserAnimationsModule,
     MatSliderModule,
+    MatTabsModule,
     MatIconModule
     
   ],
