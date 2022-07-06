@@ -16,6 +16,10 @@ import { OrderComponent } from './order/order.component';
 import { FarmerViewComponent } from './farmer-view/farmer-view.component';
 import { DeliveyComponent } from './delivey/delivey.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { CartComponent } from './cart/cart.component';
+import { HelpComponent } from './help/help.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 @NgModule({
@@ -30,6 +34,10 @@ import { MatTabsModule } from '@angular/material/tabs';
     OrderComponent,
     FarmerViewComponent,
     DeliveyComponent,
+    CartComponent,
+    HelpComponent,
+    ContactUsComponent,
+    AboutUsComponent,
     
   ],
   imports: [
