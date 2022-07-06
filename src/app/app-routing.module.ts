@@ -9,6 +9,7 @@ import { DeliveyComponent } from './delivey/delivey.component';
 import { FarmerViewComponent } from './farmer-view/farmer-view.component';
 import { HelpComponent } from './help/help.component';
 import { LoginComponent } from './login/login.component';
+import { ManageProfileComponent } from './manage-profile/manage-profile.component';
 import { OrderComponent } from './order/order.component';
 import { SignupComponent } from './signup/signup.component';
 
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path: 'cart' , component:CartComponent},
   {path: 'help' , component:HelpComponent},
   {path: 'contact_us' , component:ContactUsComponent},
-  {path: 'about_us' , component:AboutUsComponent}
+  {path: 'about_us' , component:AboutUsComponent},
+  {path: 'manage_profile' , component:ManageProfileComponent}
  
 
 ]
