@@ -23,6 +23,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ManageProfileComponent } from './manage-profile/manage-profile.component';
 //for validations
 import { ReactiveFormsModule } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @NgModule({
