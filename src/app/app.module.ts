@@ -45,6 +45,7 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
     AboutUsComponent,
     ManageProfileComponent,
     
+    
   ],
   imports: [
     BrowserModule,
@@ -55,7 +56,8 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
     MatTabsModule,
     MatIconModule,
     //for validation
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
     
     
   ],
