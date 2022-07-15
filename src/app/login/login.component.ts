@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 
@@ -10,14 +10,14 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  form: FormGroup = new FormGroup({
-    email: new FormControl(''),
-    password: new FormControl(''),
+  form: UntypedFormGroup = new UntypedFormGroup({
+    email: new UntypedFormControl(''),
+    password: new UntypedFormControl(''),
   });
   submitted = false;
   
 
-  constructor(private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private formBuilder: UntypedFormBuilder, private router: Router) { }
 
   ngOnInit(): void {
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { ValidatorFn } from '@angular/forms';
 import { Router } from '@angular/router';
 import Validation from '../validation';
@@ -15,13 +15,13 @@ import Validation from '../validation';
 })
 export class SignupComponent implements OnInit {
 
-  form: FormGroup = new FormGroup({
-    fullname: new FormControl(''),
+  form: UntypedFormGroup = new UntypedFormGroup({
+    fullname: new UntypedFormControl(''),
    
   });
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {
+  constructor(private formBuilder: UntypedFormBuilder, private router: Router) {
 
     
    }
