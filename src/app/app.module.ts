@@ -26,6 +26,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+//for toast
+import { ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
   declarations: [
@@ -57,6 +60,7 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
     MatIconModule,
     //for validation
     ReactiveFormsModule,
+    ToastrModule.forRoot(), 
     
     
     

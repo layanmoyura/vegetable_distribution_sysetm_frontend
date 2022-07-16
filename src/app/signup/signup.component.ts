@@ -3,6 +3,7 @@ import { AbstractControl, UntypedFormBuilder, UntypedFormControl, UntypedFormGro
 import { ValidatorFn } from '@angular/forms';
 import { Router } from '@angular/router';
 import Validation from '../validation';
+import { ToastrService } from 'ngx-toastr';
 
 
 
@@ -21,7 +22,7 @@ export class SignupComponent implements OnInit {
   });
   submitted = false;
 
-  constructor(private formBuilder: UntypedFormBuilder, private router: Router) {
+  constructor(private formBuilder: UntypedFormBuilder, private router: Router , private toastr: ToastrService) {
 
     
    }
@@ -89,6 +90,7 @@ export class SignupComponent implements OnInit {
       return;
     }
     console.log(JSON.stringify(this.form.value, null, 2));
+    this.toastr.success( 'Signup is Sucessfull!');
     this.router.navigate(['/order']); 
     
   }

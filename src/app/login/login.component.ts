@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
   submitted = false;
   
 
-  constructor(private formBuilder: UntypedFormBuilder, private router: Router) { }
+  constructor(private formBuilder: UntypedFormBuilder, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
 
@@ -50,6 +51,7 @@ export class LoginComponent implements OnInit {
     }
     console.log(JSON.stringify(this.form.value, null, 2));
     console.log("sucess");
+    this.toastr.success( 'Login is Sucessfull!');
     this.router.navigate(['/farmer_view']); 
     
     
