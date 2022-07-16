@@ -95,6 +95,28 @@ export class SignupComponent implements OnInit {
     
   }
 
+  onSubmitFarmer()
+  {this.submitted = true;
+    if (this.form.invalid) {
+      return;
+    }
+    console.log(JSON.stringify(this.form.value, null, 2));
+    this.toastr.success( 'Signup is Sucessfull!');
+    this.router.navigate(['/order']); 
+    
+  }
+
+  onSubmitCourier()
+  {this.submitted = true;
+    if (this.form.invalid) {
+      return;
+    }
+    console.log(JSON.stringify(this.form.value, null, 2));
+    this.toastr.success( 'Signup is Sucessfull!');
+    this.router.navigate(['/order']); 
+    
+  }
+
 
   
 

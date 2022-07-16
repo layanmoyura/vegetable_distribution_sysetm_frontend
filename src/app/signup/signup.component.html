@@ -128,98 +128,231 @@
                         
                     </mat-tab>
                     <mat-tab label="Farmer"> 
-                        <form>
+                        <form [formGroup]="form" (ngSubmit)="onSubmitFarmer()">
 
                             <div class="form-group ">
-                                <label for="firstName">FirstName</label>
-                                <input type="text" class="form-control" id="firstName" placeholder="firstName" >
+                                <label for="fullname">Fullname</label>
+                                <input type="text" class="form-control" id="fullname" placeholder="fullname"  formControlName="fullname"
+                                [ngClass]="{ 'is-invalid': submitted && f['fullname'].errors }">
+
+                                <div *ngIf="submitted && f['fullname'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['fullname'].errors['required']">Fullname is required</div>
+                                  </div>
+
                             </div>
                         
                         
                         
                             <div class="form-group ">
                                 <label for="email">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="email">
+                                <input type="email" class="form-control" id="email" placeholder="email" 
+                                formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+
+                                <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['email'].errors['required']">Email is required</div>
+                                    <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+                                  </div>
                             </div>
                         
                             <div class="form-group">
-                                <label for="nic_number">Phone Number</label>
-                                <input type="number" class="form-control" id="nic_number" placeholder="07x xxxxxxx">
+                                <label for="phone_number">Phone Number</label>
+                                <input type="text" class="form-control" id="phone_number" placeholder="07x xxxxxxx" formControlName="phone_number"
+                                [ngClass]="{ 'is-invalid': submitted && f['phone_number'].errors }"/>
+
+                                <div *ngIf="submitted && f['phone_number'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['phone_number'].errors['required']">nic_number is required</div>
+                                    <div *ngIf="f['phone_number'].errors['minlength']">
+                                        Enter a valid
+                                    </div>
+                                    <div *ngIf="f['phone_number'].errors['maxlength']">
+                                        Enter a valid
+                                    </div>
+                                  </div>
+
                             </div>
+
+
                             <div class="form-group">
                                 <label for="nic_number">NIC Number</label>
-                                <input type="text" class="form-control" id="nic_number" placeholder="971490xxxV">
+                                <input type="text" class="form-control" id="nic_number" placeholder="971490xxxV" formControlName="nic_number"
+                                [ngClass]="{ 'is-invalid': submitted && f['nic_number'].errors }">
+
+                                <div *ngIf="submitted && f['nic_number'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['nic_number'].errors['required']">NIC is required</div>
+                                    <div *ngIf="f['nic_number'].errors['minlength']">
+                                        Enter a valid NIC
+                                    </div>
+                                    <div *ngIf="f['nic_number'].errors['maxlength']">
+                                        Enter a valid NIC
+                                    </div>
+                                  </div>
                             </div>
                         
                             <div class="form-group">
                                 <label for="password">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="password">
+                                <input type="password" class="form-control" id="password" placeholder="password" formControlName="password"
+                                [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
+
+                                <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['password'].errors['required']">Password is required</div>
+                                    <div *ngIf="f['password'].errors['minlength']">
+                                      Password must be at least 6 characters
+                                    </div>
+                                    <div *ngIf="f['password'].errors['maxlength']">
+                                      Password must not exceed 40 characters
+                                    </div>
+                                  </div>
                             </div>
                         
                             <div class="form-group">
-                                <label for="confirm_password">Confirm Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="Confirm password">
+                                <label for="confirmPassword">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password" formControlName="confirmPassword"
+                                [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }">
+
+                                <div
+                                *ngIf="submitted && f['confirmPassword'].errors"
+                                class="invalid-feedback"
+                              >
+                                <div *ngIf="f['confirmPassword'].errors['required']">
+                                  Confirm Password is required
+                                </div>
+                                <div *ngIf="f['confirmPassword'].errors['matching']">
+                                  Confirm Password does not match
+                                </div>
+                              </div>
                             </div>
                         
                             <div class="form-group">
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" id="gridCheck">
+                                  <input class="form-check-input" type="checkbox" id="gridCheck"  formControlName="acceptTerms"
+                                  [ngClass]="{ 'is-invalid': submitted && f['acceptTerms'].errors }"> 
                                   <label class="form-check-label" for="gridCheck">
                                     Above details are true and I agree to the terms and conditions.
                                   </label>
                                 </div>
+
+                                <div *ngIf="submitted && f['acceptTerms'].errors" class="invalid-feedback">
+                                    Accept Terms is required
+                                  </div>
                             </div>
                         
                         
-                             <!--  <button type="submit" class="btn btn-primary">Create account</button>-->
+                            <button type="submit" class="btn btn-primary">Create account</button>
                         
                         </form>
+                        
                     </mat-tab>
                     <mat-tab label="Courier"> 
-                        <form>
+                        <form [formGroup]="form" (ngSubmit)="onSubmitCourier()">
 
                             <div class="form-group ">
-                                <label for="firstName">FirstName</label>
-                                <input type="text" class="form-control" id="firstName" placeholder="firstName" >
+                                <label for="fullname">Fullname</label>
+                                <input type="text" class="form-control" id="fullname" placeholder="fullname"  formControlName="fullname"
+                                [ngClass]="{ 'is-invalid': submitted && f['fullname'].errors }">
+
+                                <div *ngIf="submitted && f['fullname'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['fullname'].errors['required']">Fullname is required</div>
+                                  </div>
+
                             </div>
                         
                         
                         
                             <div class="form-group ">
                                 <label for="email">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="email">
+                                <input type="email" class="form-control" id="email" placeholder="email" 
+                                formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+
+                                <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['email'].errors['required']">Email is required</div>
+                                    <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+                                  </div>
                             </div>
                         
                             <div class="form-group">
-                                <label for="nic_number">Phone Number</label>
-                                <input type="number" class="form-control" id="nic_number" placeholder="07x xxxxxxx">
+                                <label for="phone_number">Phone Number</label>
+                                <input type="text" class="form-control" id="phone_number" placeholder="07x xxxxxxx" formControlName="phone_number"
+                                [ngClass]="{ 'is-invalid': submitted && f['phone_number'].errors }"/>
+
+                                <div *ngIf="submitted && f['phone_number'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['phone_number'].errors['required']">nic_number is required</div>
+                                    <div *ngIf="f['phone_number'].errors['minlength']">
+                                        Enter a valid
+                                    </div>
+                                    <div *ngIf="f['phone_number'].errors['maxlength']">
+                                        Enter a valid
+                                    </div>
+                                  </div>
+
                             </div>
+
+
                             <div class="form-group">
                                 <label for="nic_number">NIC Number</label>
-                                <input type="text" class="form-control" id="nic_number" placeholder="971490xxxV">
+                                <input type="text" class="form-control" id="nic_number" placeholder="971490xxxV" formControlName="nic_number"
+                                [ngClass]="{ 'is-invalid': submitted && f['nic_number'].errors }">
+
+                                <div *ngIf="submitted && f['nic_number'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['nic_number'].errors['required']">NIC is required</div>
+                                    <div *ngIf="f['nic_number'].errors['minlength']">
+                                        Enter a valid NIC
+                                    </div>
+                                    <div *ngIf="f['nic_number'].errors['maxlength']">
+                                        Enter a valid NIC
+                                    </div>
+                                  </div>
                             </div>
                         
                             <div class="form-group">
                                 <label for="password">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="password">
+                                <input type="password" class="form-control" id="password" placeholder="password" formControlName="password"
+                                [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
+
+                                <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['password'].errors['required']">Password is required</div>
+                                    <div *ngIf="f['password'].errors['minlength']">
+                                      Password must be at least 6 characters
+                                    </div>
+                                    <div *ngIf="f['password'].errors['maxlength']">
+                                      Password must not exceed 40 characters
+                                    </div>
+                                  </div>
                             </div>
                         
                             <div class="form-group">
-                                <label for="confirm_password">Confirm Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="Confirm password">
+                                <label for="confirmPassword">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password" formControlName="confirmPassword"
+                                [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }">
+
+                                <div
+                                *ngIf="submitted && f['confirmPassword'].errors"
+                                class="invalid-feedback"
+                              >
+                                <div *ngIf="f['confirmPassword'].errors['required']">
+                                  Confirm Password is required
+                                </div>
+                                <div *ngIf="f['confirmPassword'].errors['matching']">
+                                  Confirm Password does not match
+                                </div>
+                              </div>
                             </div>
                         
                             <div class="form-group">
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" id="gridCheck">
+                                  <input class="form-check-input" type="checkbox" id="gridCheck"  formControlName="acceptTerms"
+                                  [ngClass]="{ 'is-invalid': submitted && f['acceptTerms'].errors }"> 
                                   <label class="form-check-label" for="gridCheck">
                                     Above details are true and I agree to the terms and conditions.
                                   </label>
                                 </div>
+
+                                <div *ngIf="submitted && f['acceptTerms'].errors" class="invalid-feedback">
+                                    Accept Terms is required
+                                  </div>
                             </div>
                         
                         
-                          <!--  <button type="submit" class="btn btn-primary">Create account</button>-->
+                            <button type="submit" class="btn btn-primary">Create account</button>
                         
                         </form>
                     </mat-tab>
