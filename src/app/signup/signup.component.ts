@@ -34,7 +34,7 @@ export class SignupComponent implements OnInit {
 
         LastName: ['',Validators.required],
 
-        livingcity: ['',Validators.required],
+        Living_City: ['',Validators.required],
 
         Email: ['', [Validators.required, Validators.email]],
 
@@ -47,7 +47,7 @@ export class SignupComponent implements OnInit {
           ]
         ],
 
-        nic_number: [
+        NIC_no: [
           '',
           [
             Validators.required,
@@ -56,7 +56,7 @@ export class SignupComponent implements OnInit {
           ]
         ],
 
-        password: [
+        Password: [
           '',
           [
             Validators.required, 
@@ -65,7 +65,7 @@ export class SignupComponent implements OnInit {
           ]
         ],
 
-        confirmPassword: ['', Validators.required],
+        ConfirmPassword: ['', Validators.required],
         acceptTerms: [false, Validators.requiredTrue]
       
        

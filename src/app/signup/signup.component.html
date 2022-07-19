@@ -51,62 +51,62 @@
                             </div>
                         
                             <div class="form-group ">
-                              <label for="livingcity">Living City</label>
-                              <input type="text" class="form-control" id="livingcity" placeholder="livingcity"  formControlName="livingcity"
-                              [ngClass]="{ 'is-invalid': submitted && f['livingcity'].errors }">
+                              <label for="Living_City">Living City</label>
+                              <input type="text" class="form-control" id="Living_City" placeholder="Living_City"  formControlName="Living_City"
+                              [ngClass]="{ 'is-invalid': submitted && f['Living_City'].errors }">
 
-                              <div *ngIf="submitted && f['livingcity'].errors" class="invalid-feedback">
-                                  <div *ngIf="f['livingcity'].errors['required']">Living City is required</div>
+                              <div *ngIf="submitted && f['Living_City'].errors" class="invalid-feedback">
+                                  <div *ngIf="f['Living_City'].errors['required']">Living City is required</div>
                                 </div>
 
                           </div>
 
 
                             <div class="form-group">
-                                <label for="nic_number">NIC Number</label>
-                                <input type="text" class="form-control" id="nic_number" placeholder="971490xxxV" formControlName="nic_number"
-                                [ngClass]="{ 'is-invalid': submitted && f['nic_number'].errors }">
+                                <label for="NIC_no">NIC Number</label>
+                                <input type="text" class="form-control" id="NIC_no" placeholder="971490xxxV" formControlName="NIC_no"
+                                [ngClass]="{ 'is-invalid': submitted && f['NIC_no'].errors }">
 
-                                <div *ngIf="submitted && f['nic_number'].errors" class="invalid-feedback">
-                                    <div *ngIf="f['nic_number'].errors['required']">NIC is required</div>
-                                    <div *ngIf="f['nic_number'].errors['minlength']">
+                                <div *ngIf="submitted && f['NIC_no'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['NIC_no'].errors['required']">NIC is required</div>
+                                    <div *ngIf="f['NIC_no'].errors['minlength']">
                                         Enter a valid NIC
                                     </div>
-                                    <div *ngIf="f['nic_number'].errors['maxlength']">
+                                    <div *ngIf="f['NIC_no'].errors['maxlength']">
                                         Enter a valid NIC
                                     </div>
                                   </div>
                             </div>
                         
                             <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="password" formControlName="password"
-                                [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
+                                <label for="Password">Password</label>
+                                <input type="Password" class="form-control" id="Password" placeholder="Password" formControlName="Password"
+                                [ngClass]="{ 'is-invalid': submitted && f['Password'].errors }">
 
-                                <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
-                                    <div *ngIf="f['password'].errors['required']">Password is required</div>
-                                    <div *ngIf="f['password'].errors['minlength']">
+                                <div *ngIf="submitted && f['Password'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['Password'].errors['required']">Password is required</div>
+                                    <div *ngIf="f['Password'].errors['minlength']">
                                       Password must be at least 6 characters
                                     </div>
-                                    <div *ngIf="f['password'].errors['maxlength']">
+                                    <div *ngIf="f['Password'].errors['maxlength']">
                                       Password must not exceed 40 characters
                                     </div>
                                   </div>
                             </div>
                         
                             <div class="form-group">
-                                <label for="confirmPassword">Confirm Password</label>
-                                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password" formControlName="confirmPassword"
-                                [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }">
+                                <label for="ConfirmPassword">Confirm Password</label>
+                                <input type="Password" class="form-control" id="ConfirmPassword" placeholder="Confirm Password" formControlName="ConfirmPassword"
+                                [ngClass]="{ 'is-invalid': submitted && f['ConfirmPassword'].errors }">
 
                                 <div
-                                *ngIf="submitted && f['confirmPassword'].errors"
+                                *ngIf="submitted && f['ConfirmPassword'].errors"
                                 class="invalid-feedback"
                               >
-                                <div *ngIf="f['confirmPassword'].errors['required']">
+                                <div *ngIf="f['ConfirmPassword'].errors['required']">
                                   Confirm Password is required
                                 </div>
-                                <div *ngIf="f['confirmPassword'].errors['matching']">
+                                <div *ngIf="f['ConfirmPassword'].errors['matching']">
                                   Confirm Password does not match
                                 </div>
                               </div>
@@ -165,7 +165,7 @@
                                 [ngClass]="{ 'is-invalid': submitted && f['phone_number'].errors }"/>
 
                                 <div *ngIf="submitted && f['phone_number'].errors" class="invalid-feedback">
-                                    <div *ngIf="f['phone_number'].errors['required']">nic_number is required</div>
+                                    <div *ngIf="f['phone_number'].errors['required']">NIC_no is required</div>
                                     <div *ngIf="f['phone_number'].errors['minlength']">
                                         Enter a valid
                                     </div>
@@ -178,50 +178,50 @@
 
 
                             <div class="form-group">
-                                <label for="nic_number">NIC Number</label>
-                                <input type="text" class="form-control" id="nic_number" placeholder="971490xxxV" formControlName="nic_number"
-                                [ngClass]="{ 'is-invalid': submitted && f['nic_number'].errors }">
+                                <label for="NIC_no">NIC Number</label>
+                                <input type="text" class="form-control" id="NIC_no" placeholder="971490xxxV" formControlName="NIC_no"
+                                [ngClass]="{ 'is-invalid': submitted && f['NIC_no'].errors }">
 
-                                <div *ngIf="submitted && f['nic_number'].errors" class="invalid-feedback">
-                                    <div *ngIf="f['nic_number'].errors['required']">NIC is required</div>
-                                    <div *ngIf="f['nic_number'].errors['minlength']">
+                                <div *ngIf="submitted && f['NIC_no'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['NIC_no'].errors['required']">NIC is required</div>
+                                    <div *ngIf="f['NIC_no'].errors['minlength']">
                                         Enter a valid NIC
                                     </div>
-                                    <div *ngIf="f['nic_number'].errors['maxlength']">
+                                    <div *ngIf="f['NIC_no'].errors['maxlength']">
                                         Enter a valid NIC
                                     </div>
                                   </div>
                             </div>
                         
                             <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="password" formControlName="password"
-                                [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
+                                <label for="Password">Password</label>
+                                <input type="Password" class="form-control" id="Password" placeholder="Password" formControlName="Password"
+                                [ngClass]="{ 'is-invalid': submitted && f['Password'].errors }">
 
-                                <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
-                                    <div *ngIf="f['password'].errors['required']">Password is required</div>
-                                    <div *ngIf="f['password'].errors['minlength']">
+                                <div *ngIf="submitted && f['Password'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['Password'].errors['required']">Password is required</div>
+                                    <div *ngIf="f['Password'].errors['minlength']">
                                       Password must be at least 6 characters
                                     </div>
-                                    <div *ngIf="f['password'].errors['maxlength']">
+                                    <div *ngIf="f['Password'].errors['maxlength']">
                                       Password must not exceed 40 characters
                                     </div>
                                   </div>
                             </div>
                         
                             <div class="form-group">
-                                <label for="confirmPassword">Confirm Password</label>
-                                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password" formControlName="confirmPassword"
-                                [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }">
+                                <label for="ConfirmPassword">Confirm Password</label>
+                                <input type="Password" class="form-control" id="ConfirmPassword" placeholder="Confirm Password" formControlName="ConfirmPassword"
+                                [ngClass]="{ 'is-invalid': submitted && f['ConfirmPassword'].errors }">
 
                                 <div
-                                *ngIf="submitted && f['confirmPassword'].errors"
+                                *ngIf="submitted && f['ConfirmPassword'].errors"
                                 class="invalid-feedback"
                               >
-                                <div *ngIf="f['confirmPassword'].errors['required']">
+                                <div *ngIf="f['ConfirmPassword'].errors['required']">
                                   Confirm Password is required
                                 </div>
-                                <div *ngIf="f['confirmPassword'].errors['matching']">
+                                <div *ngIf="f['ConfirmPassword'].errors['matching']">
                                   Confirm Password does not match
                                 </div>
                               </div>
@@ -279,7 +279,7 @@
                                 [ngClass]="{ 'is-invalid': submitted && f['phone_number'].errors }"/>
 
                                 <div *ngIf="submitted && f['phone_number'].errors" class="invalid-feedback">
-                                    <div *ngIf="f['phone_number'].errors['required']">nic_number is required</div>
+                                    <div *ngIf="f['phone_number'].errors['required']">NIC_no is required</div>
                                     <div *ngIf="f['phone_number'].errors['minlength']">
                                         Enter a valid
                                     </div>
@@ -292,50 +292,50 @@
 
 
                             <div class="form-group">
-                                <label for="nic_number">NIC Number</label>
-                                <input type="text" class="form-control" id="nic_number" placeholder="971490xxxV" formControlName="nic_number"
-                                [ngClass]="{ 'is-invalid': submitted && f['nic_number'].errors }">
+                                <label for="NIC_no">NIC Number</label>
+                                <input type="text" class="form-control" id="NIC_no" placeholder="971490xxxV" formControlName="NIC_no"
+                                [ngClass]="{ 'is-invalid': submitted && f['NIC_no'].errors }">
 
-                                <div *ngIf="submitted && f['nic_number'].errors" class="invalid-feedback">
-                                    <div *ngIf="f['nic_number'].errors['required']">NIC is required</div>
-                                    <div *ngIf="f['nic_number'].errors['minlength']">
+                                <div *ngIf="submitted && f['NIC_no'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['NIC_no'].errors['required']">NIC is required</div>
+                                    <div *ngIf="f['NIC_no'].errors['minlength']">
                                         Enter a valid NIC
                                     </div>
-                                    <div *ngIf="f['nic_number'].errors['maxlength']">
+                                    <div *ngIf="f['NIC_no'].errors['maxlength']">
                                         Enter a valid NIC
                                     </div>
                                   </div>
                             </div>
                         
                             <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="password" formControlName="password"
-                                [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
+                                <label for="Password">Password</label>
+                                <input type="Password" class="form-control" id="Password" placeholder="Password" formControlName="Password"
+                                [ngClass]="{ 'is-invalid': submitted && f['Password'].errors }">
 
-                                <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
-                                    <div *ngIf="f['password'].errors['required']">Password is required</div>
-                                    <div *ngIf="f['password'].errors['minlength']">
+                                <div *ngIf="submitted && f['Password'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['Password'].errors['required']">Password is required</div>
+                                    <div *ngIf="f['Password'].errors['minlength']">
                                       Password must be at least 6 characters
                                     </div>
-                                    <div *ngIf="f['password'].errors['maxlength']">
+                                    <div *ngIf="f['Password'].errors['maxlength']">
                                       Password must not exceed 40 characters
                                     </div>
                                   </div>
                             </div>
                         
                             <div class="form-group">
-                                <label for="confirmPassword">Confirm Password</label>
-                                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password" formControlName="confirmPassword"
-                                [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }">
+                                <label for="ConfirmPassword">Confirm Password</label>
+                                <input type="Password" class="form-control" id="ConfirmPassword" placeholder="Confirm Password" formControlName="ConfirmPassword"
+                                [ngClass]="{ 'is-invalid': submitted && f['ConfirmPassword'].errors }">
 
                                 <div
-                                *ngIf="submitted && f['confirmPassword'].errors"
+                                *ngIf="submitted && f['ConfirmPassword'].errors"
                                 class="invalid-feedback"
                               >
-                                <div *ngIf="f['confirmPassword'].errors['required']">
+                                <div *ngIf="f['ConfirmPassword'].errors['required']">
                                   Confirm Password is required
                                 </div>
-                                <div *ngIf="f['confirmPassword'].errors['matching']">
+                                <div *ngIf="f['ConfirmPassword'].errors['matching']">
                                   Confirm Password does not match
                                 </div>
                               </div>
