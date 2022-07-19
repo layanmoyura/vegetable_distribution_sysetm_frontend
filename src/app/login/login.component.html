@@ -5,23 +5,23 @@
 <div class="bck">
   <div class="container" style="padding-top: 25px;">
     <div class="row ">
-      <div class="col text-center " style="  background-color: grey; height: 350px; padding-top: 75px;">
+      <div class="col text-center " style="  background-color: grey; height: 400px; padding-top: 75px;">
 
         <h3 style="color: rgb(21, 218, 57);">WELCOME BACK<br></h3>
         <div style="font-weight: 600;">TO ENJOY ALL OF OUR SERVICES <br>HASSLE FREE <br> LOGIN TO YOUR ACCOUNT</div>
       </div>
-      <div class="col" style="  background-color: rgb(241, 239, 239); height: 350px; padding-top: 25px;">
+      <div class="col" style="  background-color: rgb(241, 239, 239); height: 400px; padding-top: 25px;">
         <h3>LOGIN TO YOUR ACCOUNT</h3>
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email"
-              placeholder="Enter email"  [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="Email_or_phonenumber"
+              placeholder="Enter email"  [ngClass]="{ 'is-invalid': submitted && f['Email_or_phonenumber'].errors }">
 
-              <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
-                <div *ngIf="f['email'].errors['required']">Email is required</div>
-                <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+              <div *ngIf="submitted && f['Email_or_phonenumber'].errors" class="invalid-feedback">
+                <div *ngIf="f['Email_or_phonenumber'].errors['required']">Email is required</div>
+                <div *ngIf="f['Email_or_phonenumber'].errors['email']">Email is invalid</div>
               </div>
 
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -29,24 +29,51 @@
 
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" formControlName="password"
-            [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" formControlName="Password"
+            [ngClass]="{ 'is-invalid': submitted && f['Password'].errors }">
 
-            <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
-              <div *ngIf="f['password'].errors['required']">Password is required</div> 
-              <div *ngIf="f['password'].errors['minlength']">
+            <div *ngIf="submitted && f['Password'].errors" class="invalid-feedback">
+              <div *ngIf="f['Password'].errors['required']">Password is required</div> 
+              <div *ngIf="f['Password'].errors['minlength']">
                 Password must be at least 6 characters
               </div>
             </div>
 
           </div>
 
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-          </div>
+          <div class="form-group">
+            <label>Please select your role</label>
+            <div class="column">
+              <label class="md-check">
+                <input type="radio" value="customer" name="role" formControlName="role" [ngClass]="{ 'is-invalid': submitted && f['role'].errors }">
+                Customer&nbsp; 
+              </label>
+          
+              <label class="md-check">
+                <input type="radio" value="farmer" name="role" formControlName="role" [ngClass]="{ 'is-invalid': submitted && f['role'].errors }">
+                Farmer&nbsp;
+              </label>
 
-          <button type="submit" class="btn btn-primary">LOGIN</button>
+              <label class="md-check">
+                <input type="radio" value="admin" name="role" formControlName="role" [ngClass]="{ 'is-invalid': submitted && f['role'].errors }">
+                Admin&nbsp;
+              </label>
+
+              <label class="md-check">
+                <input type="radio" value="courier" name="role" formControlName="role" [ngClass]="{ 'is-invalid': submitted && f['role'].errors }">
+                Courier
+              </label>
+
+              <div *ngIf="submitted && f['role'].errors" class="invalid-feedback">
+                <div *ngIf="f['role'].errors['required']">Role is required</div> 
+                
+              </div>
+            </div>
+          </div>
+        
+
+          <div><button type="submit" class="btn btn-primary">LOGIN</button></div>
+          
           <div class="etc-login-form">
             <p>Forgot your password? <a href="#">click here</a></p>
             <p>New user? <a href="#">create new account</a></p>

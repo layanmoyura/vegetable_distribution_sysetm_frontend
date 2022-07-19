@@ -21,6 +21,7 @@ import { HelpComponent } from './help/help.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ManageProfileComponent } from './manage-profile/manage-profile.component';
+import { HttpClientModule } from '@angular/common/http';
 //for validations
 import { ReactiveFormsModule } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
@@ -58,6 +59,7 @@ import { ToastrModule } from 'ngx-toastr';
     MatSliderModule,
     MatTabsModule,
     MatIconModule,
+    HttpClientModule, // for request handling
     //for validation
     ReactiveFormsModule,
     ToastrModule.forRoot(), 

@@ -55,7 +55,7 @@ export class SignupComponent implements OnInit {
         password: [
           '',
           [
-            Validators.required,
+            Validators.required, 
             Validators.minLength(6),
             Validators.maxLength(40)
           ]
