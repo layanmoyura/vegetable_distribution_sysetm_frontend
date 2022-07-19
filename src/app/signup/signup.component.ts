@@ -17,7 +17,7 @@ import { ToastrService } from 'ngx-toastr';
 export class SignupComponent implements OnInit {
 
   form: UntypedFormGroup = new UntypedFormGroup({
-    fullname: new UntypedFormControl(''),
+    firstname: new UntypedFormControl(''),
    
   });
   submitted = false;
@@ -30,7 +30,7 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.formBuilder.group(
       {
-        fullname: ['', Validators.required],
+        firstname: ['', Validators.required],
 
         email: ['', [Validators.required, Validators.email]],
 

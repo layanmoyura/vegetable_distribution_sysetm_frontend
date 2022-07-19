@@ -16,12 +16,12 @@
                         <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
                             <div class="form-group ">
-                                <label for="fullname">Fullname</label>
-                                <input type="text" class="form-control" id="fullname" placeholder="fullname"  formControlName="fullname"
-                                [ngClass]="{ 'is-invalid': submitted && f['fullname'].errors }">
+                                <label for="firstname">First Name</label>
+                                <input type="text" class="form-control" id="firstname" placeholder="firstname"  formControlName="firstname"
+                                [ngClass]="{ 'is-invalid': submitted && f['firstname'].errors }">
 
-                                <div *ngIf="submitted && f['fullname'].errors" class="invalid-feedback">
-                                    <div *ngIf="f['fullname'].errors['required']">Fullname is required</div>
+                                <div *ngIf="submitted && f['firstname'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['firstname'].errors['required']">Firstname is required</div>
                                   </div>
 
                             </div>
@@ -130,16 +130,16 @@
                     <mat-tab label="Farmer"> 
                         <form [formGroup]="form" (ngSubmit)="onSubmitFarmer()">
 
-                            <div class="form-group ">
-                                <label for="fullname">Fullname</label>
-                                <input type="text" class="form-control" id="fullname" placeholder="fullname"  formControlName="fullname"
-                                [ngClass]="{ 'is-invalid': submitted && f['fullname'].errors }">
+                          <div class="form-group ">
+                            <label for="firstname">First Name</label>
+                            <input type="text" class="form-control" id="firstname" placeholder="firstname"  formControlName="firstname"
+                            [ngClass]="{ 'is-invalid': submitted && f['firstname'].errors }">
 
-                                <div *ngIf="submitted && f['fullname'].errors" class="invalid-feedback">
-                                    <div *ngIf="f['fullname'].errors['required']">Fullname is required</div>
-                                  </div>
+                            <div *ngIf="submitted && f['firstname'].errors" class="invalid-feedback">
+                                <div *ngIf="f['firstname'].errors['required']">Firstname is required</div>
+                              </div>
 
-                            </div>
+                        </div>
                         
                         
                         
@@ -245,17 +245,16 @@
                     <mat-tab label="Courier"> 
                         <form [formGroup]="form" (ngSubmit)="onSubmitCourier()">
 
-                            <div class="form-group ">
-                                <label for="fullname">Fullname</label>
-                                <input type="text" class="form-control" id="fullname" placeholder="fullname"  formControlName="fullname"
-                                [ngClass]="{ 'is-invalid': submitted && f['fullname'].errors }">
+                          <div class="form-group ">
+                            <label for="firstname">First Name</label>
+                            <input type="text" class="form-control" id="firstname" placeholder="firstname"  formControlName="firstname"
+                            [ngClass]="{ 'is-invalid': submitted && f['firstname'].errors }">
 
-                                <div *ngIf="submitted && f['fullname'].errors" class="invalid-feedback">
-                                    <div *ngIf="f['fullname'].errors['required']">Fullname is required</div>
-                                  </div>
+                            <div *ngIf="submitted && f['firstname'].errors" class="invalid-feedback">
+                                <div *ngIf="f['firstname'].errors['required']">Firstname is required</div>
+                              </div>
 
-                            </div>
-                        
+                        </div>
                         
                         
                             <div class="form-group ">
@@ -356,6 +355,8 @@
                         
                         </form>
                     </mat-tab>
+
+                    
                   </mat-tab-group>
                   
                

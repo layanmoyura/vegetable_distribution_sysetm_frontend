@@ -117,7 +117,7 @@ export class LoginComponent implements OnInit {
       
       data => {console.log(data);
       console.log("sucess");
-      this.router.navigate(['/delivery']);
+      this.router.navigate(['/order']);
       this.toastr.success( 'Login is Sucessfull!'); 
       },
       
