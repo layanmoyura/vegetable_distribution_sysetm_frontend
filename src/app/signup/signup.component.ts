@@ -4,6 +4,7 @@ import { ValidatorFn } from '@angular/forms';
 import { Router } from '@angular/router';
 import Validation from '../validation';
 import { ToastrService } from 'ngx-toastr';
+import { SharedService } from '../shared.service';
 
 
 
@@ -22,7 +23,7 @@ export class SignupComponent implements OnInit {
   });
   submitted = false;
 
-  constructor(private formBuilder: UntypedFormBuilder, private router: Router , private toastr: ToastrService) {
+  constructor(private formBuilder: UntypedFormBuilder, private router: Router , private toastr: ToastrService, private user:SharedService) {
 
     
    }
@@ -93,9 +94,21 @@ export class SignupComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
-    console.log(JSON.stringify(this.form.value, null, 2));
-    this.toastr.success( 'Signup is Sucessfull!');
-    this.router.navigate(['/order']); 
+    console.log(this.form.value)
+    this.user.addcus(this.form.value).subscribe(
+      
+      data => {console.log(data);
+      console.log("sucess");
+      this.router.navigate(['/delivery']);
+      this.toastr.success( 'Signup is Sucessfull! add a profile picture from edit profile'); 
+      },
+      
+      error=>{console.log(error); 
+      console.log("failed");
+      this.toastr.error( 'Signup failed');});
+      
+    
+    
     
   }
 
