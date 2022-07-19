@@ -25,6 +25,17 @@
                                   </div>
 
                             </div>
+
+                            <div class="form-group ">
+                              <label for="lastname">Last Name</label>
+                              <input type="text" class="form-control" id="lastname" placeholder="lastname"  formControlName="lastname"
+                              [ngClass]="{ 'is-invalid': submitted && f['lastname'].errors }">
+
+                              <div *ngIf="submitted && f['lastname'].errors" class="invalid-feedback">
+                                  <div *ngIf="f['lastname'].errors['required']">Lastname is required</div>
+                                </div>
+
+                          </div>
                         
                         
                         
