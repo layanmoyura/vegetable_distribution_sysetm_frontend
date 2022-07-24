@@ -29,6 +29,10 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 
 //for toast
 import { ToastrModule } from 'ngx-toastr';
+import { LandingNavComponent } from './landing-nav/landing-nav.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { CustomerLoginComponent } from './customer-login/customer-login.component';
+import { CustomerSignupComponent } from './customer-signup/customer-signup.component';
 
 
 @NgModule({
@@ -48,6 +52,11 @@ import { ToastrModule } from 'ngx-toastr';
     ContactUsComponent,
     AboutUsComponent,
     ManageProfileComponent,
+    LandingNavComponent,
+    LandingPageComponent,
+    CustomerLoginComponent,
+    CustomerSignupComponent,
+    
     
     
   ],

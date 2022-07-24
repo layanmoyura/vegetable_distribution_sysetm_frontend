@@ -8,12 +8,18 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DeliveyComponent } from './delivey/delivey.component';
 import { FarmerViewComponent } from './farmer-view/farmer-view.component';
 import { HelpComponent } from './help/help.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginComponent } from './login/login.component';
 import { ManageProfileComponent } from './manage-profile/manage-profile.component';
 import { OrderComponent } from './order/order.component';
 import { SignupComponent } from './signup/signup.component';
+import { CustomerLoginComponent } from './customer-login/customer-login.component';
+import { CustomerSignupComponent } from './customer-signup/customer-signup.component';
+
 
 const routes: Routes = [
+  {path:'',redirectTo:'/home',pathMatch:'full'},
+  {path:'home',component:LandingPageComponent},
   {path: 'dashboard' , component:DashboardComponent},
   {path: 'login' , component:LoginComponent},
   {path: 'signup' , component:SignupComponent},
@@ -25,7 +31,10 @@ const routes: Routes = [
   {path: 'help' , component:HelpComponent},
   {path: 'contact_us' , component:ContactUsComponent},
   {path: 'about_us' , component:AboutUsComponent},
-  {path: 'manage_profile' , component:ManageProfileComponent}
+  {path: 'manage_profile' , component:ManageProfileComponent},
+  {path: 'customer_login' , component:CustomerLoginComponent},
+  {path: 'customer_signup' , component:CustomerSignupComponent},
+
  
 
 ]
