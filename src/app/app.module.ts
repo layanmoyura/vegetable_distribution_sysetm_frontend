@@ -13,7 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { BackgroundComponent } from './background/background.component';
 import { AdminPannelComponent } from './admin-pannel/admin-pannel.component';
 import { OrderComponent } from './order/order.component';
-import { FarmerViewComponent } from './farmer-view/farmer-view.component';
+
 import { DeliveyComponent } from './delivey/delivey.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { CartComponent } from './cart/cart.component';
@@ -33,19 +33,22 @@ import { LandingNavComponent } from './landing-nav/landing-nav.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { CustomerLoginComponent } from './customer-login/customer-login.component';
 import { CustomerSignupComponent } from './customer-signup/customer-signup.component';
+import { FarmerNavbarComponent } from './farmer/farmer-navbar/farmer-navbar.component';
+import { FarmerEditproductComponent } from './farmer/farmer-editproduct/farmer-editproduct.component';
+import { FarmerVeiwComponent } from './farmer/farmer-veiw/farmer-veiw.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
+    DashboardComponent, 
     LoginComponent,
     NavibarComponent,
     SignupComponent,
     BackgroundComponent,
     AdminPannelComponent,
     OrderComponent,
-    FarmerViewComponent,
     DeliveyComponent,
     CartComponent,
     HelpComponent,
@@ -56,7 +59,11 @@ import { CustomerSignupComponent } from './customer-signup/customer-signup.compo
     LandingPageComponent,
     CustomerLoginComponent,
     CustomerSignupComponent,
-    
+    FarmerNavbarComponent,
+    FarmerEditproductComponent,
+    FarmerVeiwComponent,
+
+
     
     
   ],
@@ -72,6 +79,7 @@ import { CustomerSignupComponent } from './customer-signup/customer-signup.compo
     //for validation
     ReactiveFormsModule,
     ToastrModule.forRoot(), 
+    HttpClientModule
     
     
     

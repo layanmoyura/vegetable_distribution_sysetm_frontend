@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiService } from '../service/api.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit(): void {
-  }
+
+    constructor(private api:ApiService,private router:Router) { }
+    public CategoryList:any[]=[];
+  
+    ngOnInit(): void {
+      this.api.getCategory().subscribe(data=> this.CategoryList=data);
+    console.log(this.CategoryList);
+    }
 
 }
