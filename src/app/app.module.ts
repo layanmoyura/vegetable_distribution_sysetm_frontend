@@ -38,6 +38,8 @@ import { FarmerEditproductComponent } from './farmer/farmer-editproduct/farmer-e
 import { FarmerVeiwComponent } from './farmer/farmer-veiw/farmer-veiw.component';
 import { FarmerLoginComponent } from './farmer-login/farmer-login.component';
 import { CourierLoginComponent } from './courier-login/courier-login.component';
+import { FarmerSignupComponent } from './farmer-signup/farmer-signup.component';
+import { CourierSignupComponent } from './courier-signup/courier-signup.component';
 
 
 
@@ -66,6 +68,8 @@ import { CourierLoginComponent } from './courier-login/courier-login.component';
     FarmerVeiwComponent,
     FarmerLoginComponent,
     CourierLoginComponent,
+    FarmerSignupComponent,
+    CourierSignupComponent,
 
 
     
