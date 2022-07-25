@@ -10,20 +10,39 @@
   
                 <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                 <p class="text-white-50 mb-5">Please enter your login and password!</p>
+              <form [formGroup]="form"  (ngSubmit)="onSubmit()">
   
-                <div class="form-outline form-white mb-4">
-                  <input type="email" id="typeEmailX" class="form-control form-control-lg" />
+                <div class="form-outline form-white mb-4 form-group">
+                  <input type="email" id="typeEmailX" class="form-control form-control-lg" aria-describedby="emailHelp" formControlName="Email_or_phonenumber"
+                  placeholder="Enter email"  [ngClass]="{ 'is-invalid': submitted && f['Email_or_phonenumber'].errors }">
+    
+                  <div *ngIf="submitted && f['Email_or_phonenumber'].errors" class="invalid-feedback">
+                    <div *ngIf="f['Email_or_phonenumber'].errors['required']">Email is required</div>
+                    <div *ngIf="f['Email_or_phonenumber'].errors['email']">Email is invalid</div>
+                  </div>
+                  
                   <label class="form-label" for="typeEmailX">Email</label>
                 </div>
   
-                <div class="form-outline form-white mb-4">
-                  <input type="password" id="typePasswordX" class="form-control form-control-lg" />
+                <div class="form-outline form-white mb-4 form-group">
+                  <input type="password" id="typePasswordX" class="form-control form-control-lg"placeholder="Password" formControlName="Password"
+                  [ngClass]="{ 'is-invalid': submitted && f['Password'].errors }">
+      
+                  <div *ngIf="submitted && f['Password'].errors" class="invalid-feedback">
+                    <div *ngIf="f['Password'].errors['required']">Password is required</div> 
+                    <div *ngIf="f['Password'].errors['minlength']">
+                      Password must be at least 6 characters
+                    </div>
+                  </div>
+      
                   <label class="form-label" for="typePasswordX">Password</label>
                 </div>
   
                 
   
-                <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+                <button class="btn btn-outline-light btn-lg px-5 " type="submit">Login</button>
+
+              </form>
   
   
               </div>

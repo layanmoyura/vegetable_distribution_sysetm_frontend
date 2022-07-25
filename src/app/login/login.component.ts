@@ -55,7 +55,7 @@ export class LoginComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
-    if(this.form.value.role == 'customer' ){
+    
       console.log(this.form.value)
 
     
@@ -71,61 +71,7 @@ export class LoginComponent implements OnInit {
       console.log("failed");
       this.toastr.error( 'Login failed');});
       
-    }
-
-    if(this.form.value.role == 'admin' ){
-      console.log(this.form.value)
-
-    
-    this.user.logadm(this.form.value).subscribe(
-      
-      data => {console.log(data);
-      console.log("sucess");
-      this.router.navigate(['/admin_pannel']);
-      this.toastr.success( 'Login is Sucessfull!'); 
-      },
-      
-      error=>{console.log(error); 
-      console.log("failed");
-      this.toastr.error( 'Login failed');});
-      
-    }
-
-    if(this.form.value.role == 'farmer' ){
-      console.log(this.form.value)
-
-    
-    this.user.logfar(this.form.value).subscribe(
-      
-      data => {console.log(data);
-      console.log("sucess");
-      this.router.navigate(['/farmer_view']);
-      this.toastr.success( 'Login is Sucessfull!'); 
-      },
-      
-      error=>{console.log(error); 
-      console.log("failed");
-      this.toastr.error( 'Login failed');});
-      
-    }
-
-    if(this.form.value.role == 'courier' ){
-      console.log(this.form.value)
-
-    
-    this.user.logcou(this.form.value).subscribe(
-      
-      data => {console.log(data);
-      console.log("sucess");
-      this.router.navigate(['/order']);
-      this.toastr.success( 'Login is Sucessfull!'); 
-      },
-      
-      error=>{console.log(error); 
-      console.log("failed");
-      this.toastr.error( 'Login failed');});
-      
-    }
+  
     
       
       
