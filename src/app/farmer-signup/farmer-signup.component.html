@@ -1,1 +1,172 @@
-<p>farmer-signup works!</p>
+<app-landing-nav></app-landing-nav>
+<section class=" gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+              <h2 class="text-uppercase text-center mb-5">Create a farmer account</h2>
+
+              <form [formGroup]="form2" (ngSubmit)="onSubmit()">
+
+                <div class="form-outline mb-4 form-group">
+                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" placeholder="Name"  formControlName="Name"
+                  [ngClass]="{ 'is-invalid': submitted && g['Name'].errors }">
+
+                  <div *ngIf="submitted && g['Name'].errors" class="invalid-feedback">
+                      <div *ngIf="g['Name'].errors['required']">Name is required</div>
+                    </div>
+                  
+                  <label class="form-label" for="form3Example1cg">Your Name</label>
+                </div>
+
+
+                <div class="form-outline mb-4 form-group">
+                  <input type="text" id="form3Example2cg" class="form-control form-control-lg" placeholder="Email" 
+                  formControlName="Email" [ngClass]="{ 'is-invalid': submitted && g['Email'].errors }">
+
+                  <div *ngIf="submitted && g['Email'].errors" class="invalid-feedback">
+                      <div *ngIf="g['Email'].errors['required']">Email is required</div>
+                      <div *ngIf="g['Email'].errors['Email']">Email is invalid</div>
+                    </div>
+
+                  <label class="form-label" for="form3Example2cg">Your Email</label>
+                </div>
+
+                <div class="form-outline mb-4 form-group">
+                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" placeholder="Living City"  formControlName="Living_City"
+                  [ngClass]="{ 'is-invalid': submitted && g['Living_City'].errors }">
+
+                  <div *ngIf="submitted && g['Living_City'].errors" class="invalid-feedback">
+                      <div *ngIf="g['Living_City'].errors['required']">Living City is required</div>
+                    </div>
+
+                  <label class="form-label" for="form3Example3cg">Your Living City</label>
+                </div>
+
+                <div class="form-outline mb-4 form-group">
+                  <input type="text" id="form3Example9cg" class="form-control form-control-lg" placeholder="07x xxxxxxx" formControlName="PhoneNumber"
+                  [ngClass]="{ 'is-invalid': submitted && g['PhoneNumber'].errors }"/>
+
+                  <div *ngIf="submitted && g['PhoneNumber'].errors" class="invalid-feedback">
+                      <div *ngIf="g['PhoneNumber'].errors['required']">Phone Number is required</div>
+                      <div *ngIf="g['PhoneNumber'].errors['minlength']">
+                          Enter a valid
+                      </div>
+                      <div *ngIf="g['PhoneNumber'].errors['maxlength']">
+                          Enter a valid
+                      </div>
+                    </div>
+                  <label class="form-label" for="form3Example9cg">Your Phone Number</label>
+                </div>
+
+                <div class="form-outline mb-4 form-group">
+                  <input type="text" id="form3Example6cg" class="form-control form-control-lg" placeholder="971490xxxV" formControlName="NIC_no"
+                  [ngClass]="{ 'is-invalid': submitted && g['NIC_no'].errors }">
+
+                  <div *ngIf="submitted && g['NIC_no'].errors" class="invalid-feedback">
+                      <div *ngIf="g['NIC_no'].errors['required']">NIC is required</div>
+                      <div *ngIf="g['NIC_no'].errors['minlength']">
+                          Enter a valid NIC
+                      </div>
+                      <div *ngIf="g['NIC_no'].errors['maxlength']">
+                          Enter a valid NIC
+                      </div>
+                    </div>
+                  <label class="form-label" for="form3Example6cg">Your NIC</label>
+                </div>
+
+
+                <div class="form-outline mb-4 form-group">
+                    <input type="text" id="form3Example64cg" class="form-control form-control-lg" placeholder="Bank"  formControlName="Bank"
+                    [ngClass]="{ 'is-invalid': submitted && g['Bank'].errors }">
+
+                    <div *ngIf="submitted && g['Bank'].errors" class="invalid-feedback">
+                        <div *ngIf="g['Bank'].errors['required']">Bank is required</div>
+                      </div>
+                    <label class="form-label" for="form3Example64cg">Your Bank</label>
+                </div>
+
+
+
+                <div class="form-outline mb-4 form-group">
+                    <input type="text" id="form3Example684cg" class="form-control form-control-lg" placeholder="1406622xxxx444" formControlName="Acc_no"
+                    [ngClass]="{ 'is-invalid': submitted && g['Acc_no'].errors }">
+
+                    <div *ngIf="submitted && g['Acc_no'].errors" class="invalid-feedback">
+                        <div *ngIf="g['Acc_no'].errors['required']">Account Number is required</div>
+                        <div *ngIf="g['Acc_no'].errors['minlength']">
+                            Enter a valid Account Number
+                        </div>
+                        <div *ngIf="g['Acc_no'].errors['maxlength']">
+                            Enter a valid Account Number
+                        </div>
+                      </div>
+                    <label class="form-label" for="form3Example684cg">Your Account Number</label>
+                </div>
+
+
+                
+
+                <div class="form-outline mb-4 form-group">
+                  <input type="password" id="form3Example4cg" class="form-control form-control-lg"placeholder="Password" formControlName="Password"
+                  [ngClass]="{ 'is-invalid': submitted && g['Password'].errors }">
+
+                  <div *ngIf="submitted && g['Password'].errors" class="invalid-feedback">
+                      <div *ngIf="g['Password'].errors['required']">Password is required</div>
+                      <div *ngIf="g['Password'].errors['minlength']">
+                        Password must be at least 6 characters
+                      </div>
+                      <div *ngIf="g['Password'].errors['maxlength']">
+                        Password must not exceed 40 characters
+                      </div>
+                    </div>
+                  <label class="form-label" for="form3Example4cg">Your Password</label>
+                </div>
+
+                <div class="form-outline mb-4 form-group">
+                  <input type="password" id="form3Example4cdg" class="form-control form-control-lg"placeholder="Confirm Password" formControlName="ConfirmPassword"
+                  [ngClass]="{ 'is-invalid': submitted && g['ConfirmPassword'].errors }">
+
+                  <div
+                  *ngIf="submitted && g['ConfirmPassword'].errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="g['ConfirmPassword'].errors['required']">
+                    Confirm Password is required
+                  </div>
+                  <div *ngIf="g['ConfirmPassword'].errors['matching']">
+                    Confirm Password does not match
+                  </div>
+                </div>
+                  <label class="form-label" for="form3Example4cdg">Confirm your password</label>
+                </div>
+
+                <div class="form-check d-flex justify-content-center mb-5">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" formControlName="acceptTerms"
+                  [ngClass]="{ 'is-invalid': submitted && g['acceptTerms'].errors }"> 
+                  <label class="form-check-label" for="form2Example3g">
+                    I agree all statements in 
+                  </label>
+
+                  <div *ngIf="submitted && g['acceptTerms'].errors" class="invalid-feedback">
+                    Accept Terms is required
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="/customer_login"
+                    class="text-white-50 fw-bold"><u>Login here</u></a></p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

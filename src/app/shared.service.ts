@@ -38,4 +38,8 @@ export class SharedService {
   addfar(val:any){
     return this.http.post(this.APIurl+"/farmer/register",val)
   }
+
+  addcou(val:any){
+    return this.http.post(this.APIurl+"/courier/register",val)
+  }
 }

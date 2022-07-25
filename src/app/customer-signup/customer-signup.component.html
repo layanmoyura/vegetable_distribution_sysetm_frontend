@@ -5,49 +5,118 @@
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
           <div class="card bg-dark text-white" style="border-radius: 1rem;">
             <div class="card-body p-5 text-center">
-              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+              <h2 class="text-uppercase text-center mb-5">Create a customer account</h2>
 
-              <form>
+              <form [formGroup]="form1" (ngSubmit)="onSubmit()">
 
-                <div class="form-outline mb-4">
-                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example1cg">Your Name</label>
+                <div class="form-outline mb-4 form-group">
+                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" placeholder="FirstName"  formControlName="FirstName"
+                  [ngClass]="{ 'is-invalid': submitted && f['FirstName'].errors }">
+
+                  <div *ngIf="submitted && f['FirstName'].errors" class="invalid-feedback">
+                      <div *ngIf="f['FirstName'].errors['required']">FirstName is required</div>
+                    </div>
+                  
+                  <label class="form-label" for="form3Example1cg">Your First Name</label>
                 </div>
 
-                <div class="form-outline mb-4">
-                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
+
+                <div class="form-outline mb-4 form-group">
+                  <input type="text" id="form3Example2cg" class="form-control form-control-lg" placeholder="LastName"  formControlName="LastName"
+                  [ngClass]="{ 'is-invalid': submitted && f['LastName'].errors }">
+
+                  <div *ngIf="submitted && f['LastName'].errors" class="invalid-feedback">
+                      <div *ngIf="f['LastName'].errors['required']">LastName is required</div>
+                    </div>
+
+                  <label class="form-label" for="form3Example2cg">Your Last Name</label>
+                </div>
+
+                <div class="form-outline mb-4 form-group">
+                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" placeholder="Email" 
+                  formControlName="Email" [ngClass]="{ 'is-invalid': submitted && f['Email'].errors }">
+
+                  <div *ngIf="submitted && f['Email'].errors" class="invalid-feedback">
+                      <div *ngIf="f['Email'].errors['required']">Email is required</div>
+                      <div *ngIf="f['Email'].errors['Email']">Email is invalid</div>
+                    </div>
                   <label class="form-label" for="form3Example3cg">Your Email</label>
                 </div>
 
-                <div class="form-outline mb-4">
-                  <input type="text" id="form3Example9cg" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example9cg">Your Address</label>
+                <div class="form-outline mb-4 form-group">
+                  <input type="text" id="form3Example9cg" class="form-control form-control-lg" placeholder="Living City"  formControlName="Living_City"
+                  [ngClass]="{ 'is-invalid': submitted && f['Living_City'].errors }">
+
+                  <div *ngIf="submitted && f['Living_City'].errors" class="invalid-feedback">
+                      <div *ngIf="f['Living_City'].errors['required']">Living City is required</div>
+                    </div>
+                  <label class="form-label" for="form3Example9cg">Your Living City</label>
                 </div>
 
-                <div class="form-outline mb-4">
-                  <input type="text" id="form3Example6cg" class="form-control form-control-lg" />
+                <div class="form-outline mb-4 form-group">
+                  <input type="text" id="form3Example6cg" class="form-control form-control-lg" placeholder="971490xxxV" formControlName="NIC_no"
+                  [ngClass]="{ 'is-invalid': submitted && f['NIC_no'].errors }">
+
+                  <div *ngIf="submitted && f['NIC_no'].errors" class="invalid-feedback">
+                      <div *ngIf="f['NIC_no'].errors['required']">NIC is required</div>
+                      <div *ngIf="f['NIC_no'].errors['minlength']">
+                          Enter a valid NIC
+                      </div>
+                      <div *ngIf="f['NIC_no'].errors['maxlength']">
+                          Enter a valid NIC
+                      </div>
+                    </div>
                   <label class="form-label" for="form3Example6cg">Your NIC</label>
                 </div>
 
-                <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example4cg">Password</label>
+                <div class="form-outline mb-4 form-group">
+                  <input type="password" id="form3Example4cg" class="form-control form-control-lg"placeholder="Password" formControlName="Password"
+                  [ngClass]="{ 'is-invalid': submitted && f['Password'].errors }">
+
+                  <div *ngIf="submitted && f['Password'].errors" class="invalid-feedback">
+                      <div *ngIf="f['Password'].errors['required']">Password is required</div>
+                      <div *ngIf="f['Password'].errors['minlength']">
+                        Password must be at least 8 characters
+                      </div>
+                      <div *ngIf="f['Password'].errors['maxlength']">
+                        Password must not exceed 40 characters
+                      </div>
+                    </div>
+                  <label class="form-label" for="form3Example4cg">Your Password</label>
                 </div>
 
-                <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example4cdg">Repeat your password</label>
+                <div class="form-outline mb-4 form-group">
+                  <input type="password" id="form3Example4cdg" class="form-control form-control-lg"placeholder="Confirm Password" formControlName="ConfirmPassword"
+                  [ngClass]="{ 'is-invalid': submitted && f['ConfirmPassword'].errors }">
+
+                  <div
+                  *ngIf="submitted && f['ConfirmPassword'].errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f['ConfirmPassword'].errors['required']">
+                    Confirm Password is required
+                  </div>
+                  <div *ngIf="f['ConfirmPassword'].errors['matching']">
+                    Confirm Password does not match
+                  </div>
+                </div>
+                  <label class="form-label" for="form3Example4cdg">Confirm your password</label>
                 </div>
 
                 <div class="form-check d-flex justify-content-center mb-5">
-                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" formControlName="acceptTerms"
+                  [ngClass]="{ 'is-invalid': submitted && f['acceptTerms'].errors }"> 
                   <label class="form-check-label" for="form2Example3g">
-                    I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                    I agree all statements in 
                   </label>
+
+                  <div *ngIf="submitted && f['acceptTerms'].errors" class="invalid-feedback">
+                    Accept Terms is required
+                  </div>
                 </div>
 
                 <div class="d-flex justify-content-center">
-                  <button type="button"
+                  <button type="submit"
                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
                 </div>
 

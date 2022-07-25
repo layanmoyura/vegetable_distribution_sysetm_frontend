@@ -1,1 +1,120 @@
-<p>courier-signup works!</p>
+<app-landing-nav></app-landing-nav>
+<section class=" gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+              <h2 class="text-uppercase text-center mb-5">Create a courier account</h2>
+
+              <form [formGroup]="form2" (ngSubmit)="onSubmit()">
+
+                <div class="form-outline mb-4 form-group">
+                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" placeholder="Vehicle_reg_no"  formControlName="Vehicle_reg_no"
+                  [ngClass]="{ 'is-invalid': submitted && h['Vehicle_reg_no'].errors }">
+
+                  <div *ngIf="submitted && h['Vehicle_reg_no'].errors" class="invalid-feedback">
+                      <div *ngIf="h['Vehicle_reg_no'].errors['required']">Vehicle Register Number is required</div>
+                    </div>
+
+                  
+                  <label class="form-label" for="form3Example1cg">Your Vehicle Register Number</label>
+                </div>
+
+
+                <div class="form-outline mb-4 form-group">
+                  <input type="text" id="form3Example2cg" class="form-control form-control-lg" placeholder="Email" 
+                  formControlName="Email" [ngClass]="{ 'is-invalid': submitted && h['Email'].errors }">
+
+                  <div *ngIf="submitted && h['Email'].errors" class="invalid-feedback">
+                      <div *ngIf="h['Email'].errors['required']">Email is required</div>
+                      <div *ngIf="h['Email'].errors['Email']">Email is invalid</div>
+                    </div>
+
+                  <label class="form-label" for="form3Example2cg">Your Email</label>
+                </div>
+
+                <div class="form-outline mb-4 form-group">
+                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" placeholder="07x xxxxxxx" formControlName="PhoneNumber"
+                  [ngClass]="{ 'is-invalid': submitted && h['PhoneNumber'].errors }"/>
+
+                  <div *ngIf="submitted && h['PhoneNumber'].errors" class="invalid-feedback">
+                      <div *ngIf="h['PhoneNumber'].errors['required']">Phone Number is required</div>
+                      <div *ngIf="h['PhoneNumber'].errors['minlength']">
+                          Enter a valid
+                      </div>
+                      <div *ngIf="h['PhoneNumber'].errors['maxlength']">
+                          Enter a valid
+                      </div>
+                    </div>
+                  <label class="form-label" for="form3Example3cg">Your Phone Number</label>
+                </div>
+
+                
+
+               
+
+                
+
+                <div class="form-outline mb-4 form-group">
+                  <input type="password" id="form3Example4cg" class="form-control form-control-lg"placeholder="Password" formControlName="Password"
+                  [ngClass]="{ 'is-invalid': submitted && h['Password'].errors }">
+
+                  <div *ngIf="submitted && h['Password'].errors" class="invalid-feedback">
+                      <div *ngIf="h['Password'].errors['required']">Password is required</div>
+                      <div *ngIf="h['Password'].errors['minlength']">
+                        Password must be at least 6 characters
+                      </div>
+                      <div *ngIf="h['Password'].errors['maxlength']">
+                        Password must not exceed 40 characters
+                      </div>
+                    </div>
+                  <label class="form-label" for="form3Example4cg">Your Password</label>
+                </div>
+
+                <div class="form-outline mb-4 form-group">
+                  <input type="password" id="form3Example4cdg" class="form-control form-control-lg" placeholder="Confirm Password" formControlName="ConfirmPassword"
+                  [ngClass]="{ 'is-invalid': submitted && h['ConfirmPassword'].errors }">
+
+                  <div
+                  *ngIf="submitted && h['ConfirmPassword'].errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="h['ConfirmPassword'].errors['required']">
+                    Confirm Password is required
+                  </div>
+                  <div *ngIf="h['ConfirmPassword'].errors['matching']">
+                    Confirm Password does not match
+                  </div>
+                </div>
+                  <label class="form-label" for="form3Example4cdg">Confirm your password</label>
+                </div>
+
+                <div class="form-check d-flex justify-content-center mb-5">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" formControlName="acceptTerms"
+                  [ngClass]="{ 'is-invalid': submitted && h['acceptTerms'].errors }"> 
+                  <label class="form-check-label" for="form2Example3g">
+                    I agree all statements in 
+                  </label>
+
+                  <div *ngIf="submitted && h['acceptTerms'].errors" class="invalid-feedback">
+                    Accept Terms is required
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="/customer_login"
+                    class="text-white-50 fw-bold"><u>Login here</u></a></p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
