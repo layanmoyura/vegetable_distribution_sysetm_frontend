@@ -36,6 +36,8 @@ import { CustomerSignupComponent } from './customer-signup/customer-signup.compo
 import { FarmerNavbarComponent } from './farmer/farmer-navbar/farmer-navbar.component';
 import { FarmerEditproductComponent } from './farmer/farmer-editproduct/farmer-editproduct.component';
 import { FarmerVeiwComponent } from './farmer/farmer-veiw/farmer-veiw.component';
+import { FarmerLoginComponent } from './farmer-login/farmer-login.component';
+import { CourierLoginComponent } from './courier-login/courier-login.component';
 
 
 
@@ -62,6 +64,8 @@ import { FarmerVeiwComponent } from './farmer/farmer-veiw/farmer-veiw.component'
     FarmerNavbarComponent,
     FarmerEditproductComponent,
     FarmerVeiwComponent,
+    FarmerLoginComponent,
+    CourierLoginComponent,
 
 
     

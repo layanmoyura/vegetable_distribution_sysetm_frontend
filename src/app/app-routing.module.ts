@@ -16,6 +16,8 @@ import { SignupComponent } from './signup/signup.component';
 import { CustomerLoginComponent } from './customer-login/customer-login.component';
 import { CustomerSignupComponent } from './customer-signup/customer-signup.component';
 import { FarmerEditproductComponent } from './farmer/farmer-editproduct/farmer-editproduct.component';
+import { FarmerLoginComponent } from './farmer-login/farmer-login.component';
+import { CourierLoginComponent } from './courier-login/courier-login.component';
 
 
 const routes: Routes = [
@@ -40,6 +42,8 @@ children:[
 
 ]
 },
+{path: 'farmer_login' , component:FarmerLoginComponent},
+{path: 'courier_login' , component:CourierLoginComponent},
 
  
 
