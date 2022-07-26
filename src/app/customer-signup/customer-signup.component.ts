@@ -166,7 +166,7 @@ export class CustomerSignupComponent implements OnInit {
       
       data => {console.log(data);
       console.log("sucess");
-      this.router.navigate(['/login']);
+      this.router.navigate(['/customer_login']);
       this.toastr.success( 'Signup is Sucessfull!'); 
       },
       
