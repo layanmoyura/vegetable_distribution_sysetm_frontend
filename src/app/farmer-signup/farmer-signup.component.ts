@@ -172,6 +172,9 @@ export class FarmerSignupComponent implements OnInit {
     if (this.form2.invalid) {
       return;
     }
+    this.form2.patchValue({
+      Profile_Photo:this.image
+    })
     console.log(this.form2.value)
     this.user.addfar(this.form2.value).subscribe(
       

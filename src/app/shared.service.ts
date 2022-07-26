@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 
 @Injectable({
@@ -13,7 +14,7 @@ export class SharedService {
 
   decoded:any
 
-  constructor(private http:HttpClient,private router:Router) { }
+  constructor(private http:HttpClient,private router:Router, private jwtHelper:JwtHelperService) { }
 
  logcus(val:any){
     return this.http.post(this.APIurl+"/customer/login",val)
@@ -42,4 +43,31 @@ export class SharedService {
   addcou(val:any){
     return this.http.post(this.APIurl+"/courier/register",val)
   }
+
+  gettoken(){
+   
+    return localStorage.getItem('token') 
+  }
+  
+  getname(){
+  this.decoded = localStorage.getItem('token')
+  const decodedaf = this.jwtHelper.decodeToken(this.decoded)
+  
+  if(decodedaf!=null){
+    const name= decodedaf.name;
+    return name;
+  }
+  }
+
+  getpic(){
+    this.decoded = localStorage.getItem('token')
+    const decodedaf = this.jwtHelper.decodeToken(this.decoded)
+    
+    if(decodedaf!=null){
+      const photo= decodedaf.photo;
+      return photo;
+    }
+    }
 }
+
+
