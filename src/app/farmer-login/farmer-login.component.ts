@@ -62,7 +62,7 @@ export class FarmerLoginComponent implements OnInit {
       
       data => {console.log(data);
       console.log("sucess");
-      this.router.navigate(['/delivery']);
+      this.router.navigate(['/farmer']);
       this.toastr.success( 'Login is Sucessfull!'); 
       },
       

@@ -69,8 +69,14 @@
                   <label class="form-label" for="form3Example6cg">Your NIC</label>
                 </div>
 
+                <!--image file-->
                 <div class="form-outline mb-4 form-group">
-                  <input type="password" id="form3Example4cg" class="form-control form-control-lg"placeholder="Password" formControlName="Password"
+                  <input type="file" class="form-control form-control-lg" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+              <label class="form-label" for="form3Example1cg">Your First Name</label>
+            </div>
+
+                <div class="form-outline mb-4 form-group">
+                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" placeholder="Password" formControlName="Password"
                   [ngClass]="{ 'is-invalid': submitted && f['Password'].errors }">
 
                   <div *ngIf="submitted && f['Password'].errors" class="invalid-feedback">
