@@ -1,0 +1,71 @@
+<div class=" d-sm-flex">
+    <div class="row col-sm-9" >
+        <label class="col-sm-3 col-form-label" style="padding: 10px;">Category</label>
+        <div class="col-sm-9" placeholder="Select Category">
+            <select class="form-control" >
+               <option>--select category--</option>
+               <option *ngFor="let catName of CategoryList">
+                   {{catName.category}}
+               </option>
+           </select>
+        </div>
+
+        <label class="col-sm-3 col-form-label " style="padding: 10px;">Price per unit</label>
+        <div class="col-sm-9">
+            <input type="text " class="form-control"  placeholder="Enter Price per unit">
+        </div>
+
+        <label class="col-sm-3 col-form-label " style="padding: 10px;">One unite weight(Kg)</label>
+        <div class="col-sm-9" placeholder="Select Category">
+            <select class="form-control" >
+               <option>--select category--</option>
+               <option>0.250</option>
+               <option>0.500</option>
+               <option>1.000</option>
+               <option>2.000</option>
+               <option>5.000</option>
+                            
+           </select>
+        </div>
+
+        <label class="col-sm-3 col-form-label " style="padding: 10px;">Avialable units</label>
+        <div class="col-sm-9">
+            <input type="text " class="form-control"  placeholder="Enter Avialable units">
+        </div>
+        <label class="col-sm-3 col-form-label" style="padding: 10px;">Shiping date</label>
+        <div class="col-sm-9">
+        <input type="date"  class="form-control" data-date-end-date="0d">
+        </div>
+
+        <label class="col-sm-3 col-form-label" style="padding: 10px;">Dilivary option</label>
+        <div class="col-sm-9" placeholder="Select Category">
+            <select class="form-control" >
+               <option>--select dilivary--</option>
+               <option *ngFor="let catName of CategoryList">
+                   {{catName.category}}
+               </option>
+           </select>
+        </div>
+
+        <label for="exampleFormControlTextarea1" class="col-sm-3 col-form-label">Discription</label>
+        <div class="col-sm-9">
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"  placeholder="Enter Discription"></textarea>
+        </div>
+
+        
+        
+    </div>
+    <div class=" row " style="margin: 20px;" >
+       
+        <img src="AD.png" style="border: solid;border-width: 0.1px; height:250px; width:200px; margin:20px,60px,20px,60px;">
+        <input type="file"  class="mt-2" />
+    </div>
+</div>
+
+<button  *ngIf="true" class="btn btn-primary">
+    Add
+</button>
+
+<button  *ngIf="false" class="btn btn-primary">
+    Edit
+</button>

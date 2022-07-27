@@ -40,6 +40,8 @@ import { FarmerLoginComponent } from './farmer-login/farmer-login.component';
 import { CourierLoginComponent } from './courier-login/courier-login.component';
 import { FarmerSignupComponent } from './farmer-signup/farmer-signup.component';
 import { CourierSignupComponent } from './courier-signup/courier-signup.component';
+import { AddProductComponent } from './farmer/add-product/add-product.component';
+import { NgForOf, NgForOfContext } from '@angular/common';
 
 
 
@@ -70,6 +72,7 @@ import { CourierSignupComponent } from './courier-signup/courier-signup.componen
     CourierLoginComponent,
     FarmerSignupComponent,
     CourierSignupComponent,
+    AddProductComponent,
 
 
     
@@ -87,7 +90,8 @@ import { CourierSignupComponent } from './courier-signup/courier-signup.componen
     //for validation
     ReactiveFormsModule,
     ToastrModule.forRoot(), 
-    HttpClientModule
+    HttpClientModule,
+   
     
     
     
