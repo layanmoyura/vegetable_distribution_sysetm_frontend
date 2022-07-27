@@ -22,6 +22,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ManageProfileComponent } from './manage-profile/manage-profile.component';
 import { HttpClientModule } from '@angular/common/http';
+import { JwtHelperService,JWT_OPTIONS } from '@auth0/angular-jwt';
+import { SharedService } from './shared.service';
 //for validations
 import { ReactiveFormsModule } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
@@ -96,7 +98,8 @@ import { NgForOf, NgForOfContext } from '@angular/common';
     
     
   ],
-  providers: [],
+  providers: [SharedService,
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS }, JwtHelperService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
