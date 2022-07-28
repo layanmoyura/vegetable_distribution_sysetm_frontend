@@ -44,6 +44,10 @@ export class SharedService {
     return this.http.post(this.APIurl+"/courier/register",val)
   }
 
+  addcat(val:any){
+    return this.http.post(this.APIurl+"/adminfunc/addcat",val)
+  }
+
   gettoken(){
    
     return localStorage.getItem('token') 

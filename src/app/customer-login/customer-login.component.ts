@@ -57,18 +57,36 @@ export class CustomerLoginComponent implements OnInit {
     
       console.log(this.form.value)
 
+      this.user.logadm(this.form.value).subscribe(
+      
+        result => {console.log(result);
+      
+          localStorage.setItem('token',JSON.stringify(result));
+          this.router.navigate(['/admin']);
+          this.toastr.success( 'Login is Sucessfull!');  
+        },
+
+        error=>{
+
+          this.user.logcus(this.form.value).subscribe(
+      
+            result => {console.log(result);
+            
+              localStorage.setItem('token',JSON.stringify(result));
+              this.router.navigate(['/farmer']);
+              this.toastr.success( 'Login is Sucessfull!');  
+            },
+            
+            error=>{console.log(error); 
+            console.log("failed");
+            this.toastr.error( 'Login failed');});
+
+
+        }
+        
+        );
     
-    this.user.logcus(this.form.value).subscribe(
-      
-      data => {console.log(data);
-      console.log("sucess");
-      this.router.navigate(['/delivery']);
-      this.toastr.success( 'Login is Sucessfull!'); 
-      },
-      
-      error=>{console.log(error); 
-      console.log("failed");
-      this.toastr.error( 'Login failed');});
+    
       
   
     

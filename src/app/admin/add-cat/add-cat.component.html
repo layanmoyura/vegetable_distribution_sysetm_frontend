@@ -1,0 +1,72 @@
+<div class=" d-sm-flex">
+    <form  [formGroup]="form"  (ngSubmit)="onSubmit()">
+    <div class="row col-sm-12" >
+       
+
+        <label class="col-sm-3 col-form-label " style="padding: 10px;">Vegetable Name</label>
+        <div class="col-sm-9">
+            <input type="text " class="form-control"  placeholder="Enter Vegetable Name" formControlName="Name"
+            [ngClass]="{ 'is-invalid': submitted && f['Name'].errors }">
+
+            <div *ngIf="submitted && f['Name'].errors" class="invalid-feedback">
+                <div *ngIf="f['Name'].errors['required']">Vehicle Register Number is required</div>
+              </div>
+
+        </div>
+
+        
+
+        <label class="col-sm-3 col-form-label " style="padding: 10px;">Maximum Retail Price per kg in LKR</label>
+        <div class="col-sm-9">
+            <input type="text " class="form-control"  placeholder="Enter Maximum Retail Price per kg in LKR" formControlName="Max_control_price_country"
+            [ngClass]="{ 'is-invalid': submitted && f['Max_control_price_country'].errors }">
+
+            <div *ngIf="submitted && f['Max_control_price_country'].errors" class="invalid-feedback">
+                <div *ngIf="f['Max_control_price_country'].errors['required']">Vehicle Register Number is required</div>
+              </div>
+
+        </div>
+        
+        
+        
+    </div>
+    <div class="row" style="margin: 20px;" >
+       
+        <img src="AD.png" style="border: solid;border-width: 0.1px; height:200px; width:200px; margin:20px,60px,20px,60px;">
+        <input  style="margin-top: 10px;"type="file"  class="mt-2" accept="image/png, image/gif, image/jpeg" class="form-control " id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" placeholder="Profile Photo" formControlName="Profile_Photoc" (change)="onChange($event)"
+        [ngClass]="{ 'is-invalid': submitted && f['Profile_Photoc'].errors }">
+
+        <div *ngIf="submitted && f['Profile_Photoc'].errors" class="invalid-feedback">
+            <div *ngIf="f['Profile_Photoc'].errors['required']">Profile Photo is required</div>
+            <div *ngIf="f['Profile_Photoc'].errors['max']">
+              Only one photo needed
+            </div>
+            
+            <div *ngIf="f['Profile_Photoc'].errors['maxlength']">
+              File size is too large.
+            </div>
+          </div>
+    <label class="form-label" for="form3Example1cg">Your Profile Photo</label>
+  </div>
+
+  <div class="form-group form-outline mb-4" >
+
+
+    <textarea   hidden type="text" class="form-control  form-control-lg" value={{image}}  id="form3Example786cg" formControlName="Vegtable_image"></textarea>
+</div>
+
+
+
+    
+
+
+<button  *ngIf="true" class="btn btn-primary" type="submit">
+    Add
+</button>
+
+</form>
+</div>
+
+<button  *ngIf="false" class="btn btn-primary">
+    Edit
+</button>

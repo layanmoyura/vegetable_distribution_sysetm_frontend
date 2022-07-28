@@ -44,6 +44,12 @@ import { FarmerSignupComponent } from './farmer-signup/farmer-signup.component';
 import { CourierSignupComponent } from './courier-signup/courier-signup.component';
 import { AddProductComponent } from './farmer/add-product/add-product.component';
 import { NgForOf, NgForOfContext } from '@angular/common';
+import { EditCatComponent } from './admin/edit-cat/edit-cat.component';
+import { EditProfComponent } from './admin/edit-prof/edit-prof.component';
+import { EditOrderComponent } from './admin/edit-order/edit-order.component';
+import { ViewComponent } from './admin/view/view.component';
+import { AddCatComponent } from './admin/add-cat/add-cat.component';
+import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
 
 
 
@@ -75,6 +81,12 @@ import { NgForOf, NgForOfContext } from '@angular/common';
     FarmerSignupComponent,
     CourierSignupComponent,
     AddProductComponent,
+    EditCatComponent,
+    EditProfComponent,
+    EditOrderComponent,
+    ViewComponent,
+    AddCatComponent,
+    AdminNavComponent,
 
 
     

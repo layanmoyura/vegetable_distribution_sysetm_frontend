@@ -20,7 +20,10 @@ import { FarmerLoginComponent } from './farmer-login/farmer-login.component';
 import { CourierLoginComponent } from './courier-login/courier-login.component';
 import { FarmerSignupComponent } from './farmer-signup/farmer-signup.component';
 import { CourierSignupComponent } from './courier-signup/courier-signup.component';
-
+import { EditCatComponent } from './admin/edit-cat/edit-cat.component';
+import { EditProfComponent } from './admin/edit-prof/edit-prof.component';
+import { EditOrderComponent } from './admin/edit-order/edit-order.component';
+import { ViewComponent } from './admin/view/view.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home',pathMatch:'full'},
@@ -48,7 +51,14 @@ children:[
 {path: 'courier_login' , component:CourierLoginComponent},
 {path: 'farmer_signup' , component:FarmerSignupComponent},
 {path: 'courier_signup' , component:CourierSignupComponent},
+{path:'admin',component:ViewComponent,
+children:[
+ { path:'editcat',component:EditCatComponent},
+ { path:'editprof',component:EditProfComponent},
+ { path:'editorder',component:EditOrderComponent},
 
+]
+},
  
 
 ]
