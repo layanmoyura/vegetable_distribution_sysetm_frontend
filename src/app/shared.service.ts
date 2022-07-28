@@ -48,6 +48,14 @@ export class SharedService {
     return this.http.post(this.APIurl+"/adminfunc/addcat",val)
   }
 
+  getcat():Observable<any[]>{
+    return this.http.get<any>(this.APIurl+"/adminfunc/getcat")
+  }
+
+  delcat(id:any){
+    return this.http.delete(this.APIurl+"/adminfunc/delcat/"+id)
+  }
+
   gettoken(){
    
     return localStorage.getItem('token') 
@@ -72,6 +80,17 @@ export class SharedService {
       return photo;
     }
     }
+
+
+    getadminid(){
+      this.decoded = localStorage.getItem('token')
+      const decodedaf = this.jwtHelper.decodeToken(this.decoded)
+      
+      if(decodedaf!=null){
+        const id= decodedaf.id;
+        return id;
+      }
+      }
 }
 
 

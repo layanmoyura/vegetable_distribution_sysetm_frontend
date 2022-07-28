@@ -18,7 +18,7 @@
 
         <label class="col-sm-3 col-form-label " style="padding: 10px;">Maximum Retail Price per kg in LKR</label>
         <div class="col-sm-9">
-            <input type="text " class="form-control"  placeholder="Enter Maximum Retail Price per kg in LKR" formControlName="Max_control_price_country"
+            <input type="number" class="form-control"  placeholder="Enter Maximum Retail Price per kg in LKR" formControlName="Max_control_price_country"
             [ngClass]="{ 'is-invalid': submitted && f['Max_control_price_country'].errors }">
 
             <div *ngIf="submitted && f['Max_control_price_country'].errors" class="invalid-feedback">
@@ -32,7 +32,7 @@
     </div>
     <div class="row" style="margin: 20px;" >
        
-        <img src="AD.png" style="border: solid;border-width: 0.1px; height:200px; width:200px; margin:20px,60px,20px,60px;">
+        <img src={{image}} alt="AD.png" style="border: solid;border-width: 0.1px; height:200px; width:200px; margin:20px,60px,20px,60px;">
         <input  style="margin-top: 10px;"type="file"  class="mt-2" accept="image/png, image/gif, image/jpeg" class="form-control " id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" placeholder="Profile Photo" formControlName="Profile_Photoc" (change)="onChange($event)"
         [ngClass]="{ 'is-invalid': submitted && f['Profile_Photoc'].errors }">
 
@@ -53,6 +53,19 @@
 
 
     <textarea   hidden type="text" class="form-control  form-control-lg" value={{image}}  id="form3Example786cg" formControlName="Vegtable_image"></textarea>
+</div>
+
+<div class="form-group form-outline mb-4" >
+
+
+    <textarea   hidden type="Number" class="form-control  form-control-lg"   id="form3Example786cg" formControlName="AdminId"></textarea>
+</div>
+
+
+<div class="form-group form-outline mb-4" >
+
+
+    <textarea   hidden type="text" class="form-control  form-control-lg"   id="form3Example786cg" formControlName="Last_Updated_Time"></textarea>
 </div>
 
 

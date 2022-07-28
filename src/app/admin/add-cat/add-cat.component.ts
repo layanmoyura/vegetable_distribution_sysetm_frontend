@@ -13,10 +13,12 @@ import { Observable, Subscriber } from 'rxjs';
   styleUrls: ['./add-cat.component.css']
 })
 export class AddCatComponent implements OnInit {
-
+  
+  id=this.user.getadminid();
+  ID = +this.id;
   image:any;
   pageYoffset:any;
-
+ 
 
   @HostListener('window:scroll', ['$event']) onScroll(){
     this.pageYoffset = window.pageYOffset;
@@ -97,8 +99,16 @@ export class AddCatComponent implements OnInit {
             
           ]
         ],
+
+        Vegtable_image: [
+          
+        ],
+
+        AdminId: [
+         
+        ],
         
-        
+        Last_Updated_Time:[]
        
 
       },
@@ -119,7 +129,9 @@ export class AddCatComponent implements OnInit {
     
 
     this.form.patchValue({
-      Vegetable_image:this.image
+      Vegtable_image:this.image,
+      AdminId:this.ID,
+      Last_Updated_Time:new Date().toLocaleString()
     })
       console.log(this.form.value)
 
@@ -128,6 +140,7 @@ export class AddCatComponent implements OnInit {
       
       data => {console.log(data);
       console.log("sucess");
+      this.form.reset()
       
       this.toastr.success( 'Category is added!'); 
       },
