@@ -5,11 +5,11 @@
 
         <label class="col-sm-3 col-form-label " style="padding: 10px;">Vegetable Name</label>
         <div class="col-sm-9">
-            <input type="text " class="form-control"  placeholder="Enter Vegetable Name" formControlName="Name"
+            <input type="text " class="form-control" [(ngModel)]="pro.Name" placeholder="Enter Vegetable Name" formControlName="Name"
             [ngClass]="{ 'is-invalid': submitted && f['Name'].errors }">
 
             <div *ngIf="submitted && f['Name'].errors" class="invalid-feedback">
-                <div *ngIf="f['Name'].errors['required']">Vehicle Register Number is required</div>
+                <div *ngIf="f['Name'].errors['required']">Vegetable Name is required</div>
               </div>
 
         </div>
@@ -18,11 +18,11 @@
 
         <label class="col-sm-3 col-form-label " style="padding: 10px;">Maximum Retail Price per kg in LKR</label>
         <div class="col-sm-9">
-            <input type="number" class="form-control"  placeholder="Enter Maximum Retail Price per kg in LKR" formControlName="Max_control_price_country"
+            <input type="number" class="form-control"  [(ngModel)]="pro.Max_control_price_country"placeholder="Enter Maximum Retail Price per kg in LKR" formControlName="Max_control_price_country"
             [ngClass]="{ 'is-invalid': submitted && f['Max_control_price_country'].errors }">
 
             <div *ngIf="submitted && f['Max_control_price_country'].errors" class="invalid-feedback">
-                <div *ngIf="f['Max_control_price_country'].errors['required']">Vehicle Register Number is required</div>
+                <div *ngIf="f['Max_control_price_country'].errors['required']">Maximum Retail Price per kg is required</div>
               </div>
 
         </div>
@@ -58,14 +58,14 @@
 <div class="form-group form-outline mb-4" >
 
 
-    <textarea   hidden type="Number" class="form-control  form-control-lg"   id="form3Example786cg" formControlName="AdminId"></textarea>
+    <textarea   hidden type="Number" class="form-control  form-control-lg" [(ngModel)]="pro.AdminId"  id="form3Example786cg" formControlName="AdminId"></textarea>
 </div>
 
 
 <div class="form-group form-outline mb-4" >
 
 
-    <textarea   hidden type="text" class="form-control  form-control-lg"   id="form3Example786cg" formControlName="Last_Updated_Time"></textarea>
+    <textarea   hidden type="text" class="form-control  form-control-lg"  [(ngModel)]="pro.Last_Updated_Time" id="form3Example786cg" formControlName="Last_Updated_Time"></textarea>
 </div>
 
 
@@ -73,13 +73,14 @@
     
 
 
-<button  *ngIf="true" class="btn btn-primary" type="submit">
+<button  *ngIf="pro.VegetablesId==0" class="btn btn-primary" type="submit">
     Add
+</button>
+
+<button  *ngIf="pro.VegetablesId!=0" class="btn btn-primary" type="submit">
+  Edit
 </button>
 
 </form>
 </div>
 
-<button  *ngIf="false" class="btn btn-primary">
-    Edit
-</button>

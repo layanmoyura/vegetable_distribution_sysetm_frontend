@@ -56,6 +56,14 @@ export class SharedService {
     return this.http.delete(this.APIurl+"/adminfunc/delcat/"+id)
   }
 
+  getadmname(id:any):Observable<any>{
+    return this.http.get<any>(this.APIurl+"/adminfunc/getadminname/"+id)
+  }
+
+  updatecat(id:any,val:any){
+    return this.http.put(this.APIurl+"/adminfunc/updatecat/"+id,val);
+  }
+
   gettoken(){
    
     return localStorage.getItem('token') 

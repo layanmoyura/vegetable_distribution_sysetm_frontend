@@ -14,7 +14,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeClick()"></button>
             </div>
             <div class="modal-body">
-                <app-add-cat ></app-add-cat>            </div>
+                <app-add-cat [pro]="pro" *ngIf="ActiveAddEditPro"></app-add-cat>            </div>
   
         </div>
     </div>
@@ -52,7 +52,7 @@
           </td>
           <td>{{dataItem.name}}</td>
           <td>{{dataItem.max_control_price_country}}</td>
-          <td>{{dataItem.adminId}}</td>
+          <td >Admin under ID : {{dataItem.adminId}}</td>
           <td>{{dataItem.last_Updated_Time}}</td>
           
   
