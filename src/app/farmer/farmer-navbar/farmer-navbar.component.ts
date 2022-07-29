@@ -16,6 +16,7 @@ export class FarmerNavbarComponent implements OnInit {
 
     this.image = this.shared.getpic();
     this.name = this.shared.getname();
+    
 
   }
 

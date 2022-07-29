@@ -156,6 +156,7 @@ export class AddCatComponent implements OnInit {
         data => {console.log(data);
         console.log("sucess");
         this.form.reset()
+        this.submitted = false;
         
         this.toastr.success( 'Category is added!'); 
         },
@@ -187,6 +188,7 @@ export class AddCatComponent implements OnInit {
         
             data => {console.log(data);
             console.log("sucess");
+            this.submitted = false;
             
             
             this.toastr.success( 'Category is updated!'); 

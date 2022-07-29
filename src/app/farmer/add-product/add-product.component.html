@@ -1,71 +1,93 @@
 <div class=" d-sm-flex">
+    <form  [formGroup]="form" (ngSubmit)="onSubmit()" >
     <div class="row col-sm-9" >
         <label class="col-sm-3 col-form-label" style="padding: 10px;">Category</label>
         <div class="col-sm-9" placeholder="Select Category">
-            <select class="form-control" >
-               <option>--select category--</option>
-               <option *ngFor="let catName of CategoryList">
-                   {{catName.category}}
+            <select class="form-control"  formControlName="VegetablesId"
+            [ngClass]="{ 'is-invalid': submitted && f['VegetablesId'].errors }">
+               <option selected="selected" value="">--select category--</option>
+               <option *ngFor="let catName of CategoryList" value="{{catName.vegetablesId}}">
+                {{catName.name}} 
                </option>
            </select>
+
+           <div *ngIf="submitted && f['VegetablesId'].errors" class="invalid-feedback">
+            <div *ngIf="f['VegetablesId'].errors['required']">Category is required</div>
+          </div>
         </div>
 
-        <label class="col-sm-3 col-form-label " style="padding: 10px;">Price per unit</label>
+
+        <label class="col-sm-3 col-form-label " style="padding: 10px;">Available Amount in kg</label>
+        <div class="col-sm-9" style="margin-top:10px ;">
+            <input type="number" class="form-control"  placeholder="Enter Available Amount in kg" formControlName="Amount"
+            [ngClass]="{ 'is-invalid': submitted && f['Amount'].errors }">
+
+            <div *ngIf="submitted && f['Amount'].errors" class="invalid-feedback">
+                <div *ngIf="f['Amount'].errors['required']">Available Amount is required</div>
+              </div>
+        </div>
+
+        <label class="col-sm-3 col-form-label " style="padding: 10px;">Price per kg in LKR</label>
         <div class="col-sm-9">
-            <input type="text " class="form-control"  placeholder="Enter Price per unit">
+            <input type="number" class="form-control"  placeholder="Enter Price per kg in LKR" formControlName="Farmers_price_per_kg"
+            [ngClass]="{ 'is-invalid': submitted && f['Farmers_price_per_kg'].errors }">
+
+            <div *ngIf="submitted && f['Farmers_price_per_kg'].errors" class="invalid-feedback">
+                <div *ngIf="f['Farmers_price_per_kg'].errors['required']">Price per kg in LKR is required</div>
+              </div>
+
         </div>
 
-        <label class="col-sm-3 col-form-label " style="padding: 10px;">One unite weight(Kg)</label>
-        <div class="col-sm-9" placeholder="Select Category">
-            <select class="form-control" >
-               <option>--select category--</option>
-               <option>0.250</option>
-               <option>0.500</option>
-               <option>1.000</option>
-               <option>2.000</option>
-               <option>5.000</option>
-                            
-           </select>
-        </div>
-
-        <label class="col-sm-3 col-form-label " style="padding: 10px;">Avialable units</label>
+       
+        <label class="col-sm-3 col-form-label" style="padding: 10px;">Manufactured date</label>
         <div class="col-sm-9">
-            <input type="text " class="form-control"  placeholder="Enter Avialable units">
-        </div>
-        <label class="col-sm-3 col-form-label" style="padding: 10px;">Shiping date</label>
-        <div class="col-sm-9">
-        <input type="date"  class="form-control" data-date-end-date="0d">
+        <input type="date"  class="form-control" data-date-end-date="0d" formControlName="Manu_date"
+        [ngClass]="{ 'is-invalid': submitted && f['Manu_date'].errors }">
+
+        <div *ngIf="submitted && f['Manu_date'].errors" class="invalid-feedback">
+            <div *ngIf="f['Manu_date'].errors['required']">Manufactured date is required</div>
+          </div>
+
         </div>
 
-        <label class="col-sm-3 col-form-label" style="padding: 10px;">Dilivary option</label>
-        <div class="col-sm-9" placeholder="Select Category">
-            <select class="form-control" >
-               <option>--select dilivary--</option>
-               <option *ngFor="let catName of CategoryList">
-                   {{catName.category}}
-               </option>
-           </select>
-        </div>
 
         <label for="exampleFormControlTextarea1" class="col-sm-3 col-form-label">Discription</label>
         <div class="col-sm-9">
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"  placeholder="Enter Discription"></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"  placeholder="Enter Discription" formControlName="Discription"
+            [ngClass]="{ 'is-invalid': submitted && f['Discription'].errors }"> </textarea>
+
+            <div *ngIf="submitted && f['Discription'].errors" class="invalid-feedback">
+                <div *ngIf="f['Discription'].errors['required']">Discription is required</div>
+              </div>
+
+
+           
+        </div>
+
+        <div class="form-group form-outline mb-4" >
+
+
+            <textarea   hidden type="Number" class="form-control  form-control-lg"  id="form3Example786cg" formControlName="FarmerId"></textarea>
+        </div>
+        
+        
+        <div class="form-group form-outline mb-4" >
+        
+        
+            <textarea   hidden type="text" class="form-control  form-control-lg"   id="form3Example786cg" formControlName="Updated_Time"></textarea>
         </div>
 
         
         
     </div>
-    <div class=" row " style="margin: 20px;" >
-       
-        <img src="AD.png" style="border: solid;border-width: 0.1px; height:250px; width:200px; margin:20px,60px,20px,60px;">
-        <input type="file"  class="mt-2" />
-    </div>
+    
+    <button  class="btn btn-primary" type="submit">
+        Add
+    </button>
+    
+   
+    </form>
 </div>
 
-<button  *ngIf="true" class="btn btn-primary">
-    Add
-</button>
 
-<button  *ngIf="false" class="btn btn-primary">
-    Edit
-</button>
+

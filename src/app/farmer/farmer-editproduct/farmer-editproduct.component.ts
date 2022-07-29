@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/service/api.service';
+import { SharedService } from 'src/app/shared.service';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-farmer-editproduct',
@@ -9,18 +12,20 @@ import { ApiService } from 'src/app/service/api.service';
 })
 export class FarmerEditproductComponent implements OnInit {
 
-  constructor(private api:ApiService ,private router:Router) { }
+  constructor(private router: Router, private toastr: ToastrService,private user:SharedService) { }
   public ProductList:any[]=[];
   public pro:any={};
   pro_null:boolean=false;
   ActiveAddEditPro:boolean=false;
+  id=this.user.getadminid();
+  ID = +this.id;
 
   ngOnInit(): void {
     this.refresh();
   }
 
   refresh(){
-    this.api.getCategory().subscribe(data=> {this.ProductList=data;
+    this.user.getprodfar(this.ID).subscribe(data=> {this.ProductList=data;
     console.log(this.ProductList);
     if(this.ProductList.length==0){
   this.pro_null=true;

@@ -64,6 +64,13 @@ export class SharedService {
     return this.http.put(this.APIurl+"/adminfunc/updatecat/"+id,val);
   }
 
+  addprod(val:any){
+    return this.http.post(this.APIurl+"/farmerfunc/addstock",val)
+  }
+
+  getprodfar(id:any):Observable<any[]>{
+    return this.http.get<any>(this.APIurl+"/farmerfunc/getfarmerprod/"+id)
+  }
   gettoken(){
    
     return localStorage.getItem('token') 
