@@ -29,7 +29,7 @@
         </div>
 
         <label class="col-sm-3 col-form-label " style="padding: 10px;">Price per kg in LKR</label>
-        <div class="col-sm-9">
+        <div class="col-sm-9" style="margin-top:10px ;">
             <input type="number" class="form-control"  placeholder="Enter Price per kg in LKR" formControlName="Farmers_price_per_kg"
             [ngClass]="{ 'is-invalid': submitted && f['Farmers_price_per_kg'].errors }">
 
@@ -41,7 +41,7 @@
 
        
         <label class="col-sm-3 col-form-label" style="padding: 10px;">Manufactured date</label>
-        <div class="col-sm-9">
+        <div class="col-sm-9" style="margin-top:10px ;">
         <input type="date"  class="form-control" data-date-end-date="0d" formControlName="Manu_date"
         [ngClass]="{ 'is-invalid': submitted && f['Manu_date'].errors }">
 
@@ -53,7 +53,7 @@
 
 
         <label for="exampleFormControlTextarea1" class="col-sm-3 col-form-label">Discription</label>
-        <div class="col-sm-9">
+        <div class="col-sm-9" style="margin-top:10px ;">
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"  placeholder="Enter Discription" formControlName="Discription"
             [ngClass]="{ 'is-invalid': submitted && f['Discription'].errors }"> </textarea>
 

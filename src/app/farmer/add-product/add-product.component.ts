@@ -33,7 +33,7 @@ stokid:number=0;
     
     
   });
-  submitted = true;
+  submitted = false;
 
 
   constructor( private formBuilder: UntypedFormBuilder, private router: Router, private toastr: ToastrService,private user:SharedService) { }

@@ -71,6 +71,14 @@ export class SharedService {
   getprodfar(id:any):Observable<any>{
     return this.http.get<any>(this.APIurl+"/farmerfunc/getfarmerprod/"+id)
   }
+
+  delprod(id:any){
+    return this.http.delete(this.APIurl+"/farmerfunc/delprod/"+id)
+  }
+
+  getcatid(id:any):Observable<any>{
+    return this.http.delete(this.APIurl+"/farmerfunc/getcat/"+id)
+  }
   gettoken(){
    
     return localStorage.getItem('token') 

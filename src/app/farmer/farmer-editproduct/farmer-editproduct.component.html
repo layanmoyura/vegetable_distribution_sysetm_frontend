@@ -34,40 +34,40 @@
       <table class="table table-striped table-hover">
           <thead class="table-dark" style="text-align: center;">
       <tr>
-        <!--<th scope="col">Stock id</th>
-        <th scope="col">Category</th>
+        <th scope="col">Stock id</th>
+        <th scope="col" >Category</th>
         <th scope="col">Amount in kg</th>
         <th scope="col">Farmer's Price per kg</th>
         <th scope="col">Manufactured Date</th>
         <th scope="col">Discription</th>
         <th scope="col">Updated Time</th>
-        <th scope="col">Delete</th>-->
+        <th scope="col">Delete</th>
 
-        <th>id</th>
+        <!--<th>id</th>
         <th>Category</th>
         <th>Orders</th>
         <th>Shiping date</th>
-        <th>Remove</th>
+        <th>Remove</th>-->
 
 
       </tr>
     </thead>
     <tbody class="align-middle" style="text-align: center;">
-      <tr *ngFor="let dataItem of ProductList" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="clickItem(dataItem)">
+      <tr *ngFor="let dataItem of ProductList" data-bs-toggle="modal" data-bs-target="#exampleModal" >
 
 
-        <!--<td>{{dataItem.vegetableStocksId}}</td>
-        <td>{{dataItem.vegetablesId}}</td>
+        <td>{{dataItem.vegetableStocksId}}</td>
+        <td (click)="clickItem(dataItem)">{{dataItem.vegetablesId}}</td>
         <td>{{dataItem.amount}}</td>
         <td>{{dataItem.farmers_price_per_kg}}</td>
         <td>{{dataItem.manu_date}}</td>
         <td>{{dataItem.discription}}</td>
-        <td>{{dataItem.updated_Time}}</td>-->
+        <td>{{dataItem.updated_Time}}</td>
 
-        <td>{{dataItem.id}}</td>
-        <td>{{dataItem.category}}</td>
+        <!--<td>{{dataItem.id}}</td>
+        <td (click)="clickItem(dataItem)">{{dataItem.category}}</td>
         <td>{{dataItem.price}}</td>
-        <td>2022-03-12</td>
+        <td>2022-03-12</td>-->
 
 
         

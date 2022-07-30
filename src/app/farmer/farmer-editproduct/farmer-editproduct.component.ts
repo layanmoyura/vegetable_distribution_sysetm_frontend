@@ -28,14 +28,14 @@ export class FarmerEditproductComponent implements OnInit {
     this.refresh();
   }
 
-  refresh(){
+ /* refresh(){
 this.del=0;
     this.api.getCategory().subscribe(data=> {this.ProductList=data;
       console.log(this.ProductList);
-  });
+  });*/
 
 
-  /*refresh(){
+  refresh(){
     this.user.getprodfar(this.ID).subscribe(data=> {this.ProductList=data;
     console.log(this.ProductList);
     if(this.ProductList.length==0){
@@ -45,7 +45,7 @@ this.del=0;
       this.pro_null=false;
     }
   
-  });*/
+  });
    }
 
 
@@ -73,8 +73,19 @@ this.del=0;
 
    
   delete(item:any){
-    console.log('d ok');
-    this.del=1;
+    this.user.delprod(item.vegetableStocksId).subscribe(
+      
+      data => {console.log(data);
+      console.log("sucess");
+      
+      this.toastr.success( 'Product is deleted!'); 
+      window.location.reload();
+      },
+      
+      error=>{console.log(error); 
+      console.log("failed");
+      this.toastr.error( 'Deleting product failed');});
+    
   
 
 
@@ -87,7 +98,7 @@ this.del=0;
     this.ActiveAddEditPro=true;
     this.Modal_title= "veiw Product";
 
-/////////////////////////
+/////////////////////////*
     this.pro={
       stokid:dataItem.id,
       stock:dataItem.price,
