@@ -1,6 +1,7 @@
 <div class=" d-sm-flex">
-    <form  [formGroup]="form" (ngSubmit)="onSubmit()" >
-    <div class="row col-sm-9" >
+    <form  [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="activeAdd">
+    <div class="row col-sm-9"  >
+        
         <label class="col-sm-3 col-form-label" style="padding: 10px;">Category</label>
         <div class="col-sm-9" placeholder="Select Category">
             <select class="form-control"  formControlName="VegetablesId"
@@ -84,8 +85,44 @@
     <button  class="btn btn-primary" type="submit">
         Add
     </button>
+    </form>
+
+
+<!--veiw-->
+
+    <form  [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="activeVeiw">
+
+    <div class="row col-sm-9" >
+ 
+        <label class="col-sm-3 col-form-label" style="padding: 10px;font-weight:500;">Category                  :</label>
+        <label class="col-sm-9 col-form-label" style="padding: 10px;">{{category}}</label>
+      
+
+
+        <label class="col-sm-3 col-form-label " style="padding: 10px;font-weight:500;">Available Amount in kg   :</label>
+        <label class="col-sm-9 col-form-label" style="padding: 10px;">{{stock}}</label>
+
+        <label class="col-sm-3 col-form-label " style="padding: 10px;font-weight:500;">Orders                   :</label>
+        <label class="col-sm-9 col-form-label" style="padding: 10px;">{{order}}</label>
+
+        <label class="col-sm-3 col-form-label " style="padding: 10px;font-weight:500;">Price per kg in LKR      :</label>
+        <label class="col-sm-9 col-form-label" style="padding: 10px;">{{price}}</label>
+
+       
+        <label class="col-sm-3 col-form-label" style="padding: 10px;font-weight:500;">shiping Date              :</label>
+        <label class="col-sm-9 col-form-label" style="padding: 10px;">{{date}}</label>
+
+
+        <label for="exampleFormControlTextarea1" class="col-sm-3 col-form-label" style="padding: 10px;font-weight:500;">Discription              :</label>
+        <label class="col-sm-9 col-form-label" style="padding: 10px;">{{discription}}</label>
+
+        
+
+        
+        
+    </div>
     
-   
+
     </form>
 </div>
 

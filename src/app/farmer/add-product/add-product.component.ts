@@ -16,18 +16,44 @@ export class AddProductComponent implements OnInit {
   CategoryList:any=[];
   id=this.user.getadminid();
   ID = +this.id;
+public activeVeiw=true;
+public activeAdd=false;
+
+stokid:number=0;
+      stock:number=0;
+      order:number=0;
+      category:string="--select--";
+      price:number=0.00;
+      date:string="";
+      discription:string="";
+
 
 
   form: UntypedFormGroup = new UntypedFormGroup({
     
     
   });
-  submitted = false;
+  submitted = true;
 
 
   constructor( private formBuilder: UntypedFormBuilder, private router: Router, private toastr: ToastrService,private user:SharedService) { }
+  @Input() pro:any;
 
   ngOnInit(): void {
+               this.stock=this.pro.stock;
+               this.order=this.pro.order;
+                this.category=this.pro.category;
+                this.price=this.pro.price;
+                this.date=this.pro.date;
+                this.discription=this.pro.discription;
+                if(this.pro.stokid==0){
+                  this.activeAdd=true;
+                  this.activeVeiw=false;
+                }
+
+
+
+
     this.user.getcat().subscribe(data=> this.CategoryList=data);
 
     this.form = this.formBuilder.group(
