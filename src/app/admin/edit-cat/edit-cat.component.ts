@@ -16,7 +16,7 @@ export class EditCatComponent implements OnInit {
   public pro:any={};
   pro_null:boolean=false;
   ActiveAddEditPro:boolean=false;
-  aid:any
+  aid:any[]=[];
   
 
   ngOnInit(): void {
@@ -46,12 +46,8 @@ export class EditCatComponent implements OnInit {
 
     getadminname(ID:any){
 
-    this.shared.getadmname(ID).subscribe(data=>{this.aid = data; console.log(data);});
+    this.shared.getadmin(ID).subscribe(data=>{ this.aid = data });
     console.log(this.aid)
-    return this.aid;
-    
-    
-
     
    }
 

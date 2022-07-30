@@ -56,8 +56,8 @@ export class SharedService {
     return this.http.delete(this.APIurl+"/adminfunc/delcat/"+id)
   }
 
-  getadmname(id:any):Observable<any>{
-    return this.http.get<any>(this.APIurl+"/adminfunc/getadminname/"+id)
+  getadmin(id:any):Observable<any>{
+    return this.http.get<any>(this.APIurl+"/adminfunc/getadmin/"+id)
   }
 
   updatecat(id:any,val:any){
@@ -68,7 +68,7 @@ export class SharedService {
     return this.http.post(this.APIurl+"/farmerfunc/addstock",val)
   }
 
-  getprodfar(id:any):Observable<any[]>{
+  getprodfar(id:any):Observable<any>{
     return this.http.get<any>(this.APIurl+"/farmerfunc/getfarmerprod/"+id)
   }
   gettoken(){

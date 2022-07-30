@@ -43,16 +43,16 @@
         </tr>
       </thead>
       <tbody class="align-middle" style="text-align: center;">
-        <tr *ngFor="let dataItem of ProductList">
+        <tr *ngFor="let dataItem of ProductList" >
   
-  
+          
           <td>{{dataItem.vegetablesId}}</td>
           <td style="width: 50px;">
-            <img src={{dataItem.vegtable_image}} class="img-fluid img-thumbnail" >
+            <img src={{dataItem.vegtable_image}} class="img-fluid img-thumbnail" onload="getadminname(dataItem.adminId)" >
           </td>
           <td>{{dataItem.name}}</td>
           <td>{{dataItem.max_control_price_country}}</td>
-          <td >Admin under ID : {{dataItem.adminId}}</td>
+          <td >{{aid[0].firstName}}</td>
           <td>{{dataItem.last_Updated_Time}}</td>
           
   
