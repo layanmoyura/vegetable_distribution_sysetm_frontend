@@ -147,7 +147,8 @@ public activeAdd=false;
       
       this.user.addprod(this.form.value).subscribe(
         
-        data => {console.log(data);
+        response => {console.log(response);
+
         console.log("sucess");
         this.form.reset()
         this.submitted = false;
@@ -156,9 +157,14 @@ public activeAdd=false;
         this.toastr.success( 'Prodcut is added!'); 
         },
         
-        error=>{console.log(error); 
+        error=>{console.log(error.status); 
+        if(error.status == 411){
+          console.log("failed");
+          this.toastr.error( 'Please provide less price per kg than MRP of category');
+        }  
+        else{
         console.log("failed");
-        this.toastr.error( 'Adding Product failed');});
+        this.toastr.error( 'Adding Product failed');}});
 
     }
 
