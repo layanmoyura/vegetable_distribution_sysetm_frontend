@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ApiService } from 'src/app/service/api.service';
 import { SharedService } from 'src/app/shared.service';
 import { ToastrService } from 'ngx-toastr';
+import { data } from 'autoprefixer';
 
 
 @Component({
@@ -14,6 +15,8 @@ export class FarmerEditproductComponent implements OnInit {
 
   constructor(private router: Router, private toastr: ToastrService,private user:SharedService,private api:ApiService) { }
   public ProductList:any[]=[];
+
+  public CatList:any[]=[];
 
   
   pro_null:boolean=false;
@@ -95,22 +98,29 @@ this.del=0;
 
   clickItem(dataItem:any){
 
-    this.ActiveAddEditPro=true;
-    this.Modal_title= "veiw Product";
+    
+    this.user.getcatid(dataItem.vegetablesId).subscribe(data=>{console.log(data); 
+      this.CatList = data;
+      this.pro={
+      
+        
+        order:10,
+        category:this.CatList[0].name,
+        price:this.CatList[0].max_control_price_country,
+        date:this.CatList[0].last_Updated_Time,
+        vegimg:this.CatList[0].vegtable_image,
+      } ;
+      this.ActiveAddEditPro=true;
+    this.Modal_title= "Veiw Category";
+    
+    })
+
+    
 
 /////////////////////////*
-    this.pro={
-      stokid:dataItem.id,
-      stock:dataItem.price,
-      order:10,
-      category:dataItem.category,
-      price:dataItem.price,
-      date:'2022-03-12',
-      discription:"saca booom la lalalaaa",
-    }
+    
 ////////////////////////
     
-console.log(dataItem.id);
 /*if(this.del==1){
   this.closeClick()
 }*/

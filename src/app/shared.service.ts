@@ -77,7 +77,7 @@ export class SharedService {
   }
 
   getcatid(id:any):Observable<any>{
-    return this.http.delete(this.APIurl+"/farmerfunc/getcat/"+id)
+    return this.http.get<any>(this.APIurl+"/farmerfunc/getcat/"+id)
   }
   gettoken(){
    
