@@ -6,7 +6,7 @@
 </div>
 
 <!--model-->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false" *ngIf="ActiveAddEditPro">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false" >
   <div class="modal-dialog modal-dialog-centered modal-xl">
       <div class="modal-content ">
           <div class="modal-header">
@@ -57,7 +57,7 @@
 
 
         <td>{{dataItem.vegetableStocksId}}</td>
-        <td (click)="clickItem(dataItem)">{{dataItem.vegetablesId}}</td>
+        <td >Category under ID:{{dataItem.vegetablesId}} <button class="btn" id="edit"><img src="https://img.icons8.com/ios-filled/20/000000/open-in-popup.png" (click)="clickItem(dataItem)"/></button> </td>
         <td>{{dataItem.amount}}</td>
         <td>{{dataItem.farmers_price_per_kg}}</td>
         <td>{{dataItem.manu_date}}</td>
