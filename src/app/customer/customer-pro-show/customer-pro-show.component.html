@@ -1,0 +1,51 @@
+
+<!--model-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false" >
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{Modal_title}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeClick()"></button>
+            </div>
+            <div class="modal-body">
+                <app-customer-pro-details [prod]="prod" *ngIf="Activedetail" ></app-customer-pro-details>
+            </div>
+  
+        </div>
+    </div>
+  </div>
+
+
+
+
+<div *ngIf="resultItem">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 style="font-style: italic;text-align: center;">No Items</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+<div class="container">
+    <div class="row">
+
+        <ng-container *ngFor="let item of prdlist ">
+            <div class="card col-md-3 bg-light" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onproduct(item)">
+                <div style="text-align: center;">
+                    <img src="">
+                </div>
+                <br>
+                <h5 style="text-align: center;">{{item.farmers_price_per_kg}}</h5>
+
+            </div>
+        </ng-container>
+
+    </div>
+
+
+</div>

@@ -51,6 +51,9 @@ export class SharedService {
   getcat():Observable<any[]>{
     return this.http.get<any>(this.APIurl+"/adminfunc/getcat")
   }
+  getpro():Observable<any[]>{
+    return this.http.get<any>(this.APIurl+"/CustomerFunc/customervegetablestockall")
+  }
 
   delcat(id:any){
     return this.http.delete(this.APIurl+"/adminfunc/delcat/"+id)

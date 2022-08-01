@@ -24,6 +24,9 @@ import { EditCatComponent } from './admin/edit-cat/edit-cat.component';
 import { EditProfComponent } from './admin/edit-prof/edit-prof.component';
 import { EditOrderComponent } from './admin/edit-order/edit-order.component';
 import { ViewComponent } from './admin/view/view.component';
+import { CustomerVeiwComponent } from './customer/customer-veiw/customer-veiw.component';
+import { CustomerCatShowComponent } from './customer/customer-cat-show/customer-cat-show.component';
+import { CustomerProShowComponent } from './customer/customer-pro-show/customer-pro-show.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home',pathMatch:'full'},
@@ -59,7 +62,13 @@ children:[
 
 ]
 },
- 
+{path:'customer',component:CustomerVeiwComponent,
+children:[
+  {path:'category-show',component:CustomerCatShowComponent},
+  {path:'products-show/:id',component:CustomerProShowComponent},
+]
+},
+
 
 ]
 

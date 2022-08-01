@@ -1,0 +1,44 @@
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="AD.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="g.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="ELMS005.png" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="container ">
+    <div class="row">
+
+        <div class="card col-md-3" (click)="click_All()">
+            <div style="text-align: center;">
+                <img src="AD.png">
+                <h5>All products</h5>
+
+            </div>
+        </div>
+
+        <ng-container *ngFor="let item of catList "   >
+            <div class="card  col-md-3 bg-light" style="width:250px;position: relative;  align-self: start;" (click)="click_cat(item)" >
+                <div style="text-align: center;">
+                    <img src="{{item.vegtable_image}}">
+                    <h5>{{item.name}}</h5>
+                </div>
+            </div>
+        </ng-container>
+
+    </div>
+
+</div>

@@ -1,0 +1,35 @@
+<div class=" d-sm-flex" >
+<form    >
+
+    <div class="row col-sm-12" >
+ 
+        <label class="col-sm-3 col-form-label" style="padding: 10px;font-weight:500;">Amount                  :</label>
+        <select class="col-sm-9" >
+            <option selected> select amount</option>
+            <option value="1">100g</option>
+            <option value="2">250g</option>
+            <option value="3">500g</option>
+          </select>
+      
+
+
+        <label class="col-sm-3 col-form-label " style="padding: 10px;font-weight:500;">farmers price per kg</label>
+        <label class="col-sm-9 col-form-label" style="padding: 10px;">{{prod.farmers_price_per_kg}}</label>
+
+        <label class="col-sm-3 col-form-label " style="padding: 10px;font-weight:500;">Discription                  :</label>
+        <label class="col-sm-9 col-form-label" style="padding: 10px;">{{prod.discription}}</label>
+
+        
+        <label class="col-sm-3 col-form-label" style="padding: 10px;font-weight:500;">Shiping date          </label>
+        <label class="col-sm-9 col-form-label" style="padding: 10px;">{{prod.manu_date}}</label>
+
+        <button type="button" class="btn btn-secondary col-sm-3 col-form-label" (click)="addcart()">Add to cart</button>
+
+
+        
+        
+    </div>
+    
+
+    </form>
+</div>

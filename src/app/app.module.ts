@@ -50,6 +50,11 @@ import { EditOrderComponent } from './admin/edit-order/edit-order.component';
 import { ViewComponent } from './admin/view/view.component';
 import { AddCatComponent } from './admin/add-cat/add-cat.component';
 import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
+import { CustomerNavComponent } from './customer/customer-nav/customer-nav.component';
+import { CustomerVeiwComponent } from './customer/customer-veiw/customer-veiw.component';
+import { CustomerCatShowComponent } from './customer/customer-cat-show/customer-cat-show.component';
+import { CustomerProShowComponent } from './customer/customer-pro-show/customer-pro-show.component';
+import { CustomerProDetailsComponent } from './customer/customer-pro-details/customer-pro-details.component';
 
 
 
@@ -87,6 +92,11 @@ import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
     ViewComponent,
     AddCatComponent,
     AdminNavComponent,
+    CustomerNavComponent,
+    CustomerVeiwComponent,
+    CustomerCatShowComponent,
+    CustomerProShowComponent,
+    CustomerProDetailsComponent,
 
 
     
