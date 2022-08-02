@@ -37,10 +37,10 @@
         <ng-container *ngFor="let item of prdlist ">
             <div class="card col-md-3 bg-light" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onproduct(item)">
                 <div style="text-align: center;">
-                    <img src="">
+                    <img src="{{item.stock_image}}">
                 </div>
                 <br>
-                <h5 style="text-align: center;">{{item.farmers_price_per_kg}}</h5>
+                <h5 style="text-align: center;">Price Per kg {{item.farmers_price_per_kg}} LKR</h5>
 
             </div>
         </ng-container>
