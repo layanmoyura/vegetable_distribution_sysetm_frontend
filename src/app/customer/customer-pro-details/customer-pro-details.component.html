@@ -1,29 +1,71 @@
 <div class=" d-sm-flex" >
-<form    >
+<form  [formGroup]="form"   (ngSubmit)="onSubmit()" >
 
     <div class="row col-sm-12" >
  
-        <label class="col-sm-3 col-form-label" style="padding: 10px;font-weight:500;">Amount                  :</label>
-        <select class="col-sm-9" >
-            <option selected> select amount</option>
-            <option value="1">100g</option>
-            <option value="2">250g</option>
-            <option value="3">500g</option>
-          </select>
+        <label class="col-sm-3 col-form-label" style="padding: 10px;font-weight:500;">Amount kg                 :</label>
+        <div class="col-sm-9">
+            <select  class="form-control form-control-lg" formControlName="required_amount_kg"  [ngClass]="{ 'is-invalid': submitted && f['required_amount_kg'].errors }">
+                <option selected> select amount</option>
+                <option value=0.1>100g</option>
+                <option value=0.25>250g</option>
+                <option value=0.5>500g</option>
+                <option value=1>1kg</option>
+                <option value=5>5kg</option>
+                <option value=10>10kg</option>
+                <option value=20>20kg</option>
+                <option value=50>50kg</option>
+              </select>
+              <div *ngIf="submitted && f['required_amount_kg'].errors" class="invalid-feedback">
+                <div *ngIf="f['required_amount_kg'].errors['required']">Amount is required</div>
+              </div>
+
+
+        </div>
+       
       
 
 
-        <label class="col-sm-3 col-form-label " style="padding: 10px;font-weight:500;">farmers price per kg</label>
+        <label class="col-sm-3 col-form-label " style="padding: 10px;font-weight:500;">Farmers price per kg</label>
         <label class="col-sm-9 col-form-label" style="padding: 10px;">{{prod.farmers_price_per_kg}}</label>
+
+        <label class="col-sm-3 col-form-label " style="padding: 10px;font-weight:500;">Available Amount kg                  :</label>
+        <label class="col-sm-9 col-form-label" style="padding: 10px;">{{prod.amount}}</label>
 
         <label class="col-sm-3 col-form-label " style="padding: 10px;font-weight:500;">Discription                  :</label>
         <label class="col-sm-9 col-form-label" style="padding: 10px;">{{prod.discription}}</label>
 
-        
+        <label class="col-sm-3 col-form-label " style="padding: 10px;font-weight:500;">Farmer name                 :</label>
+        <label class="col-sm-9 col-form-label" style="padding: 10px;">{{prod.name}}</label>
+
+
+        <label class="col-sm-3 col-form-label " style="padding: 10px;font-weight:500;">Phone number                  :</label>
+        <label class="col-sm-9 col-form-label" style="padding: 10px;">{{prod.phone_Number}}</label>
+
+        <label class="col-sm-3 col-form-label " style="padding: 10px;font-weight:500;">Farmer living city                  :</label>
+        <label class="col-sm-9 col-form-label" style="padding: 10px;">{{prod.living_City}}</label>
+
+
+
         <label class="col-sm-3 col-form-label" style="padding: 10px;font-weight:500;">Shiping date          </label>
         <label class="col-sm-9 col-form-label" style="padding: 10px;">{{prod.manu_date}}</label>
 
-        <button type="button" class="btn btn-secondary col-sm-3 col-form-label" (click)="addcart()">Add to cart</button>
+        <div class="form-group form-outline mb-4" >
+            <textarea   hidden type="number" class="form-control  form-control-lg"   id="form3Example788cg" formControlName="VegetableStocksId"></textarea>
+        </div>
+
+        <div class="form-group form-outline mb-4" >
+            <textarea   hidden type="number" class="form-control  form-control-lg"   id="form3Example787cg" formControlName="FarmerId"></textarea>
+        </div>
+
+        <div class="form-group form-outline mb-4" >
+            <textarea   hidden type="number" class="form-control  form-control-lg"   id="form3Example785cg" formControlName="CustomerId"></textarea>
+        </div>
+    
+    
+    
+
+        <button type="submit" class="btn btn-secondary col-sm-3 col-form-label" >Add to cart</button>
 
 
         
