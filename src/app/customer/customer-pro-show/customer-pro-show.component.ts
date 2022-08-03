@@ -30,6 +30,7 @@ export class CustomerProShowComponent implements OnInit {
   public prod:any={};
   public cat:any={};
   farmerlist:any[]=[];
+  cat_name:any;
 
   ngOnInit(): void {
 
@@ -59,6 +60,8 @@ export class CustomerProShowComponent implements OnInit {
            this.y++; 
         }
 
+        
+
      });
 
     
@@ -68,6 +71,10 @@ export class CustomerProShowComponent implements OnInit {
     
     
       console.log(this.productList.length);
+
+      this.productList.forEach((a:any)=>{
+        Object.assign(a,{quantity:1,total:a.farmers_price_per_kg,Cname:"no"})
+        });
    
   });
 
@@ -92,20 +99,7 @@ export class CustomerProShowComponent implements OnInit {
     
     
     
-      this.prod={
-        amount:item.amount,
-        farmers_price_per_kg:item.farmers_price_per_kg,
-        discription:item.discription,
-        manu_date:item.manu_date,
-        name:this.farmerlist[0].name,
-        living_City:this.farmerlist[0].living_city,
-        phone_Number:this.farmerlist[0].phoneNumber,
-        farmerId:this.farmerlist[0].farmerId,
-        stockId:item.vegetableStocksId,
-        
-        
-    
-      }
+      this.prod=item;
       /////////////
   
       this.Activedetail=true;

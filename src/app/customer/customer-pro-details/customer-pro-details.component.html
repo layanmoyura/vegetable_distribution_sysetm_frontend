@@ -1,12 +1,12 @@
 <div class=" d-sm-flex" >
-<form  [formGroup]="form"   (ngSubmit)="onSubmit()" >
+<form  [formGroup]="form"    >
 
     <div class="row col-sm-12" >
  
         <label class="col-sm-3 col-form-label" style="padding: 10px;font-weight:500;">Amount kg                 :</label>
         <div class="col-sm-9">
             <select  class="form-control form-control-lg" formControlName="required_amount_kg"  [ngClass]="{ 'is-invalid': submitted && f['required_amount_kg'].errors }">
-                <option selected> select amount</option>
+                <option selected value=1> select amount</option>
                 <option value=0.1>100g</option>
                 <option value=0.25>250g</option>
                 <option value=0.5>500g</option>
@@ -65,7 +65,7 @@
     
     
 
-        <button type="submit" class="btn btn-secondary col-sm-3 col-form-label" >Add to cart</button>
+        <button type="submit" class="btn btn-secondary col-sm-3 col-form-label" (click)="addtocart()" >Add to cart</button>
 
 
         

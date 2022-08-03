@@ -55,6 +55,7 @@ import { CustomerVeiwComponent } from './customer/customer-veiw/customer-veiw.co
 import { CustomerCatShowComponent } from './customer/customer-cat-show/customer-cat-show.component';
 import { CustomerProShowComponent } from './customer/customer-pro-show/customer-pro-show.component';
 import { CustomerProDetailsComponent } from './customer/customer-pro-details/customer-pro-details.component';
+import { CustomerCartComponent } from './customer/customer-cart/customer-cart.component';
 
 
 
@@ -97,6 +98,7 @@ import { CustomerProDetailsComponent } from './customer/customer-pro-details/cus
     CustomerCatShowComponent,
     CustomerProShowComponent,
     CustomerProDetailsComponent,
+    CustomerCartComponent,
 
 
     

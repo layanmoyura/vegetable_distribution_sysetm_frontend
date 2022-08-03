@@ -1,0 +1,42 @@
+<div class="container" *ngIf="product.length == 0">
+    <div class="card">
+        <h5 class="card-title">My Cart</h5>
+    </div>
+    <div class="center">
+        <img src="cart.png">
+        <h4>Your cart is empty!</h4>
+        <h6>Add item to it now</h6>
+        <button class="btn btn-primary" routerLink="/customer/category-show">shop now</button>
+    </div>
+</div>
+<div class="container" *ngIf="product.length != 0">
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Product</th>
+        <th scope="col">Qnt.</th>
+        <th scope="col">Price</th>
+        <th scope="col">Remove</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of product">
+        <td>{{item.vegetableStocksId}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.total}}</td>
+        <td><button (click)="removeIteam(item)">delet</button></td>
+      </tr>
+      <tr>
+       
+        <td><button class="btn btn-danger" (click)="emptycart()" >Empty cart</button></td>
+        <td><button class="btn btn-primary" routerLink="/customer/category-show">Shop more</button></td>
+        <td><button class="btn btn-success" >CheckOut</button></td>
+        <td>Grand Total :LKR {{grandTotal}}</td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -27,6 +27,8 @@ import { ViewComponent } from './admin/view/view.component';
 import { CustomerVeiwComponent } from './customer/customer-veiw/customer-veiw.component';
 import { CustomerCatShowComponent } from './customer/customer-cat-show/customer-cat-show.component';
 import { CustomerProShowComponent } from './customer/customer-pro-show/customer-pro-show.component';
+import { CartComponent } from './cart/cart.component';
+import { CustomerCartComponent } from './customer/customer-cart/customer-cart.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home',pathMatch:'full'},
@@ -66,8 +68,11 @@ children:[
 children:[
   {path:'category-show',component:CustomerCatShowComponent},
   {path:'products-show/:id',component:CustomerProShowComponent},
+  {path: 'cart' ,component:CustomerCartComponent },
 ]
 },
+
+
 
 
 ]

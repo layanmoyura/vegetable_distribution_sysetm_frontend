@@ -9,6 +9,7 @@ import { Input } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 
 import { Observable, Subscriber } from 'rxjs';
+import { CartService } from 'src/app/service/cart.service';
 
 @Component({
   selector: 'app-customer-pro-details',
@@ -19,6 +20,8 @@ export class CustomerProDetailsComponent implements OnInit {
 
   id=this.shared.getadminid();
   ID = +this.id;
+  public productlist:any;
+  public productLis:any;
 
 
   form: UntypedFormGroup = new UntypedFormGroup({
@@ -27,11 +30,16 @@ export class CustomerProDetailsComponent implements OnInit {
   });
   submitted=false;
 
-  constructor(private formBuilder:UntypedFormBuilder,private shared:SharedService,private toastr:ToastrService) { }
+  constructor(private formBuilder:UntypedFormBuilder,private shared:SharedService,private toastr:ToastrService,private cartService:CartService) { }
 @Input() prod:any;
 
 
   ngOnInit(): void {
+
+    
+
+
+
 
     this.form = this.formBuilder.group(
       {
@@ -72,7 +80,7 @@ export class CustomerProDetailsComponent implements OnInit {
     return this.form.controls;
   }
 
-  onSubmit():void{
+  /*onSubmit():void{
 
     
     this.submitted = true;
@@ -116,6 +124,39 @@ export class CustomerProDetailsComponent implements OnInit {
   
 
       
+  }*/
+addtocart(){
+  if(this.form.value.required_amount_kg<this.prod.amount){
+    console.log(this.form.value.required_amount_kg);
+this.prod.quantity=this.form.value.required_amount_kg;
+this.prod.total=(this.form.value.required_amount_kg*this.prod.farmers_price_per_kg);
+
+
+this.shared.getcat().subscribe(data=> {
+  this.productLis=data,
+
+  this.productLis.forEach((item:any)=>{
+  
+    if(item.vegetablesId==this.prod.vegetablesId){
+    this.prod.name=item.name;
+console.log(item.name);
+    }
+  })});
+
+
+
+
+
+this.cartService.addtoCart(this.prod);
+
+  console.log(this.prod);
+}
+
+  else{
+    alert("Not available");
+   
   }
+}
+  
 
 }
