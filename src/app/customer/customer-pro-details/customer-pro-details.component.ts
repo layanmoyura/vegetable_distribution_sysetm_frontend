@@ -11,6 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Observable, Subscriber } from 'rxjs';
 import { CartService } from 'src/app/service/cart.service';
 
+
 @Component({
   selector: 'app-customer-pro-details',
   templateUrl: './customer-pro-details.component.html',
@@ -31,6 +32,8 @@ export class CustomerProDetailsComponent implements OnInit {
   submitted=false;
 
   constructor(private formBuilder:UntypedFormBuilder,private shared:SharedService,private toastr:ToastrService,private cartService:CartService) { }
+
+@Input() farm:any;
 @Input() prod:any;
 
 
@@ -126,7 +129,7 @@ export class CustomerProDetailsComponent implements OnInit {
       
   }*/
 addtocart(){
-  if(this.form.value.required_amount_kg<this.prod.amount){
+  if(this.form.value.required_amount_kg<=this.prod.amount){
     console.log(this.form.value.required_amount_kg);
 this.prod.quantity=this.form.value.required_amount_kg;
 this.prod.total=(this.form.value.required_amount_kg*this.prod.farmers_price_per_kg);
@@ -150,10 +153,11 @@ console.log(item.name);
 this.cartService.addtoCart(this.prod);
 
   console.log(this.prod);
+  this.toastr.success('Added to cart!')
 }
 
   else{
-    alert("Not available");
+    this.toastr.error( 'Requested amount is not available');
    
   }
 }

@@ -31,6 +31,7 @@ export class CustomerProShowComponent implements OnInit {
   public cat:any={};
   farmerlist:any[]=[];
   cat_name:any;
+  public farm:any={};
 
   ngOnInit(): void {
 
@@ -97,18 +98,27 @@ export class CustomerProShowComponent implements OnInit {
 
     this.service.getfarm(item.farmerId).subscribe( data=>{this.farmerlist =data;
     
+      
     
-    
-      this.prod=item;
+      
       /////////////
-  
-      this.Activedetail=true;
-      this.Modal_title= "Product details";
-  
+      
+      this.prod=item;
+      this.prod.f=this.farmerlist[0].name;
+      this.prod.living_city=this.farmerlist[0].living_city;
+      this.prod.phoneNumber=this.farmerlist[0].phoneNumber;
+      this.prod.farmerId=this.farmerlist[0].farmerId;
+      console.log(this.farm)
+
+      
   })
 
-   
-    ////////////
+
+  this.Activedetail=true;
+  this.Modal_title= "Product details";
+
+      
+ ////////////
     
   }
 
