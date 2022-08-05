@@ -17,7 +17,8 @@ export class CustomerCartComponent implements OnInit {
   public orditem:any={}
   id=this.service.getadminid();
   ID = +this.id;
-
+  public check = 0;
+  public check2 = 0;
 
 
 
@@ -47,6 +48,8 @@ export class CustomerCartComponent implements OnInit {
   addorders(){
     var x = this.product.length;
     console.log(x)
+    this.check2 = x;
+    this.check=0;
 
     
 
@@ -55,6 +58,8 @@ export class CustomerCartComponent implements OnInit {
 
       var temp = this.product[i].quantity;
       var Temp = +temp;
+      
+      
 
 
       this.orditem={
@@ -70,8 +75,14 @@ export class CustomerCartComponent implements OnInit {
 
         console.log("sucess");
         
-        this.toastr.success( 'Orders are added!'); 
-        
+         
+        this.check++;
+        console.log(this.check)
+        if(this.check===this.check2){
+          this.toastr.success( 'Orders added successfully and removed from cart to My orders!');
+          this.cartService.removeAllCart();
+          this.check = 0;
+        }
         
         },
         
@@ -81,7 +92,11 @@ export class CustomerCartComponent implements OnInit {
         console.log(error)
         console.log("failed");
         this.toastr.error( 'Adding Orders failed');})
+        this.check = 0;
     }
+
+   
+    
   }
 
 

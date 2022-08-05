@@ -19,6 +19,14 @@ this.productList.next(product);
   }
 
   addtoCart(product:any){
+    var x = this.cartItemList.length;
+    var y = +x
+
+   for(var i=0; i< y; i++){
+    if(this.cartItemList[i].vegetableStocksId == product.vegetableStocksId){
+      this.removeCartItem(this.cartItemList[i])
+    }
+   }
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
     this.getTotalPrice();
