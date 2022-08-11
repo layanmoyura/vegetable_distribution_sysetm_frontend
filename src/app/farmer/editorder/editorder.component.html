@@ -1,0 +1,64 @@
+
+  
+  
+  
+  
+  <div style="margin: 20px;">
+  
+     
+      
+    <div style="padding: 10px;">
+
+
+      <table class="table table-striped table-hover">
+          <thead class="table-dark" style="text-align: center;">
+      <tr>
+        <th scope="col">Order Id</th>
+        <th scope="col">Stock ID</th>
+        <th scope="col">Stock Image</th>
+        
+        <th scope="col">Required amount</th>
+        <th scope="col">Customer ID</th>
+        <th scope="col">Add to Deliver</th>
+      </tr>
+    </thead>
+    <tbody class="align-middle" style="text-align: center;">
+      <tr *ngFor="let dataItem of OrderList let dataItem2 of StockList" onload="stockimg(dataItem2)" >
+
+        
+        <td>{{dataItem.orderId}}</td>
+        <td>{{dataItem.vegetableStocksId}}</td>
+        <td style="width: 50px;">
+          <img src={{dataItem2.stock_image}} class="img-fluid img-thumbnail" >
+        </td>
+       
+        <td>{{dataItem.required_amount_kg}} kg</td>
+        <td >{{dataItem.customerId}}</td>
+        
+        
+
+        <td>
+          <button class="btn"  id="edit" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          
+          <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="margin: 5px; " class="bi bi-pen-fill" viewBox="0 0 16 16">
+          <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"/>
+        </svg>
+      </button >
+      
+
+        
+        
+        
+    </tr>
+   
+    </tbody>
+  </table>
+  <div *ngIf="pro_null" style="text-align: center;font-style: italic;">
+
+    <br>
+    <h4>No Orders!</h4>
+    <br>
+    <br>
+</div>
+
+    </div>
