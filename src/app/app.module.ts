@@ -56,6 +56,7 @@ import { CustomerCatShowComponent } from './customer/customer-cat-show/customer-
 import { CustomerProShowComponent } from './customer/customer-pro-show/customer-pro-show.component';
 import { CustomerProDetailsComponent } from './customer/customer-pro-details/customer-pro-details.component';
 import { CustomerCartComponent } from './customer/customer-cart/customer-cart.component';
+import { EditorderComponent } from './farmer/editorder/editorder.component';
 
 
 
@@ -99,6 +100,7 @@ import { CustomerCartComponent } from './customer/customer-cart/customer-cart.co
     CustomerProShowComponent,
     CustomerProDetailsComponent,
     CustomerCartComponent,
+    EditorderComponent,
 
 
     

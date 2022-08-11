@@ -29,6 +29,7 @@ import { CustomerCatShowComponent } from './customer/customer-cat-show/customer-
 import { CustomerProShowComponent } from './customer/customer-pro-show/customer-pro-show.component';
 import { CartComponent } from './cart/cart.component';
 import { CustomerCartComponent } from './customer/customer-cart/customer-cart.component';
+import { EditorderComponent } from './farmer/editorder/editorder.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home',pathMatch:'full'},
@@ -49,6 +50,7 @@ const routes: Routes = [
   {path:'farmer',component:FarmerVeiwComponent,
 children:[
  { path:'editproduct',component:FarmerEditproductComponent},
+ { path:'editorder',component:EditorderComponent},
 
 ]
 },
@@ -60,7 +62,7 @@ children:[
 children:[
  { path:'editcat',component:EditCatComponent},
  { path:'editprof',component:EditProfComponent},
- { path:'editorder',component:EditOrderComponent},
+ { path:'editorders',component:EditOrderComponent},
 
 ]
 },

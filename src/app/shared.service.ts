@@ -92,6 +92,22 @@ export class SharedService {
     return this.http.post(this.APIurl+"/customerfunc/customerorder",val)
   }
 
+  getorder(id:any):Observable<any>{
+    return this.http.get(this.APIurl+"/farmerfunc/getfarmerorder/"+id)
+  }
+
+  updorder(id:any,val:any){
+    return this.http.put(this.APIurl+"/farmerfunc/putorder/"+id,val)
+  }
+
+  getstock(id:any):Observable<any>{
+    return this.http.get(this.APIurl+"/farmerfunc/getstock/"+id)
+  }
+
+  getstockimg(id:any){
+    return this.http.get(this.APIurl+"/farmerfunc/getstockimg/"+id)
+  }
+
 
 
   
