@@ -19,10 +19,43 @@ export class EditorderComponent implements OnInit {
   ID = +this.id;
   pro_null=true;
   img:any
+  val:any={}
 
   constructor(private shared:SharedService,private toast:ToastrService) { }
 
   ngOnInit(): void {
+
+    this.refresh();
+    
+
+   
+    
+  }
+
+  adddel(item:any){
+    this.val={
+        customer: null,
+        customerId: 8,
+        deadline: null,
+        farmer: null,
+        farmerId: 2,
+        orderId: 1,
+        progress: 1,
+        required_amount_kg: 5,
+        supplied_or_not: true,
+        vegetableStock: null,
+        vegetableStocksId: 7
+    }
+    console.log(this.val)
+    this.shared.updorder(item.orderId,this.val).subscribe(response=>{
+      this.toast.success('Proceed to Delivery')
+      console.log(response)
+      this.refresh()
+    },
+    error=>{this.toast.error('Updating failed')})
+  }
+
+  refresh(){
     this.shared.getorder(this.ID).subscribe(
       data=>{console.log(data); this.pro_null = false;
       this.OrderList = data;
@@ -39,16 +72,7 @@ export class EditorderComponent implements OnInit {
     
     error=>{this.toast.error( 'Loading Orders failed')}
     )
-
-   
-    console.log(this.OrderList)
   }
-
-  stockimage(item:any){
-    this.shared.getstockimg(item.vegetableStocksId).subscribe(data=>this.img=data)
-    console.log(this.img)
-  }
-
   
 
 
