@@ -108,6 +108,27 @@ export class SharedService {
     return this.http.get(this.APIurl+"/farmerfunc/getstockimg/"+id)
   }
 
+  getorderadmin():Observable<any>{
+    return this.http.get(this.APIurl+"/adminfunc/getorder/")
+  }
+
+  getcus(id:any):Observable<any>{
+    return this.http.get(this.APIurl+"/adminfunc/getcus/"+id)
+  }
+
+  getcou():Observable<any>{
+    return this.http.get(this.APIurl+"/adminfunc/getcou")
+  }
+
+  getorderbyid(id:any):Observable<any>{
+    return this.http.get(this.APIurl+"/adminfunc/getorder/"+id)
+  }
+
+  
+ 
+
+  
+
 
 
   

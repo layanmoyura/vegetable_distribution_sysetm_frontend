@@ -96,7 +96,7 @@ export class CourierSignupComponent implements OnInit {
           ]
         ],
 
-        Profile_Photo: [
+        Vehicle_Photo: [
           '',
           [
             
@@ -159,13 +159,13 @@ export class CourierSignupComponent implements OnInit {
       
       data => {console.log(data);
       console.log("sucess");
-      this.router.navigate(['/login']);
+      this.router.navigate(['/courier_login']);
       this.toastr.success( 'Signup is Sucessfull!'); 
       },
       
       error=>{console.log(error); 
       console.log("failed");
-      this.toastr.error( 'Signup failed');this.form2.reset()});
+      this.toastr.error( 'Signup failed')});
       
     
   }

@@ -58,6 +58,7 @@ import { CustomerProDetailsComponent } from './customer/customer-pro-details/cus
 import { CustomerCartComponent } from './customer/customer-cart/customer-cart.component';
 import { EditorderComponent } from './farmer/editorder/editorder.component';
 import { CustomerAccComponent } from './customer/customer-acc/customer-acc.component';
+import { OrderdetComponent } from './admin/orderdet/orderdet.component';
 
 
 
@@ -103,6 +104,7 @@ import { CustomerAccComponent } from './customer/customer-acc/customer-acc.compo
     CustomerCartComponent,
     EditorderComponent,
     CustomerAccComponent,
+    OrderdetComponent,
 
 
     
