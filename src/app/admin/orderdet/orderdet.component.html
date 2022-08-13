@@ -1,0 +1,78 @@
+<div class=" d-sm-flex" >
+    <form  [formGroup]="form"    >
+    
+        <div class="row col-sm-12" >
+     
+            <label class="col-sm-3 col-form-label" style="padding: 10px;font-weight:500;">Assign Courier              :</label>
+            <div class="col-sm-9">
+                <select  class="form-control " formControlName="VehiclId"  [ngClass]="{ 'is-invalid': submitted && f['VehiclId'].errors }">
+                    <option selected value=1> select courier</option>
+                    <option *ngFor="let datai of coulist "value={{datai.vehiclId}}>Vehicle under {{datai.vehicle_reg_no}} reg no</option>
+                   
+                  </select>
+                  <div *ngIf="submitted && f['VehiclId'].errors" class="invalid-feedback">
+                    <div *ngIf="f['VehiclId'].errors['required']">Courier is required</div>
+                  </div>
+    
+    
+            </div>
+           
+          
+    
+    
+            <label class="col-sm-3 col-form-label " style="padding: 10px;font-weight:500;">From  :</label>
+            <label class="col-sm-9 col-form-label" style="padding: 10px;">{{pro.from}}</label>
+    
+            <label class="col-sm-3 col-form-label " style="padding: 10px;font-weight:500;">To    :</label>
+            <label class="col-sm-9 col-form-label" style="padding: 10px;">{{pro.to}}</label>
+    
+            <label class="col-sm-3 col-form-label " style="padding: 10px;font-weight:500;">Deliver Status                 :</label>
+            <label class="col-sm-9 col-form-label" style="padding: 10px;">{{pro.delivered_or_not}}</label>
+    
+           
+           
+            <div class="form-group form-outline mb-4" >
+                <textarea   hidden type="number" class="form-control  form-control-lg"   id="form3Example788cg" formControlName="AdminId"></textarea>
+            </div>
+    
+            <div class="form-group form-outline mb-4" >
+                <textarea   hidden type="number" class="form-control  form-control-lg"   id="form3Example787cg" formControlName="OrderId"></textarea>
+            </div>
+    
+            
+        
+            <div class="row col-sm-12">
+                <section class="step-wizard">
+                    <ul class="step-wizard-list" >
+                        <li class="step-wizard-item" [ngClass]="{'current-item':pro.status==0}">
+                            <span class="progress-count">1</span>
+                            <span class="progress-label">Prpared by Farmer</span>
+                        </li>
+                        <li class="step-wizard-item " [ngClass]="{'current-item':pro.status==1}">
+                            <span class="progress-count">2</span>
+                            <span class="progress-label">Assigned the Courier</span>
+                        </li>
+                        <li class="step-wizard-item" [ngClass]="{'current-item':pro.status==2}">
+                            <span class="progress-count">3</span>
+                            <span class="progress-label">Delievry on the way</span>
+                        </li>
+                        <li class="step-wizard-item"  [ngClass]="{'current-item':pro.status==3}">
+                            <span class="progress-count">4</span>
+                            <span class="progress-label">Delivery Completed</span>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        
+    
+            <button type="submit" class="btn btn-secondary col-sm-3 col-form-label" (click)="addtocart()" >Add to Delivery</button>
+    
+    
+            
+            
+        </div>
+        
+    
+        </form>
+    </div>
+    
