@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { data } from 'autoprefixer';
+import { CartService } from 'src/app/service/cart.service';
 import { SharedService } from 'src/app/shared.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class CustomerNavComponent implements OnInit {
   list:any
   id:any
   size: any=0
-  constructor(private shared: SharedService) { }
+  totalcart:number=0
+  constructor(private shared: SharedService ,private cartshear:CartService) { }
 
   ngOnInit(): void {
 
@@ -22,7 +24,8 @@ export class CustomerNavComponent implements OnInit {
     this.id= this.shared.getadminid();
     console.log(this.id)
     this.shared.getorderbycusid(this.id).subscribe(data => {this.list = data; console.log(data);this.size= this.list.length})
-
+    this.cartshear.getProduct().subscribe(res=>{
+      this.totalcart=res.length    })
   }
 
   loggout(){
