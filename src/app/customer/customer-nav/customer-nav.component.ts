@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { data } from 'autoprefixer';
 import { SharedService } from 'src/app/shared.service';
 
 @Component({
@@ -9,13 +10,22 @@ import { SharedService } from 'src/app/shared.service';
 export class CustomerNavComponent implements OnInit {
   image:any
   name:any
+  list:any
+  id:any
+  size: any
   constructor(private shared: SharedService) { }
 
   ngOnInit(): void {
 
     this.image = this.shared.getpic();
     this.name = this.shared.getname();
+    this.id= this.shared.getadminid();
+    console.log(this.id)
+    this.shared.getorderbycusid(this.id).subscribe(data => {this.list = data; console.log(data);this.size= this.list.length})
 
   }
 
+  loggout(){
+    this.shared.logout();
+  }
 }

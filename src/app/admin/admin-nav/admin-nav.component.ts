@@ -19,4 +19,8 @@ export class AdminNavComponent implements OnInit {
 
   }
 
+  loggout(){
+    this.shared.logout();
+  }
+
 }

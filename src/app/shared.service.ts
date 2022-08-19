@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Injectable({
@@ -14,7 +15,7 @@ export class SharedService {
 
   decoded:any
 
-  constructor(private http:HttpClient,private router:Router, private jwtHelper:JwtHelperService) { }
+  constructor(private http:HttpClient,private router:Router, private jwtHelper:JwtHelperService, private toastr:ToastrService) { }
 
  logcus(val:any){
     return this.http.post(this.APIurl+"/customer/login",val)
@@ -124,6 +125,20 @@ export class SharedService {
     return this.http.get(this.APIurl+"/adminfunc/getorder/"+id)
   }
 
+
+
+  getorderbycusid(id:any):Observable<any>{
+    return this.http.get(this.APIurl+"/adminfunc/getorderbycus/"+id)
+  }
+
+
+  logout(){
+  
+    localStorage.removeItem('token')
+    this.router.navigate(['/home'])
+    this.toastr.error('You are logged out')
+  
+  }
   
  
 

@@ -3,19 +3,7 @@
     
         <div class="row col-sm-12" >
      
-            <label class="col-sm-3 col-form-label" style="padding: 10px;font-weight:500;">Assign Courier              :</label>
-            <div class="col-sm-9">
-                <select  class="form-control " formControlName="VehiclId"  [ngClass]="{ 'is-invalid': submitted && f['VehiclId'].errors }">
-                    <option selected value=1> select courier</option>
-                    <option *ngFor="let datai of coulist "value={{datai.vehiclId}}>Vehicle under {{datai.vehicle_reg_no}} reg no</option>
-                   
-                  </select>
-                  <div *ngIf="submitted && f['VehiclId'].errors" class="invalid-feedback">
-                    <div *ngIf="f['VehiclId'].errors['required']">Courier is required</div>
-                  </div>
-    
-    
-            </div>
+            
            
           
     
@@ -31,13 +19,7 @@
     
            
            
-            <div class="form-group form-outline mb-4" >
-                <textarea   hidden type="number" class="form-control  form-control-lg"   id="form3Example788cg" formControlName="AdminId"></textarea>
-            </div>
-    
-            <div class="form-group form-outline mb-4" >
-                <textarea   hidden type="number" class="form-control  form-control-lg"   id="form3Example787cg" formControlName="OrderId"></textarea>
-            </div>
+           
     
             
         
@@ -65,7 +47,7 @@
             </div>
         
     
-            <button type="submit" class="btn btn-secondary col-sm-3 col-form-label" (click)="addtocart()" >Add to Delivery</button>
+           
     
     
             

@@ -1,0 +1,71 @@
+<!--model-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Order Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeClick()"></button>
+            </div>
+            <div class="modal-body">
+                <app-orderdet1 [pro]="pro" *ngIf="ActiveAddEditPro"></app-orderdet1>            </div>
+  
+        </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  <div style="margin: 20px;">
+  
+     
+      
+      <div style="padding: 10px;">
+  
+  
+        <table class="table table-striped table-hover">
+            <thead class="table-dark" style="text-align: center;">
+        <tr>
+          <th scope="col">Order ID</th>
+          <th scope="col">Stock ID</th>
+          <th scope="col">Required Amount in kg</th>
+         
+          <th scope="col">Farmer ID</th>
+          
+          <th scope="col">View Order Details</th>
+        </tr>
+      </thead>
+      <tbody class="align-middle" style="text-align: center;">
+        <tr *ngFor="let dataItem of ProductList" >
+  
+          
+          <td>{{dataItem.orderId}}</td>
+          <td>{{dataItem.vegetableStocksId}}</td>
+          <td>{{dataItem.required_amount_kg}}</td>
+          <td >{{dataItem.farmerId}}</td>
+          
+          
+  
+          <td>
+            <button class="btn"  id="edit" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <img src="https://img.icons8.com/ios-filled/20/000000/open-in-popup.png" (click)="clickItem(dataItem)"/>
+           
+        </button >
+        
+  
+          
+          
+          
+      </tr>
+     
+      </tbody>
+    </table>
+    <div *ngIf="pro_null" style="text-align: center;font-style: italic;">
+  
+      <br>
+      <h4>No Category!</h4>
+      <br>
+      <br>
+  </div>
+  
+      </div>

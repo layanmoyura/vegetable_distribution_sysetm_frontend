@@ -31,6 +31,8 @@ import { CartComponent } from './cart/cart.component';
 import { CustomerCartComponent } from './customer/customer-cart/customer-cart.component';
 import { EditorderComponent } from './farmer/editorder/editorder.component';
 import { CustomerAccComponent } from './customer/customer-acc/customer-acc.component';
+import { OrderdetComponent } from './admin/orderdet/orderdet.component';
+import { OrdershowComponent } from './customer/ordershow/ordershow.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home',pathMatch:'full'},
@@ -73,6 +75,8 @@ children:[
   {path:'products-show/:id',component:CustomerProShowComponent},
   {path: 'cart' ,component:CustomerCartComponent },
   {path:'customer_account',component:CustomerAccComponent},
+  {path:'customer_order',component:OrdershowComponent},
+  
 ]
 },
 

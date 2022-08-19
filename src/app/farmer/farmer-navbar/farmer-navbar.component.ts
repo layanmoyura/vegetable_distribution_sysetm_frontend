@@ -20,4 +20,8 @@ export class FarmerNavbarComponent implements OnInit {
 
   }
 
+  loggout(){
+    this.shared.logout();
+  }
+
 }
