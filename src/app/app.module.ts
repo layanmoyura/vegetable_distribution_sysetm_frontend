@@ -61,6 +61,7 @@ import { CustomerAccComponent } from './customer/customer-acc/customer-acc.compo
 import { OrderdetComponent } from './admin/orderdet/orderdet.component';
 import { OrdershowComponent } from './customer/ordershow/ordershow.component';
 import { Orderdet1Component } from './customer/orderdet1/orderdet1.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -108,7 +109,8 @@ import { Orderdet1Component } from './customer/orderdet1/orderdet1.component';
     CustomerAccComponent,
     OrderdetComponent,
     OrdershowComponent,
-    Orderdet1Component
+    Orderdet1Component,
+    FooterComponent
 
 
     
