@@ -63,7 +63,7 @@ export class FarmerLoginComponent implements OnInit {
       result => {console.log(result);
       
       localStorage.setItem('token',JSON.stringify(result));
-      this.router.navigate(['/farmer']);
+      this.router.navigate(['/farmer/farmer_acc']);
       this.toastr.success( 'Login is Sucessfull!'); 
       },
       

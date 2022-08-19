@@ -34,6 +34,7 @@ import { CustomerAccComponent } from './customer/customer-acc/customer-acc.compo
 import { OrderdetComponent } from './admin/orderdet/orderdet.component';
 import { OrdershowComponent } from './customer/ordershow/ordershow.component';
 import { AdminAccComponent } from './admin/admin-acc/admin-acc.component';
+import { FarmerAccComponent } from './farmer/farmer-acc/farmer-acc.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home',pathMatch:'full'},
@@ -55,6 +56,7 @@ const routes: Routes = [
 children:[
  { path:'editproduct',component:FarmerEditproductComponent},
  { path:'editorder',component:EditorderComponent},
+ {path:'farmer_acc',component:FarmerAccComponent},
 
 ]
 },
