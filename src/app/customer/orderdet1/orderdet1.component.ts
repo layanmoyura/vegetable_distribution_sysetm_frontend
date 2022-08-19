@@ -40,48 +40,17 @@ export class Orderdet1Component implements OnInit {
 
   ngOnInit(): void {
     
-    this.shared.getcou().subscribe(data=>{this.coulist=data})
     
 
 
 
 
-    this.form = this.formBuilder.group(
-      {
-
-       
-        VehiclId: [
-          '',
-          [
-            Validators.required
-            
-          ]
-        ],
-
-        AdminId: [
-
-        ],
-
-
-        OrderId: [
-          
-        ],
-
-
-        
-
-        
-
-      },
-
-    );
+    
 
 
   }
 
-  get f(): { [key: string]: AbstractControl } {
-    return this.form.controls;
-  }
+  
 
   /*onSubmit():void{
 

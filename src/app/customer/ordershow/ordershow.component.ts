@@ -33,9 +33,9 @@ export class OrdershowComponent implements OnInit {
   }
 
   refresh(){
-    this.shared.getorderadmin().subscribe(data=> {this.ProductList=data;
-      this.ProductList.length = this.size;
-    console.log(this.ProductList);
+    this.shared.getorderbycusid(this.ID).subscribe(data=> {this.ProductList=data;
+      this.size= this.ProductList.length;
+    
     
     if(this.ProductList.length==0){
   this.pro_null=true;
@@ -116,6 +116,7 @@ export class OrdershowComponent implements OnInit {
     this.refresh();
     this.ActiveAddEditPro=false;
     this.refresh();
+    location.reload();
     
   }
 }

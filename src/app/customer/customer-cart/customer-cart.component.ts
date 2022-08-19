@@ -82,6 +82,7 @@ export class CustomerCartComponent implements OnInit {
           this.toastr.success( 'Orders added successfully and removed from cart to My orders!');
           this.cartService.removeAllCart();
           this.check = 0;
+          
         }
         
         },
@@ -94,6 +95,8 @@ export class CustomerCartComponent implements OnInit {
         this.toastr.error( 'Adding Orders failed');})
         this.check = 0;
     }
+
+    location.reload();
 
    
     

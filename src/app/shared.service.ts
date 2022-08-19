@@ -131,6 +131,17 @@ export class SharedService {
     return this.http.get(this.APIurl+"/adminfunc/getorderbycus/"+id)
   }
 
+  updateordadmin(id:any,val:number){
+    return this.http.put(this.APIurl+"/adminfunc/updateord/"+id,val);
+  }
+
+  adddel(val:any){
+    return this.http.post(this.APIurl+"/adminfunc/adddel",val)
+  }
+
+  getcusbyid(id:any):Observable<any>{
+    return this.http.get(this.APIurl+"/customerfunc/getcustomeredit/"+id)
+  }
 
   logout(){
   

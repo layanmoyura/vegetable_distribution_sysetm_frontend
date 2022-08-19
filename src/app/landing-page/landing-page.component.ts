@@ -46,6 +46,7 @@ export class LandingPageComponent implements OnInit {
     closeClick(){
       
       this.ActiveAddEditPro=false;
+      location.reload();
       
       
     }

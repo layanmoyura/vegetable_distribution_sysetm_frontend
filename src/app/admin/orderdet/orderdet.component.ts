@@ -24,6 +24,7 @@ export class OrderdetComponent implements OnInit {
   public prouctlist:any;
   public prouctLis:any;
   public coulist:any;
+ 
 
 
   form: UntypedFormGroup = new UntypedFormGroup({
@@ -82,6 +83,42 @@ export class OrderdetComponent implements OnInit {
     return this.form.controls;
   }
 
+  onSubmit(){
+  this.shared.updateordadmin(this.pro.OrderId,2).subscribe(response=>console.log(response));
+
+  this.submitted = true;
+  if (this.form.invalid) {
+    return;
+  }
+
+ +this.form.value.VehiclId
+  this.pro.CourierVehiclId=+this.form.value.VehiclId,
+  this.pro.AdminID=2
+
+  console.log(this.pro)
+
+  this.shared.adddel(this.pro).subscribe(
+        
+    data => {console.log(data);
+
+    console.log("sucess");
+    this.form.reset()
+    this.submitted = false;
+    this.toastr.success( 'Assigned delivery!'); 
+    
+    
+    },
+    
+    error=>{console.log(error.status); 
+   
+    
+    console.log(error)
+    console.log("failed");
+    this.toastr.error( 'Assigning delivery failed!');});
+  }
+
+ 
+
   /*onSubmit():void{
 
     
@@ -127,37 +164,5 @@ export class OrderdetComponent implements OnInit {
 
       
   }*/
-addtocart(){
-  if(this.form.value.required_amount_kg<=this.pro.amount){
-    console.log(this.form.value.required_amount_kg);
-this.pro.quantity=this.form.value.required_amount_kg;
-this.pro.total=(this.form.value.required_amount_kg*this.pro.farmers_price_per_kg);
 
-
-this.shared.getcat().subscribe(data=> {
-  this.prouctLis=data,
-
-  this.prouctLis.forEach((item:any)=>{
-  
-    if(item.vegetablesId==this.pro.vegetablesId){
-    this.pro.name=item.name;
-console.log(item.name);
-    }
-  })});
-
-
-
-
-
-this.cartService.addtoCart(this.pro);
-
-  console.log(this.pro);
-  this.toastr.success('Added to cart!')
-}
-
-  else{
-    this.toastr.error( 'Requested amount is not available');
-   
-  }
-}
 }

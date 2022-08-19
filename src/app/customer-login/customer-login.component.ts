@@ -62,7 +62,7 @@ export class CustomerLoginComponent implements OnInit {
         result => {console.log(result);
       
           localStorage.setItem('token',JSON.stringify(result));
-          this.router.navigate(['/admin']);
+          this.router.navigate(['/admin/admin_acc']);
           this.toastr.success( 'Login is Sucessfull!');  
         },
 
