@@ -12,7 +12,7 @@ export class CustomerNavComponent implements OnInit {
   name:any
   list:any
   id:any
-  size: any
+  size: any=0
   constructor(private shared: SharedService) { }
 
   ngOnInit(): void {
