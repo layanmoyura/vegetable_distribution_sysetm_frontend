@@ -24,7 +24,7 @@ export class CustomerProShowComponent implements OnInit {
   searchKey:any="";
   Activtall:boolean=false;
   Activepart:boolean=true;
-  resultItem:boolean=false;
+  resultItem:boolean=false ;
  public Activedetail:boolean=false;
   Modal_title:string="";
   public prod:any={};
