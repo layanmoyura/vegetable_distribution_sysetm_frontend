@@ -62,6 +62,8 @@ import { OrderdetComponent } from './admin/orderdet/orderdet.component';
 import { OrdershowComponent } from './customer/ordershow/ordershow.component';
 import { Orderdet1Component } from './customer/orderdet1/orderdet1.component';
 import { FooterComponent } from './footer/footer.component';
+import { FarmerAccComponent } from './farmer/farmer-acc/farmer-acc.component';
+import { AdminAccComponent } from './admin/admin-acc/admin-acc.component';
 
 
 
@@ -110,7 +112,9 @@ import { FooterComponent } from './footer/footer.component';
     OrderdetComponent,
     OrdershowComponent,
     Orderdet1Component,
-    FooterComponent
+    FooterComponent,
+    FarmerAccComponent,
+    AdminAccComponent
 
 
     

@@ -33,6 +33,7 @@ import { EditorderComponent } from './farmer/editorder/editorder.component';
 import { CustomerAccComponent } from './customer/customer-acc/customer-acc.component';
 import { OrderdetComponent } from './admin/orderdet/orderdet.component';
 import { OrdershowComponent } from './customer/ordershow/ordershow.component';
+import { AdminAccComponent } from './admin/admin-acc/admin-acc.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home',pathMatch:'full'},
@@ -66,6 +67,7 @@ children:[
  { path:'editcat',component:EditCatComponent},
  { path:'editprof',component:EditProfComponent},
  { path:'editorders',component:EditOrderComponent},
+ {path:'admin_acc',component:AdminAccComponent}
 
 ]
 },
