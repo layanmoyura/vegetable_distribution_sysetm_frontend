@@ -64,6 +64,10 @@ import { Orderdet1Component } from './customer/orderdet1/orderdet1.component';
 import { FooterComponent } from './footer/footer.component';
 import { FarmerAccComponent } from './farmer/farmer-acc/farmer-acc.component';
 import { AdminAccComponent } from './admin/admin-acc/admin-acc.component';
+import { CourierVeiwComponent } from './courier/courier-veiw/courier-veiw.component';
+import { CourierAccComponent } from './courier/courier-acc/courier-acc.component';
+import { CourierNavbarComponent } from './courier/courier-navbar/courier-navbar.component';
+import { CourierEditComponent } from './courier/courier-edit/courier-edit.component';
 
 
 
@@ -114,7 +118,11 @@ import { AdminAccComponent } from './admin/admin-acc/admin-acc.component';
     Orderdet1Component,
     FooterComponent,
     FarmerAccComponent,
-    AdminAccComponent
+    AdminAccComponent,
+    CourierVeiwComponent,
+    CourierAccComponent,
+    CourierNavbarComponent,
+    CourierEditComponent
 
 
     
