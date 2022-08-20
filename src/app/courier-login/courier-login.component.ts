@@ -62,7 +62,7 @@ export class CourierLoginComponent implements OnInit {
       
       data => {console.log(data);
       console.log("sucess");
-      this.router.navigate(['/delivery']);
+      this.router.navigate(['/courior/courior-acc']);
       this.toastr.success( 'Login is Sucessfull!'); 
       },
       

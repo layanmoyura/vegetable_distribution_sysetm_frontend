@@ -35,6 +35,9 @@ import { OrderdetComponent } from './admin/orderdet/orderdet.component';
 import { OrdershowComponent } from './customer/ordershow/ordershow.component';
 import { AdminAccComponent } from './admin/admin-acc/admin-acc.component';
 import { FarmerAccComponent } from './farmer/farmer-acc/farmer-acc.component';
+import { CourierVeiwComponent } from './courier/courier-veiw/courier-veiw.component';
+import { CourierAccComponent } from './courier/courier-acc/courier-acc.component';
+import { CourierEditComponent } from './courier/courier-edit/courier-edit.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home',pathMatch:'full'},
@@ -81,6 +84,12 @@ children:[
   {path:'customer_account',component:CustomerAccComponent},
   {path:'customer_order',component:OrdershowComponent},
   
+]
+},
+{path:'courior',component:CourierVeiwComponent,
+children:[
+  {path:'courior-acc',component:CourierAccComponent},
+  {path:'courior-edit',component:CourierEditComponent},
 ]
 },
 

@@ -1,0 +1,13 @@
+#sup1{
+    background-blend-mode: lighten;   
+       font-weight: bolder;
+   font-size:12px;
+   background: rgb(31, 103, 37);
+   border-radius:80%;
+   padding:3px;
+   position:relative;
+   left:2px;
+   top:-10px;
+   opacity:0.9;
+   padding: 3px;
+   }
