@@ -10,7 +10,7 @@ import { ToastrService } from 'ngx-toastr';
   providedIn: 'root'
 })
 export class SharedService {
-  readonly APIurl = "https://localhost:5001/api";
+  readonly APIurl = "https://onlineplatformforvegetables20221026195155.azurewebsites.net/api";
   
 
   decoded:any
