@@ -18,15 +18,18 @@ export class CustomerAccComponent implements OnInit {
 
   ngOnInit(): void {
 
+  
     this.image = this.shared.getpic();
     this.name = this.shared.getname();
     this.id=this.shared.getadminid();
     this.ID=+this.id
     
-
     this.shared.getcusbyid(this.ID).subscribe(data=>{this.list=data; console.log(this.list)})
     
     this.shared.getorderbycusid(this.id).subscribe(data => {this.list = data; console.log(data);this.size=this.list.length })
+
+
+    
 
   }
 
