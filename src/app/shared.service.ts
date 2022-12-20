@@ -10,39 +10,19 @@ import { ToastrService } from 'ngx-toastr';
   providedIn: 'root'
 })
 export class SharedService {
-  readonly APIurl = "https://onlineplatformforvegetables20221026195155.azurewebsites.net/api";
+  readonly APIurl = "https://localhost:5001/api";
   
 
   decoded:any
 
   constructor(private http:HttpClient,private router:Router, private jwtHelper:JwtHelperService, private toastr:ToastrService) { }
 
- logcus(val:any){
-    return this.http.post(this.APIurl+"/customer/login",val)
+  addrol(val:any){
+    return this.http.post(this.APIurl+"/role/register",val)
   }
 
-  logfar(val:any){
-    return this.http.post(this.APIurl+"/farmer/login",val)
-  }
-
-  logadm(val:any){
-    return this.http.post(this.APIurl+"/admin/login",val)
-  }
-
-  logcou(val:any){
-    return this.http.post(this.APIurl+"/courier/login",val)
-  }
-
-  addcus(val:any){
-    return this.http.post(this.APIurl+"/customer/register",val)
-  }
-
-  addfar(val:any){
-    return this.http.post(this.APIurl+"/farmer/register",val)
-  }
-
-  addcou(val:any){
-    return this.http.post(this.APIurl+"/courier/register",val)
+  logrol(val:any){
+    return this.http.post(this.APIurl+"/role/login",val)
   }
 
   addcat(val:any){
@@ -193,6 +173,18 @@ export class SharedService {
         return id;
       }
       }
+
+      getrol(){
+        this.decoded = localStorage.getItem('token')
+        const decodedaf = this.jwtHelper.decodeToken(this.decoded)
+        
+        if(decodedaf!=null){
+          const rol= decodedaf.role;
+          return rol;
+        }
+        }
+
+    
 }
 
 
