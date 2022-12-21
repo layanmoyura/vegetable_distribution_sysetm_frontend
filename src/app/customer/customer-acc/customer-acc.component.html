@@ -11,7 +11,7 @@
               <h5 class="my-3">{{name}}</h5>
               
               <div class="d-flex justify-content-center mb-2">
-                <button type="button" class="btn btn-outline-primary ms-1">Logout</button>
+                <button type="button" class="btn btn-outline-primary ms-1" (click)="loggout()">Logout</button>
               </div>
             </div>
           </div>
@@ -22,19 +22,19 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0">First Name</p>
+                  <p class="mb-0">Firstname</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">john</p>
+                  <p class="text-muted mb-0">{{firstname}}</p>
                 </div>
               </div>
               <hr>
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0">Last Name</p>
+                  <p class="mb-0">Last name</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">perera</p>
+                  <p class="text-muted mb-0">{{Lastname}}</p>
                 </div>
               </div>
               <hr>
@@ -43,7 +43,7 @@
                   <p class="mb-0">Email</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">john@gmai.com</p>
+                  <p class="text-muted mb-0">{{Email}}</p>
                 </div>
               </div>
               <hr>
@@ -52,7 +52,7 @@
                   <p class="mb-0">NIC</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">981811692v</p>
+                  <p class="text-muted mb-0">{{NIC}}</p>
                 </div>
               </div>
               <hr>
@@ -61,7 +61,7 @@
                   <p class="mb-0">Living City</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">Kalutara</p>
+                  <p class="text-muted mb-0">{{Livingcity}}</p>
                 </div>
               </div>
             </div>

@@ -84,6 +84,9 @@ export class CustomerSignupComponent implements OnInit {
 
         Email: ['', [Validators.required, Validators.email]],
 
+        Rolename: ['',Validators.required],
+
+
        
 
         NIC_no: [
@@ -162,12 +165,15 @@ export class CustomerSignupComponent implements OnInit {
       Profile_Photo:this.image
     })
     console.log(this.form1.value)
-    this.user.addcus(this.form1.value).subscribe(
+    this.user.addrol(this.form1.value).subscribe(
       
       data => {console.log(data);
       console.log("sucess");
+      console.log(this.user.getrol());
       this.router.navigate(['/customer_login']);
-      this.toastr.success( 'Signup is Sucessfull!'); 
+      this.toastr.success( 'Signup is Sucessfull!');
+      
+      
       },
       
       error=>{console.log(error); 

@@ -163,7 +163,7 @@ export class AddCatComponent implements OnInit {
         
         error=>{console.log(error); 
         console.log("failed");
-        this.toastr.error( 'Adding Category failed');});
+        this.toastr.error( 'Adding Category failed cannot use same vegetable');});
 
     }
 

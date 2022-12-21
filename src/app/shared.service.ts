@@ -25,6 +25,34 @@ export class SharedService {
     return this.http.post(this.APIurl+"/role/login",val)
   }
 
+  logcus(val:any){
+    return this.http.post(this.APIurl+"/customer/login",val)
+  }
+
+  logfar(val:any){
+    return this.http.post(this.APIurl+"/farmer/login",val)
+  }
+
+  logadm(val:any){
+    return this.http.post(this.APIurl+"/admin/login",val)
+  }
+
+  logcou(val:any){
+    return this.http.post(this.APIurl+"/courier/login",val)
+  }
+
+  addcus(val:any){
+    return this.http.post(this.APIurl+"/customer/register",val)
+  }
+
+  addfar(val:any){
+    return this.http.post(this.APIurl+"/farmer/register",val)
+  }
+
+  addcou(val:any){
+    return this.http.post(this.APIurl+"/courier/register",val)
+  }
+
   addcat(val:any){
     return this.http.post(this.APIurl+"/adminfunc/addcat",val)
   }

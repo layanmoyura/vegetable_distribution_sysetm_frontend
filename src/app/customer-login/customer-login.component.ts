@@ -57,24 +57,39 @@ export class CustomerLoginComponent implements OnInit {
     
       console.log(this.form.value)
 
-      this.user.logadm(this.form.value).subscribe(
       
-        result => {console.log(result);
       
-          localStorage.setItem('token',JSON.stringify(result));
-          this.router.navigate(['/admin/admin_acc']);
-          this.toastr.success( 'Login is Sucessfull!');  
-        },
+       
 
-        error=>{
+        
 
-          this.user.logcus(this.form.value).subscribe(
+          this.user.logrol(this.form.value).subscribe(
       
             result => {console.log(result);
             
               localStorage.setItem('token',JSON.stringify(result));
+              if(this.user.getrol()=="customer"){
               this.router.navigate(['/customer/customer_account']);
-              this.toastr.success( 'Login is Sucessfull!');  
+              this.toastr.success( 'Login is Sucessfull!');
+              }
+
+              else if(this.user.getrol()=="farmer"){
+                this.router.navigate(['/farmer/farmer_acc']);
+                this.toastr.success( 'Login is Sucessfull!');
+              }
+
+              else if(this.user.getrol()=="admin"){
+                this.router.navigate(['/admin/editcat']);
+                this.toastr.success( 'Login is Sucessfull!');
+              }
+
+              else if(this.user.getrol()=="courier"){
+                this.router.navigate(['/courior/courior-acc']);
+                this.toastr.success( 'Login is Sucessfull!');
+              }
+
+              
+                
             },
             
             error=>{console.log(error); 
@@ -82,9 +97,9 @@ export class CustomerLoginComponent implements OnInit {
             this.toastr.error( 'Login failed');});
 
 
-        }
         
-        );
+        
+        
     
     
       

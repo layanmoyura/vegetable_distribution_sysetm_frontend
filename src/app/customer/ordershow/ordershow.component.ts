@@ -88,7 +88,7 @@ export class OrdershowComponent implements OnInit {
           console.log(data);
           this.pro={
             from:this.cus[0].living_City,
-            to:this.farm[0].living_city,
+            to:this.farm[0].living_City,
             delivered_or_not:false,
             AdminId:this.ID,
             OrderId:dataItem.orderId,

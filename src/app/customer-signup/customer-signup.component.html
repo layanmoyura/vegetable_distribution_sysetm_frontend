@@ -5,7 +5,7 @@
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
           <div class="card bg-dark text-white" style="border-radius: 1rem;">
             <div class="card-body p-5 text-center">
-              <h2 class="text-uppercase text-center mb-5">Create a customer account</h2>
+              <h2 class="text-uppercase text-center mb-5">Create a account</h2>
 
               <form [formGroup]="form1" (ngSubmit)="onSubmit()">
 
@@ -67,6 +67,22 @@
                       </div>
                     </div>
                   <label class="form-label" for="form3Example6cg">Your NIC</label>
+                </div>
+
+                <div class="form-outline mb-4 form-group">
+                  <select type="text" id="form3Example91cg" class="form-control form-control-lg" placeholder="Role name"  formControlName="Rolename"
+                  [ngClass]="{ 'is-invalid': submitted && f['Rolename'].errors }">
+                  <option value="customer">customer</option>
+                  <option value="farmer">farmer</option>
+                  <option value="courier">courier</option>
+                  
+                  </select>
+
+
+                  <div *ngIf="submitted && f['Rolename'].errors" class="invalid-feedback">
+                      <div *ngIf="f['Rolename'].errors['required']">Role name is required</div>
+                    </div>
+                  <label class="form-label" for="form3Example91cg">Your Role name</label>
                 </div>
 
                 <!--image file-->
