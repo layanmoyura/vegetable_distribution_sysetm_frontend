@@ -21,7 +21,7 @@ export class EditOrderComponent implements OnInit {
   cus:any[]=[];
   farm:any[]=[];
   ord:any[]=[];
-  id=this.shared.getadminid();
+  id= this.shared.getadminid();
   ID = +this.id;
   
 

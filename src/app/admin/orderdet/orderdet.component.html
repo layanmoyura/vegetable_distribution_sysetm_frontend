@@ -5,9 +5,9 @@
      
             <label class="col-sm-3 col-form-label" style="padding: 10px;font-weight:500;">Assign Courier              :</label>
             <div class="col-sm-9">
-                <select  class="form-control " formControlName="VehiclId"  [ngClass]="{ 'is-invalid': submitted && f['VehiclId'].errors }">
-                    <option selected value=1> select courier</option>
-                    <option *ngFor="let datai of coulist">Vehicle owned by {{datai.firstName}} from {{datai.living_City}}.</option>
+                <select  class="form-control" placehholder="Select courier" formControlName="VehiclId"  [ngClass]="{ 'is-invalid': submitted && f['VehiclId'].errors }">
+                    <option selected="selected" value=""> select courier</option>
+                    <option *ngFor="let datai of coulist" value="{{datai.roleId}}">Vehicle owned by {{datai.firstName}} from {{datai.living_City}}.</option>
                    
                   </select>
                   <div *ngIf="submitted && f['VehiclId'].errors" class="invalid-feedback">
@@ -54,7 +54,7 @@
                         </li>
                         <li class="step-wizard-item" [ngClass]="{'current-item':pro.status==2}">
                             <span class="progress-count">3</span>
-                            <span class="progress-label">Delievry on the way</span>
+                            <span class="progress-label">Delievery on the way</span>
                         </li>
                         <li class="step-wizard-item"  [ngClass]="{'current-item':pro.status==3}">
                             <span class="progress-count">4</span>
@@ -65,7 +65,7 @@
             </div>
         
     
-            <button type="submit" class="btn btn-secondary col-sm-3 col-form-label"  (click)="onSubmit()">Add to Delivery</button>
+            <button type="submit" class="btn btn-secondary col-sm-3 col-form-label" (click)="onSubmit()"  >Add to Delivery</button>
     
     
             

@@ -84,27 +84,30 @@ export class OrderdetComponent implements OnInit {
   }
 
   onSubmit(){
-  this.shared.updateordadmin(this.pro.OrderId,2).subscribe(response=>console.log(response));
+  
 
   this.submitted = true;
   if (this.form.invalid) {
     return;
   }
 
- +this.form.value.VehiclId
-  this.pro.CourierVehiclId=+this.form.value.VehiclId,
-  this.pro.AdminID=2
+ 
+  this.pro.CourierVehiclId=+this.form.value.VehiclId;
+  console.log(this.pro.CourierVehiclId)
+  this.pro.AdminID=+this.id;
 
   console.log(this.pro)
 
   this.shared.adddel(this.pro).subscribe(
         
+    
     data => {console.log(data);
 
     console.log("sucess");
     this.form.reset()
     this.submitted = false;
-    this.toastr.success( 'Assigned delivery!'); 
+    this.toastr.success( 'Assigned delivery!');
+    this.shared.updateordadmin(this.pro.OrderId,2).subscribe(response=>console.log(response)); 
     
     
     },

@@ -159,6 +159,19 @@ export class SharedService {
     return this.http.get(this.APIurl+"/customerfunc/getcustomeredit/"+id)
   }
 
+   getcoubyid(id:any):Observable<any>{
+    return this.http.get(this.APIurl+"/adminfunc/getdelbycou/"+id);
+  }
+
+  updatedel(id:any,val:number){
+    return this.http.put(this.APIurl+"/adminfunc/updatedel/"+id,val);
+  }
+
+  confirmdel(id:any,val:number){
+    return this.http.put(this.APIurl+"/adminfunc/confirmdel/"+id,val);
+  }
+
+
   logout(){
   
     localStorage.removeItem('token')

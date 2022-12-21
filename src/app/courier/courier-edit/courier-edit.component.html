@@ -1,39 +1,60 @@
-<table class="table">
-    <thead>
+ <!--model-->
+ 
+
+
+
+
+<div style="margin: 20px;">
+
+   
+    
+    <div style="padding: 10px;">
+
+
+      <table class="table table-striped table-hover">
+          <thead class="table-dark" style="text-align: center;">
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
+        <th scope="col">Delivery ID</th>
+        <th scope="col">Order ID</th>
+        <th scope="col">Delivered from</th>
+        <th scope="col">Delivered to</th>
+        
+        <th scope="col">Accept the delivery</th>
         
       </tr>
+    </thead>
+    <tbody class="align-middle" style="text-align: center;">
+      <tr *ngFor="let dataItem of ProductList" >
+
+        
+        <td>{{dataItem.deliveryId}}</td>
+        <td >{{dataItem.orderId}}</td>
+        <td>{{dataItem.from}}</td>
+        <td>{{dataItem.to}}</td>
+        
+        
+        
+
+        <td>
+          <button class="btn"  id="edit" >
+          <svg (click)="clickItem(dataItem)" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 0.391 0.391" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="20" height="20"><g><g><path cx="139.636" cy="384" r="11.636" d="M0.115 0.293A0.009 0.009 0 0 1 0.107 0.302A0.009 0.009 0 0 1 0.098 0.293A0.009 0.009 0 0 1 0.115 0.293z"/></g></g><g><g><path cx="407.273" cy="384" r="11.636" d="M0.32 0.293A0.009 0.009 0 0 1 0.311 0.302A0.009 0.009 0 0 1 0.302 0.293A0.009 0.009 0 0 1 0.32 0.293z"/></g></g><g><g><path d="M0.38 0.201l-0.027 -0.02l-0.026 -0.077c-0.001 -0.004 -0.004 -0.006 -0.008 -0.006H0.24c-0.005 0 -0.009 0.004 -0.009 0.009v0.178H0.15c-0.004 -0.02 -0.022 -0.036 -0.044 -0.036c-0.021 0 -0.039 0.015 -0.044 0.036H0.027c-0.005 0 -0.009 -0.004 -0.009 -0.009v-0.195c0 -0.005 0.004 -0.009 0.009 -0.009h0.204c0 0.005 0.004 0.009 0.009 0.009s0.009 -0.004 0.009 -0.009V0.062c0 -0.005 -0.004 -0.009 -0.009 -0.009H0.027C0.012 0.053 0 0.065 0 0.08v0.195c0 0.015 0.012 0.027 0.027 0.027h0.036c0.004 0.02 0.022 0.036 0.044 0.036c0.021 0 0.039 -0.015 0.044 -0.036h0.09c0.005 0 0.009 -0.004 0.009 -0.009V0.115h0.065l0.02 0.062h-0.018l0.003 -0.005c0.002 -0.004 0 -0.01 -0.004 -0.012c-0.004 -0.002 -0.01 0 -0.012 0.004l-0.007 0.013h-0.021c-0.005 0 -0.009 0.004 -0.009 0.009S0.27 0.195 0.275 0.195h0.068l0.026 0.02c0.003 0.002 0.004 0.004 0.004 0.007v0.053c0 0.005 -0.004 0.009 -0.009 0.009h-0.01c-0.004 -0.02 -0.022 -0.036 -0.044 -0.036c-0.025 0 -0.044 0.02 -0.044 0.044c0 0.025 0.02 0.044 0.044 0.044c0.021 0 0.039 -0.015 0.044 -0.036h0.01c0.015 0 0.027 -0.012 0.027 -0.027v-0.053C0.391 0.214 0.387 0.206 0.38 0.201zM0.107 0.32c-0.015 0 -0.027 -0.012 -0.027 -0.027c0 -0.015 0.012 -0.027 0.027 -0.027c0.015 0 0.027 0.012 0.027 0.027C0.133 0.308 0.122 0.32 0.107 0.32zM0.311 0.32c-0.015 0 -0.027 -0.012 -0.027 -0.027c0 -0.015 0.012 -0.027 0.027 -0.027c0.015 0 0.027 0.012 0.027 0.027C0.337 0.308 0.326 0.32 0.311 0.32z"/></g></g><g><g><path d="M0.204 0.213H0.044c-0.005 0 -0.009 0.004 -0.009 0.009s0.004 0.009 0.009 0.009h0.16c0.005 0 0.009 -0.004 0.009 -0.009S0.21 0.213 0.204 0.213z"/></g></g></svg>
+         
+      </button >
+      
+
+        
+        
+        
+    </tr>
+   
     </tbody>
   </table>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+  <div *ngIf="pro_null" style="text-align: center;font-style: italic;">
+
+    <br>
+    <h4>No Pending Deliveries!</h4>
+    <br>
+    <br>
+</div>
+
+    </div>
