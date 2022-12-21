@@ -22,35 +22,54 @@
                                 <h3 class="mb-4" style="text-align: center; color: white;">Tell us what you think</h3>
                                 <div id="form-message-warning" class="mb-4"></div> 
                          
-                                <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                                <form  id="contactForm" name="contactForm" class="contactForm" [formGroup]="form2" (ngSubmit)="onSubmit()">
                                     <div class="row" >
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="label" for="name" style="color: white;">Full Name</label>
-                                                <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+                                                <input type="text" id="form3Example1cg" class="form-control form-control-lg" placeholder="Full Name"  formControlName="FullName"
+                                                [ngClass]="{ 'is-invalid': submitted && f['FullName'].errors }">
+                                                <div *ngIf="submitted && f['FullName'].errors" class="invalid-feedback">
+                                                    <div *ngIf="f['FullName'].errors['required']">Full Name is required</div>
+                                                  </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6"> 
                                             <div class="form-group">
                                                 <label class="label" for="email" style="color: white;">Email Address</label>
-                                                <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                                                <input type="email" id="form3Example3cg" class="form-control form-control-lg" placeholder="Email" 
+                                                formControlName="Email" [ngClass]="{ 'is-invalid': submitted && f['Email'].errors }">
+
+                                                <div *ngIf="submitted && f['Email'].errors" class="invalid-feedback">
+                                                     <div *ngIf="f['Email'].errors['required']">Email is required</div>
+                                                     <div *ngIf="f['Email'].errors['Email']">Email is invalid</div>
+                                                </div>
+                                                
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label class="label" for="subject" style="color: white;">Subject</label>
-                                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+                                                <input type="text" id="form3Example15cg" class="form-control form-control-lg" placeholder="Subject"  formControlName="Subject"
+                                                [ngClass]="{ 'is-invalid': submitted && f['Subject'].errors }">
+                                                <div *ngIf="submitted && f['Subject'].errors" class="invalid-feedback">
+                                                    <div *ngIf="f['Subject'].errors['required']">Subject is required</div>
+                                                  </div>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label class="label" for="#" style="color: white;">Message</label>
-                                                <textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
+                                                <textarea type="text" id="form3Example155cg" class="form-control form-control-lg" placeholder="Message" cols="30" rows="4"  formControlName="Message"
+                                                [ngClass]="{ 'is-invalid': submitted && f['Message'].errors }"></textarea>
+                                                <div *ngIf="submitted && f['Message'].errors" class="invalid-feedback">
+                                                    <div *ngIf="f['Message'].errors['required']">Message is required</div>
+                                                  </div>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group" style="margin-top:10px">
-                                                <input type="submit"  class="btn btn-primary" (Click)="click();">
+                                                <input type="submit"  class="btn btn-primary" >
 
                                                 
                                             </div>

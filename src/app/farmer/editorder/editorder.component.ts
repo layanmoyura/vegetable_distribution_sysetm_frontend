@@ -57,9 +57,16 @@ export class EditorderComponent implements OnInit {
 
   refresh(){
     this.shared.getorder(this.ID).subscribe(
-      data=>{console.log(data); this.pro_null = false;
+      data=>{console.log(data);
+        
       this.OrderList = data;
       console.log(this.OrderList)
+      if(this.OrderList.length==0){
+        this.pro_null=true;
+          }
+          else{
+            this.pro_null=false;
+          }
       
      
       

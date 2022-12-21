@@ -7,7 +7,7 @@
             <div class="col-sm-9">
                 <select  class="form-control " formControlName="VehiclId"  [ngClass]="{ 'is-invalid': submitted && f['VehiclId'].errors }">
                     <option selected value=1> select courier</option>
-                    <option *ngFor="let datai of coulist "value={{datai.vehiclId}}>Vehicle under {{datai.vehicle_reg_no}} reg no</option>
+                    <option *ngFor="let datai of coulist">Vehicle owned by {{datai.firstName}} from {{datai.living_City}}.</option>
                    
                   </select>
                   <div *ngIf="submitted && f['VehiclId'].errors" class="invalid-feedback">

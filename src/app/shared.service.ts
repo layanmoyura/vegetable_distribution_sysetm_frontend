@@ -80,6 +80,10 @@ export class SharedService {
     return this.http.post(this.APIurl+"/farmerfunc/addstock",val)
   }
 
+  comment(val:any){
+    return this.http.post(this.APIurl+"/customerfunc/customercomment",val)
+  }
+
   getprodfar(id:any):Observable<any>{
     return this.http.get<any>(this.APIurl+"/farmerfunc/getfarmerprod/"+id)
   }
@@ -103,6 +107,10 @@ export class SharedService {
 
   getorder(id:any):Observable<any>{
     return this.http.get(this.APIurl+"/farmerfunc/getfarmerorder/"+id)
+  }
+
+  getorder2(id:any):Observable<any>{
+    return this.http.get(this.APIurl+"/farmerfunc/getfarmerorder2/"+id)
   }
 
   updorder(id:any,val:any){

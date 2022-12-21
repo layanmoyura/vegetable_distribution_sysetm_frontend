@@ -13,7 +13,9 @@ export class FarmerAccComponent implements OnInit {
   id:any
   ID:any
   list:any
+  list2:any
   size:any
+  size2:any
   firstname:any 
   Lastname:any
   Email:any
@@ -41,7 +43,10 @@ export class FarmerAccComponent implements OnInit {
 
     
     
-    this.shared.getorderbycusid(this.id).subscribe(data => {this.list = data; console.log(data);this.size=this.list.length })
+    
+    this.shared.getorder(this.id).subscribe(data => {this.list = data; console.log(data);this.size=this.list.length })
+
+    this.shared.getorder2(this.id).subscribe(data => {this.list2 = data; console.log(data);this.size2=this.list2.length })
 
 
     
