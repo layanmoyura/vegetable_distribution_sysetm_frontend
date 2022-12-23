@@ -53,7 +53,7 @@
             </div>
         </div>-->
 
-        <ng-container *ngFor="let item of CategoryList "   >
+        <ng-container *ngFor="let item of CategoryList | filter:searchKey:'name' "   >
             <div class="card  col-md-3 bg-light" style="width:250px;position: relative;  align-self: start;" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <div style="text-align: center;">
                     <img src="{{item.vegtable_image}}" (click)="Viewcat(item)">
