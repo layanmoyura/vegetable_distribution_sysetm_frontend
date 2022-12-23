@@ -71,6 +71,10 @@ import { CourierEditComponent } from './courier/courier-edit/courier-edit.compon
 import { FilterPipe } from './shear/filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { AuthGuard } from './adminauth.guard';
+import { CusAuthGuard } from './cusauth.guard';
+import { FarAuthGuard } from './farauth.guard';
+import { CouAuthGuard } from './couauth.guard';
 
 
 @NgModule({
@@ -151,7 +155,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     
     
   ],
-  providers: [SharedService,
+  providers: [SharedService,AuthGuard,CusAuthGuard,FarAuthGuard,CouAuthGuard,
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS }, JwtHelperService],
   bootstrap: [AppComponent]
 })

@@ -63,6 +63,7 @@ this.addorders();}
 
       var temp = this.product[i].quantity;
       var Temp = +temp;
+      console.log(this.product[i])
       
       
 

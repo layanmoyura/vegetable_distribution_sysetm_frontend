@@ -18,7 +18,8 @@ export class LandingPageComponent implements OnInit {
     public pro:any={}
   
     ngOnInit(): void {
-      
+    
+    localStorage.clear();
 
     this.shared.getcat().subscribe(data=> {this.CategoryList=data;
     console.log(this.CategoryList)});

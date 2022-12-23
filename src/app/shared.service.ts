@@ -163,6 +163,10 @@ export class SharedService {
     return this.http.get(this.APIurl+"/adminfunc/getdelbycou/"+id);
   }
 
+  updatedel0(id:any,val:number){
+    return this.http.put(this.APIurl+"/adminfunc/updatedel0/"+id,val);
+  }
+
   updatedel(id:any,val:number){
     return this.http.put(this.APIurl+"/adminfunc/updatedel/"+id,val);
   }
@@ -231,6 +235,54 @@ export class SharedService {
           const rol= decodedaf.role;
           return rol;
         }
+        }
+
+        loggedinuser(){
+          this.decoded = localStorage.getItem('token')
+          const decodedaf = this.jwtHelper.decodeToken(this.decoded)
+          
+          if(decodedaf!=null && decodedaf.role =="customer"){
+            return true;
+          }
+          else{
+            return false;
+          }
+        }
+
+        loggedinadmin(){
+          this.decoded = localStorage.getItem('token')
+          const decodedaf = this.jwtHelper.decodeToken(this.decoded)
+          
+          if(decodedaf!=null && decodedaf.role =="admin"){
+            return true;
+          }
+          else{
+            return false;
+          }
+        }
+
+        loggedinfarmer(){
+          this.decoded = localStorage.getItem('token')
+          const decodedaf = this.jwtHelper.decodeToken(this.decoded)
+          
+          if(decodedaf!=null && decodedaf.role =="farmer"){
+            return true;
+          }
+          else{
+            return false;
+          }
+        }
+
+        loggedincourier(){
+          this.decoded = localStorage.getItem('token')
+          const decodedaf = this.jwtHelper.decodeToken(this.decoded)
+          
+          if(decodedaf!=null && decodedaf.role =="courier"){
+            return true;
+          }
+          else{
+            return false;
+          }
         }
 
     

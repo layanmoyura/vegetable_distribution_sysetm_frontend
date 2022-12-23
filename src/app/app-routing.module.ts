@@ -38,6 +38,11 @@ import { FarmerAccComponent } from './farmer/farmer-acc/farmer-acc.component';
 import { CourierVeiwComponent } from './courier/courier-veiw/courier-veiw.component';
 import { CourierAccComponent } from './courier/courier-acc/courier-acc.component';
 import { CourierEditComponent } from './courier/courier-edit/courier-edit.component';
+import { AuthGuard } from './adminauth.guard';
+import { CusAuthGuard } from './cusauth.guard';
+import { FarAuthGuard } from './farauth.guard';
+import { CouAuthGuard } from './couauth.guard';
+
 
 const routes: Routes = [
   {path:'',redirectTo:'/home',pathMatch:'full'},
@@ -57,9 +62,9 @@ const routes: Routes = [
   {path: 'customer_signup' , component:CustomerSignupComponent},
   {path:'farmer',component:FarmerVeiwComponent,
 children:[
- { path:'editproduct',component:FarmerEditproductComponent},
- { path:'editorder',component:EditorderComponent},
- {path:'farmer_acc',component:FarmerAccComponent},
+ { path:'editproduct',component:FarmerEditproductComponent,canActivate:[FarAuthGuard]},
+ { path:'editorder',component:EditorderComponent,canActivate:[FarAuthGuard]},
+ {path:'farmer_acc',component:FarmerAccComponent,canActivate:[FarAuthGuard]},
 
 ]
 },
@@ -69,27 +74,27 @@ children:[
 {path: 'courier_signup' , component:CourierSignupComponent},
 {path:'admin',component:ViewComponent,
 children:[
- { path:'editcat',component:EditCatComponent},
- { path:'editprof',component:EditProfComponent},
- { path:'editorders',component:EditOrderComponent},
- {path:'admin_acc',component:AdminAccComponent}
+ { path:'editcat',component:EditCatComponent,canActivate:[AuthGuard]},
+ { path:'editprof',component:EditProfComponent,canActivate:[AuthGuard]},
+ { path:'editorders',component:EditOrderComponent,canActivate:[AuthGuard]},
+ {path:'admin_acc',component:AdminAccComponent,canActivate:[AuthGuard]}
 
 ]
 },
 {path:'customer',component:CustomerVeiwComponent,
 children:[
-  {path:'category-show',component:CustomerCatShowComponent},
-  {path:'products-show/:id',component:CustomerProShowComponent},
-  {path: 'cart' ,component:CustomerCartComponent },
-  {path:'customer_account',component:CustomerAccComponent},
-  {path:'customer_order',component:OrdershowComponent},
+  {path:'category-show',component:CustomerCatShowComponent,canActivate:[CusAuthGuard]},
+  {path:'products-show/:id',component:CustomerProShowComponent,canActivate:[CusAuthGuard]},
+  {path: 'cart' ,component:CustomerCartComponent,canActivate:[CusAuthGuard] },
+  {path:'customer_account',component:CustomerAccComponent,canActivate:[CusAuthGuard]},
+  {path:'customer_order',component:OrdershowComponent,canActivate:[CusAuthGuard]},
   
 ]
 },
 {path:'courior',component:CourierVeiwComponent,
 children:[
-  {path:'courior-acc',component:CourierAccComponent},
-  {path:'courior-edit',component:CourierEditComponent},
+  {path:'courior-acc',component:CourierAccComponent,canActivate:[CouAuthGuard]},
+  {path:'courior-edit',component:CourierEditComponent,canActivate:[CouAuthGuard]},
 ]
 },
 

@@ -100,18 +100,19 @@ export class CustomerProShowComponent implements OnInit {
     
 
     this.service.getfarm(item.farmerId).subscribe( data=>{this.farmerlist =data;
+
     
       
-    
+      console.log(this.farmerlist)
       
       /////////////
       
       this.prod=item;
-      this.prod.f=this.farmerlist[0].name;
-      this.prod.living_city=this.farmerlist[0].living_city;
-      this.prod.phoneNumber=this.farmerlist[0].phoneNumber;
-      this.prod.farmerId=this.farmerlist[0].farmerId;
-      console.log(this.farm)
+      this.prod.f=this.farmerlist[0].firstName;
+      this.prod.living_city=this.farmerlist[0].living_City;
+      
+      this.prod.farmerId=this.farmerlist[0].roleId;
+      
 
       
   })
