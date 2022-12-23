@@ -42,7 +42,7 @@
         <td>{{item.vegetableStocksId}}</td>
         <td>{{item.name}}</td>
         <td>{{item.quantity}}</td>
-        <td>{{item.total}}</td>
+        <td>{{item.total | number:'1.2-2'}}</td>
         <td><button (click)="removeIteam(item)">Delete</button></td>
       </tr>
       <tr>
@@ -50,7 +50,7 @@
         <td><button class="btn btn-danger" (click)="emptycart()" >Empty cart</button></td>
         <td><button class="btn btn-primary" routerLink="/customer/category-show">Shop more</button></td>
         <td><button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" >CheckOut</button></td>
-        <td>Grand Total :LKR {{grandTotal}}</td>
+        <td>Grand Total :LKR {{grandTotal | number:'1.2-2'}}</td>
 
       </tr>
     </tbody>

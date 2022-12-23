@@ -30,7 +30,7 @@
         <label class="col-sm-9 col-form-label" style="padding: 10px;">{{prod.farmers_price_per_kg}}</label>
 
         <label class="col-sm-3 col-form-label " style="padding: 10px;font-weight:500;">Available Amount kg                  :</label>
-        <label class="col-sm-9 col-form-label" style="padding: 10px;">{{prod.amount}}</label>
+        <label class="col-sm-9 col-form-label" style="padding: 10px;">{{prod.amount | number:'1.2-2'}}</label>
 
         <label class="col-sm-3 col-form-label " style="padding: 10px;font-weight:500;">Discription                  :</label>
         <label class="col-sm-9 col-form-label" style="padding: 10px;">{{prod.discription}}</label>
