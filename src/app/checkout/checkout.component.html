@@ -1,5 +1,5 @@
 <div class=" d-sm-flex" >
-    <form      >
+    <form     [formGroup]="form"  >
     
        
            <div class="row col-sm-12" *ngIf="Activepay">
@@ -8,24 +8,39 @@
     
             <label class="col-sm-3 col-form-label " style="padding: 10px;">Card No</label>
             <div class="col-sm-9" style="margin-top:10px ;">
-                <input type="text"  class="form-control"  placeholder="Card number" >
+                <input type="text " class="form-control"  placeholder="Enter Card no" formControlName="No"
+                [ngClass]="{ 'is-invalid': submitted && f['No'].errors }">
+    
+                <div *ngIf="submitted && f['No'].errors" class="invalid-feedback">
+                    <div *ngIf="f['No'].errors['required']">Card No is required</div>
+                  </div>
     
             </div>
-            <label class="col-sm-3 col-form-label " style="padding: 10px;">Card Name</label>
+            <label class="col-sm-3 col-form-label " style="padding: 10px;">Name on Card</label>
             <div class="col-sm-9" style="margin-top:10px ;">
-                <input type="text" class="form-control"  placeholder="Card Name" >
+                <input type="text " class="form-control"  placeholder="Enter Name on Card" formControlName="Name"
+                [ngClass]="{ 'is-invalid': submitted && f['Name'].errors }">
+    
+                <div *ngIf="submitted && f['Name'].errors" class="invalid-feedback">
+                    <div *ngIf="f['Name'].errors['required']">Name on Card is required</div>
+                  </div>
     
             </div>
             <label class="col-sm-3 col-form-label " style="padding: 10px;">Pin No</label>
             <div class="col-sm-9" style="margin-top:10px ;margin-bottom:10px ;">
-                <input type="text"  class="form-control"  placeholder="pin" >
+                <input type="password" class="form-control"  placeholder="Enter PIN" formControlName="PIN"
+                [ngClass]="{ 'is-invalid': submitted && f['PIN'].errors }">
+    
+                <div *ngIf="submitted && f['PIN'].errors" class="invalid-feedback">
+                    <div *ngIf="f['PIN'].errors['PIN']">PIN is required</div>
+                  </div>
     
             </div>
 
         
         
     
-            <button type="submit" class="btn btn-secondary col-sm-3 col-form-label" (click)="pay()" >Pay</button>
+            <button style="margin-top: 10px;" type="submit" class="btn btn-secondary col-sm-3 col-form-label" (click)="pay()" >Pay</button>
     
     
             
