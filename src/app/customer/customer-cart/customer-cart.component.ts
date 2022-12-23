@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/service/cart.service';
 import { SharedService } from 'src/app/shared.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class CustomerCartComponent implements OnInit {
 
-  constructor(private cartService:CartService,private service:SharedService,private toastr:ToastrService) { }
+  constructor(private cartService:CartService,private service:SharedService,private toastr:ToastrService,private router:Router) { }
   public product:any;
   public grandTotal:number=0;
   public orditem:any={}
@@ -19,12 +20,15 @@ export class CustomerCartComponent implements OnInit {
   ID = +this.id;
   public check = 0;
   public check2 = 0;
+  public pays:boolean=false;
 
 
 
   ngOnInit(): void {
+    this.refresh();
+    if(this.pays){
+this.addorders();}
 
- this.refresh();
     
   }
 
@@ -46,6 +50,7 @@ export class CustomerCartComponent implements OnInit {
   }
 
   addorders(){
+    if(this.pays){
     var x = this.product.length;
     console.log(x)
     this.check2 = x;
@@ -96,14 +101,17 @@ export class CustomerCartComponent implements OnInit {
         this.check = 0;
     }
 
-    location.reload();
-
-   
-    
+   //location.reload();
+   this.router.navigate(["/customer/customer_order"]);
+   this.pays=false;
+  }
   }
 
 
+  close(){
+    this.addorders();
 
+  }
 
-
+  
 }

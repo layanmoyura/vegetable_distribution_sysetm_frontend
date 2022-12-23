@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ApiService } from 'src/app/service/api.service';
+import { CartService } from 'src/app/service/cart.service';
 import { SharedService } from 'src/app/shared.service';
 
 @Component({
@@ -11,17 +12,20 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class CustomerCatShowComponent implements OnInit {
 
-  constructor(private api:ApiService ,private router:Router,private shared:SharedService, private toastr:ToastrService) { }
+  constructor(private api:ApiService ,private router:Router,private shared:SharedService, private toastr:ToastrService,private cartshear:CartService) { }
   public catList:any[]=[];
   public pro:any={};
   pro_null:boolean=false;
   ActiveAddEditPro:boolean=false;
   aid:any[]=[];
+  searchKey:string="";
   
 
   ngOnInit(): void {
     this.refresh();
-    
+    this.cartshear.searchs.subscribe((val:any)=>{
+      this.searchKey=val;
+     }) ;
   }
 
   refresh(){

@@ -1,0 +1,40 @@
+<div class=" d-sm-flex" >
+    <form      >
+    
+       
+           <div class="row col-sm-12" *ngIf="Activepay">
+          
+    
+    
+            <label class="col-sm-3 col-form-label " style="padding: 10px;">Card No</label>
+            <div class="col-sm-9" style="margin-top:10px ;">
+                <input type="text"  class="form-control"  placeholder="Card number" >
+    
+            </div>
+            <label class="col-sm-3 col-form-label " style="padding: 10px;">Card Name</label>
+            <div class="col-sm-9" style="margin-top:10px ;">
+                <input type="text" class="form-control"  placeholder="Card Name" >
+    
+            </div>
+            <label class="col-sm-3 col-form-label " style="padding: 10px;">Pin No</label>
+            <div class="col-sm-9" style="margin-top:10px ;margin-bottom:10px ;">
+                <input type="text"  class="form-control"  placeholder="pin" >
+    
+            </div>
+
+        
+        
+    
+            <button type="submit" class="btn btn-secondary col-sm-3 col-form-label" (click)="pay()" >Pay</button>
+    
+    
+            
+            
+        </div>
+        <div class="row col-sm-12" *ngIf="!Activepay">
+            <label  style="padding: 10px;">Payment success</label> 
+        </div>
+        
+    
+        </form>
+    </div>

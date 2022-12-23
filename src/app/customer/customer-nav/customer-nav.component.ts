@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { data } from 'autoprefixer';
 import { CartService } from 'src/app/service/cart.service';
 import { SharedService } from 'src/app/shared.service';
@@ -15,8 +16,10 @@ export class CustomerNavComponent implements OnInit {
   id:any
   size: any=0
   totalcart:number=0
-  constructor(private shared: SharedService ,private cartshear:CartService) { }
 
+  
+  constructor(private shared: SharedService ,private cartshear:CartService,private router:Router) { }
+  public searchTerm:string=" ";
   ngOnInit(): void {
 
     this.image = this.shared.getpic();
@@ -31,4 +34,13 @@ export class CustomerNavComponent implements OnInit {
   loggout(){
     this.shared.logout();
   }
+  
+  onsearch(){
+    this.cartshear.searchs.next(this.searchTerm);
+    this.router.navigate(["/customer/category-show"]);
+    console.log(this.searchTerm);
+    this.searchTerm="";
+
+  }
+
 }

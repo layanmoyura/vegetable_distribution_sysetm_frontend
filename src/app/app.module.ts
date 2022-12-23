@@ -68,7 +68,9 @@ import { CourierVeiwComponent } from './courier/courier-veiw/courier-veiw.compon
 import { CourierAccComponent } from './courier/courier-acc/courier-acc.component';
 import { CourierNavbarComponent } from './courier/courier-navbar/courier-navbar.component';
 import { CourierEditComponent } from './courier/courier-edit/courier-edit.component';
-
+import { FilterPipe } from './shear/filter.pipe';
+import { FormsModule } from '@angular/forms';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 @NgModule({
@@ -122,7 +124,9 @@ import { CourierEditComponent } from './courier/courier-edit/courier-edit.compon
     CourierVeiwComponent,
     CourierAccComponent,
     CourierNavbarComponent,
-    CourierEditComponent
+    CourierEditComponent,
+    FilterPipe,
+    CheckoutComponent
 
 
     
@@ -141,6 +145,7 @@ import { CourierEditComponent } from './courier/courier-edit/courier-edit.compon
     ReactiveFormsModule,
     ToastrModule.forRoot(), 
     HttpClientModule,
+    FormsModule
    
     
     

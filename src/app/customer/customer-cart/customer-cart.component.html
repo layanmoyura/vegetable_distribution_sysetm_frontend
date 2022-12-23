@@ -1,3 +1,19 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false" >
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content ">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Payment Process</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="close()" ></button>
+          </div>
+          <div class="modal-body">
+              <app-checkout (childEvent)="pays=$event"  ></app-checkout>
+          </div>
+
+      </div>
+  </div>
+</div>
+
+
 <div class="container" *ngIf="product.length == 0">
     <div class="card">
         <h5 class="card-title">My Cart</h5>
@@ -33,7 +49,7 @@
        
         <td><button class="btn btn-danger" (click)="emptycart()" >Empty cart</button></td>
         <td><button class="btn btn-primary" routerLink="/customer/category-show">Shop more</button></td>
-        <td><button class="btn btn-success" (click)="addorders()">CheckOut</button></td>
+        <td><button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" >CheckOut</button></td>
         <td>Grand Total :LKR {{grandTotal}}</td>
 
       </tr>

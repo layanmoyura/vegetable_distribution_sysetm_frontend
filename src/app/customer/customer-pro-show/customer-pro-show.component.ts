@@ -9,6 +9,7 @@ import { Input } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 
 import { Observable, Subscriber } from 'rxjs';
+import { CartService } from 'src/app/service/cart.service';
 @Component({
   selector: 'app-customer-pro-show',
   templateUrl: './customer-pro-show.component.html',
@@ -16,7 +17,7 @@ import { Observable, Subscriber } from 'rxjs';
 })
 export class CustomerProShowComponent implements OnInit {
 
-  constructor(private service:SharedService,private arouter:ActivatedRoute,private router:Router) { }
+  constructor(private service:SharedService,private arouter:ActivatedRoute,private router:Router,private cartshear:CartService) { }
   productList:any[]=[];
   cat_id:number=0;
   prdlist:any[]=[];
@@ -80,8 +81,10 @@ export class CustomerProShowComponent implements OnInit {
   });
 
 
-  
-
+ this.cartshear.searchs.subscribe((val:any)=>{
+  this.searchKey=val;
+ }) ;
+   
 
   
   }
