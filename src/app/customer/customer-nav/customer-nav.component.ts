@@ -19,7 +19,7 @@ export class CustomerNavComponent implements OnInit {
 
   
   constructor(private shared: SharedService ,private cartshear:CartService,private router:Router) { }
-  public searchTerm:string=" ";
+  public searchTerm:string="";
   ngOnInit(): void {
 
     this.image = this.shared.getpic();

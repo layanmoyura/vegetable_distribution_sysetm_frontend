@@ -11,7 +11,7 @@ import { SharedService } from 'src/app/shared.service';
 export class LandingNavComponent implements OnInit {
 
   constructor(private shared: SharedService ,private cartshear:CartService,private router:Router) { }
-  public searchTerm:string=" ";
+  public searchTerm:string="";
   ngOnInit(): void {
   }
 
