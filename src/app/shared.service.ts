@@ -147,6 +147,14 @@ export class SharedService {
     return this.http.get(this.APIurl+"/adminfunc/getorderbycus/"+id)
   }
 
+  getorderbycusid1(id:any):Observable<any>{
+    return this.http.get(this.APIurl+"/adminfunc/getorderbycus1/"+id)
+  }
+
+  getorderbycusid2(id:any):Observable<any>{
+    return this.http.get(this.APIurl+"/adminfunc/getorderbycus2/"+id)
+  }
+
   updateordadmin(id:any,val:number){
     return this.http.put(this.APIurl+"/adminfunc/updateord/"+id,val);
   }
@@ -161,6 +169,10 @@ export class SharedService {
 
    getcoubyid(id:any):Observable<any>{
     return this.http.get(this.APIurl+"/adminfunc/getdelbycou/"+id);
+  }
+
+  getcoubyid1(id:any):Observable<any>{
+    return this.http.get(this.APIurl+"/adminfunc/getdelbycou1/"+id);
   }
 
   updatedel0(id:any,val:number){

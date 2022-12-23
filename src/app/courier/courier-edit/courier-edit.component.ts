@@ -90,7 +90,7 @@ export class CourierEditComponent implements OnInit {
     })*/
 
     this.shared.updatedel0(dataItem.orderId,3).subscribe(data=>{
-      this.toastr.success( 'Delivery Status Updated');
+      this.toastr.success( 'Delivery is Accepted');
 
     },
     error=>{
@@ -143,7 +143,7 @@ export class CourierEditComponent implements OnInit {
 
     this.shared.updatedel(dataItem.orderId,3).subscribe(data=>{
       this.shared.confirmdel(dataItem.deliveryId,3).subscribe(data=>{
-        this.toastr.success( 'Delivery Status Updated');
+        this.toastr.success( 'Delivery is delivered');
         
       },
       error=>{

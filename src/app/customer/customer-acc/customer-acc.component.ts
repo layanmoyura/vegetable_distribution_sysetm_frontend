@@ -14,6 +14,7 @@ export class CustomerAccComponent implements OnInit {
   ID:any
   list:any
   size:any
+  size2:any
   firstname:any 
   Lastname:any
   Email:any
@@ -41,8 +42,8 @@ export class CustomerAccComponent implements OnInit {
 
     
     
-    this.shared.getorderbycusid(this.id).subscribe(data => {this.list = data; console.log(data);this.size=this.list.length })
-
+    this.shared.getorderbycusid1(this.id).subscribe(data => {this.list = data; console.log(data);this.size=this.list.length })
+    this.shared.getorderbycusid2(this.id).subscribe(data => {this.list = data; console.log(data);this.size2=this.list.length })
 
     
 

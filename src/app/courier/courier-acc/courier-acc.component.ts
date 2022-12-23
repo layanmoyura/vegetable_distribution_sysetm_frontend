@@ -45,9 +45,9 @@ export class CourierAccComponent implements OnInit {
     
     
     
-    this.shared.getorder(this.id).subscribe(data => {this.list = data; console.log(data);this.size=this.list.length })
+    this.shared.getcoubyid(this.id).subscribe(data => {this.list = data; console.log(data);this.size=this.list.length })
 
-    this.shared.getorder2(this.id).subscribe(data => {this.list2 = data; console.log(data);this.size2=this.list2.length })
+    this.shared.getcoubyid1(this.id).subscribe(data => {this.list2 = data; console.log(data);this.size2=this.list2.length })
 
 
     
