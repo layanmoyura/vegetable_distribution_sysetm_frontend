@@ -1,5 +1,7 @@
 # SoftwareProject
 
+Find more details from this article: https://drive.google.com/file/d/1FrV8PDAtyDYpwC0JaeKcW60rDLw1-Zzy/view?usp=sharing
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
 ## Development server
